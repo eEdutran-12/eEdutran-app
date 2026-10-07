@@ -1,351 +1,242 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <link rel="manifest" href="manifest.json">
+    <meta name="theme-color" content="#317EFB">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Contact Us - eEdutran Online Tutoring</title>
-    <link rel="manifest" href="manifest.json">
-    <meta name="theme-color" content="#317EFB">
+    <link href="https://fonts.googleapis.com/css2?family=Comic+Neue:wght@400;700&display=swap" rel="stylesheet">
+    
     <style>
-        :root {
-            --primary-color: #2b989c;
-            --primary-dark: #1d696c;
-            --secondary-color: #f4a261;
-            --bg-light: #f8fafc;
-            --text-dark: #1e293b;
-            --text-light: #64748b;
-            --white: #ffffff;
-            --shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
-        }
-
         * {
             box-sizing: border-box;
             margin: 0;
             padding: 0;
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
         }
 
         body {
-            background-color: var(--bg-light);
-            color: var(--text-dark);
-            line-height: 1.6;
-            padding-top: 80px;
+            background: linear-gradient(135deg, #2b989c 0%, #325a7b 30%, #5d3579 70%, #9e2a6b 100%);
+            font-family: 'Comic Sans MS', 'Comic Neue', 'Arial', sans-serif;
+            color: #ffffff;
+            min-height: 100vh;
+            overflow-x: hidden;
+            position: relative;
         }
 
-        header {
+        .top-header {
             position: fixed;
             top: 0;
             left: 0;
-            right: 0;
-            height: 80px;
-            background-color: var(--white);
-            box-shadow: var(--shadow);
+            width: 100%;
+            height: 54px;
             display: flex;
-            align-items: center;
             justify-content: space-between;
-            padding: 0 2rem;
+            align-items: center;
+            padding: 10px 15px;
+            background: rgba(43, 152, 156, 0.98);
+            backdrop-filter: blur(8px);
+            -webkit-backdrop-filter: blur(8px);
             z-index: 1000;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+            border-bottom: 2px solid #00e5ff;
         }
 
-        .logo-area {
+        .logo-container {
             display: flex;
             align-items: center;
-            gap: 10px;
-            cursor: pointer;
+            gap: 8px;
+            text-decoration: none;
         }
-
         .logo-icon {
-            width: 40px;
-            height: 40px;
-            background-color: var(--primary-color);
-            color: var(--white);
-            font-weight: bold;
-            font-size: 1.5rem;
+            width: 32px;
+            height: 32px;
+            border-radius: 50%;
+            background: conic-gradient(from 180deg at 50% 50%, #9b51e0, #27ae60, #f2c94c, #eb5757, #9b51e0);
             display: flex;
             align-items: center;
             justify-content: center;
-            border-radius: 8px;
+            font-weight: bold;
+            font-size: 16px;
+            color: #ffffff;
+            box-shadow: 0 0 8px rgba(255,255,255,0.5);
+            font-family: 'Arial Black', sans-serif;
+        }
+        .logo-text {
+            display: flex;
+            flex-direction: column;
+            line-height: 1.1;
+        }
+        .logo-title {
+            font-family: 'Verdana', sans-serif;
+            font-size: 13px;
+            font-weight: bold;
+            color: #ffffff;
+            letter-spacing: -0.3px;
+        }
+        .logo-subtitle {
+            font-family: 'Courier New', monospace;
+            font-size: 7px;
+            color: #76ff03;
+            font-weight: bold;
+            letter-spacing: 0.8px;
         }
 
-        .logo-text h1 {
-            font-size: 1.2rem;
-            color: var(--text-dark);
-            line-height: 1;
-        }
-
-        .logo-text span {
-            font-size: 0.8rem;
-            color: var(--text-light);
-        }
-
-        nav {
+        .nav-container {
             display: flex;
             align-items: center;
-            gap: 1.5rem;
+            gap: 8px;
         }
 
         .nav-link {
+            background: #1b1464;
+            border: 2px solid #00e5ff;
+            color: #00e5ff;
+            font-family: 'Lucida Console', monospace;
+            font-size: 11px;
+            font-weight: bold;
+            border-radius: 9999px;
+            padding: 5px 12px;
             text-decoration: none;
-            color: var(--text-dark);
-            font-weight: 500;
+            transition: all 0.2s ease;
+            white-space: nowrap;
         }
-
-        .nav-link:hover, .nav-link.active {
-            color: var(--primary-color);
-        }
-
-        .dropdown {
-            position: relative;
-            display: inline-block;
-        }
-
-        .dropbtn {
-            background: none;
-            border: none;
-            font-size: 1rem;
-            font-weight: 500;
-            color: var(--text-dark);
-            cursor: pointer;
-            padding: 10px;
-        }
-
-        .dropdown-content {
-            display: none;
-            position: absolute;
-            top: 100%;
-            left: 0;
-            background-color: var(--white);
-            min-width: 200px;
-            box-shadow: var(--shadow);
-            border-radius: 8px;
-            overflow: hidden;
-            z-index: 1001;
-        }
-
-        .dropdown-content.show {
-            display: block;
-        }
-
-        .level-btn {
-            width: 100%;
-            text-align: left;
-            padding: 10px 15px;
-            background: none;
-            border: none;
-            font-weight: 600;
-            cursor: pointer;
-            border-bottom: 1px solid #e2e8f0;
-        }
-
-        .subjects-list {
-            display: none;
-            background-color: #f1f5f9;
-        }
-
-        .subjects-list.show {
-            display: block;
-        }
-
-        .subjects-list a {
-            display: block;
-            padding: 8px 25px;
-            text-decoration: none;
-            color: var(--text-dark);
-            font-size: 0.9rem;
+        .nav-link:hover {
+            background: #00e5ff;
+            color: #1b1464;
+            box-shadow: 0 0 10px #00e5ff;
         }
 
         .header-cta-btn {
-            background-color: var(--primary-color);
-            color: var(--white);
-            padding: 10px 20px;
-            border-radius: 6px;
+            background: #e58e26;
+            border: 2px solid #fff200;
+            color: #ffffff;
+            font-family: 'Impact', sans-serif;
+            font-size: 11px;
+            letter-spacing: 0.5px;
+            border-radius: 9999px;
+            padding: 5px 12px;
+            text-shadow: 1px 1px 2px rgba(0,0,0,0.5);
+            box-shadow: 0 2px 8px rgba(0,0,0,0.3);
+            transition: all 0.2s ease;
             text-decoration: none;
-            font-weight: 600;
+            white-space: nowrap;
         }
 
-        .container {
-            max-width: 900px;
-            margin: 0 auto;
-            padding: 3rem 1.5rem;
+        .main-container {
+            max-width: 800px;
+            margin: 100px auto 40px auto;
+            padding: 20px;
+            background: rgba(30, 39, 46, 0.9);
+            border-radius: 20px;
+            border: 3px solid #00d2d3;
+            box-shadow: 0 8px 25px rgba(0,0,0,0.5);
         }
 
-        .form-card {
-            background: var(--white);
-            padding: 2.5rem;
-            border-radius: 12px;
-            box-shadow: var(--shadow);
-        }
-
-        .form-card h2 {
-            color: var(--primary-color);
-            margin-bottom: 0.5rem;
-        }
-
-        .form-card p {
-            color: var(--text-light);
-            margin-bottom: 2rem;
+        h1 {
+            text-align: center;
+            color: #ffea00;
+            font-family: 'Arial Black', sans-serif;
+            margin-bottom: 20px;
         }
 
         .form-group {
-            margin-bottom: 1.5rem;
+            margin-bottom: 15px;
         }
 
-        .form-group label {
+        label {
             display: block;
-            font-weight: 600;
-            margin-bottom: 0.5rem;
-        }
-
-        .form-group input, .form-group select, .form-group textarea {
-            width: 100%;
-            padding: 12px;
-            border: 1px solid #cbd5e1;
-            border-radius: 6px;
-            font-size: 1rem;
-        }
-
-        .submit-btn {
-            background-color: var(--primary-color);
-            color: var(--white);
-            border: none;
-            padding: 14px 28px;
-            font-size: 1rem;
+            margin-bottom: 5px;
             font-weight: bold;
-            border-radius: 6px;
-            cursor: pointer;
+            color: #00e5ff;
+        }
+
+        input, select, textarea {
             width: 100%;
-            transition: background 0.2s;
+            padding: 10px;
+            border-radius: 8px;
+            border: 2px solid #00d2d3;
+            background: #2f3640;
+            color: #ffffff;
+            font-size: 14px;
         }
 
-        .submit-btn:hover {
-            background-color: var(--primary-dark);
+        button.submit-btn {
+            width: 100%;
+            background: #eb2f06;
+            border: 2px solid #ff7979;
+            color: white;
+            padding: 12px;
+            font-size: 16px;
+            font-weight: bold;
+            border-radius: 10px;
+            cursor: pointer;
+            text-transform: uppercase;
         }
 
-        footer {
-            background-color: var(--text-dark);
-            color: var(--white);
-            text-align: center;
-            padding: 2rem;
-            margin-top: 4rem;
+        button.submit-btn:hover {
+            background: #ff3838;
         }
     </style>
 </head>
 <body>
 
-    <!-- Fixed Header & Navigation -->
-    <header>
-        <a href="index.html" style="text-decoration: none;">
-            <div class="logo-area">
-                <div class="logo-icon">E</div>
-                <div class="logo-text">
-                    <h1>eEdutran</h1>
-                    <span>Online Tutoring</span>
-                </div>
+    <header class="top-header">
+        <a href="index.html" class="logo-container">
+            <div class="logo-icon">e</div>
+            <div class="logo-text">
+                <span class="logo-title">eEdutran</span>
+                <span class="logo-subtitle">ONLINE TUTORING</span>
             </div>
         </a>
 
-        <nav>
+        <nav class="nav-container">
             <a href="index.html" class="nav-link">Homepage</a>
             <a href="about.html" class="nav-link">About</a>
-            
-            <div class="dropdown">
-                <button class="dropbtn" type="button" onclick="toggleDropdown(event)">Levels & Subjects ▼</button>
-                <div class="dropdown-content" id="subjectsDropdown">
-                    <button class="level-btn" type="button" onclick="toggleLevel(event, 'ks2-list')">KS2 Level ▼</button>
-                    <div class="subjects-list" id="ks2-list">
-                        <a href="contact.html#callback-form">Science</a>
-                        <a href="contact.html#callback-form">Math</a>
-                        <a href="contact.html#callback-form">English</a>
-                    </div>
-                    <button class="level-btn" type="button" onclick="toggleLevel(event, 'ks3-list')">KS3 Level ▼</button>
-                    <div class="subjects-list" id="ks3-list">
-                        <a href="contact.html#callback-form">Physics</a>
-                        <a href="contact.html#callback-form">Chemistry</a>
-                        <a href="contact.html#callback-form">Biology</a>
-                    </div>
-                </div>
-            </div>
-
-            <a href="contact.html" class="nav-link active">Contact</a>
+            <a href="contact.html#callback-form" class="header-cta-btn">Free Trial</a>
         </nav>
-
-        <a href="contact.html#callback-form" class="header-cta-btn">Free Trial</a>
     </header>
 
-    <main class="container">
-        <div class="form-card" id="callback-form">
-            <h2>Book Your Free Trial / Request Call Back</h2>
-            <p>Fill out the form below and our team will get back to you within 24 hours to schedule your session.</p>
-
-            <form action="#" method="POST">
-                <div class="form-group">
-                    <label for="name">Full Name</label>
-                    <input type="text" id="name" name="name" placeholder="Enter your name" required>
-                </div>
-
-                <div class="form-group">
-                    <label for="email">Email Address</label>
-                    <input type="email" id="email" name="email" placeholder="Enter your email" required>
-                </div>
-
-                <div class="form-group">
-                    <label for="phone">Phone Number</label>
-                    <input type="tel" id="phone" name="phone" placeholder="Enter phone number" required>
-                </div>
-
-                <div class="form-group">
-                    <label for="level">Level of Interest</label>
-                    <select id="level" name="level">
-                        <option value="ks2">KS2 Level</option>
-                        <option value="ks3">KS3 Level</option>
-                        <option value="gcse">GCSE / IGCSE</option>
-                        <option value="other">Other</option>
-                    </select>
-                </div>
-
-                <div class="form-group">
-                    <label for="message">Message / Specific Requirements</label>
-                    <textarea id="message" name="message" rows="4" placeholder="Tell us about the student's needs..."></textarea>
-                </div>
-
-                <button type="submit" class="submit-btn">Submit Request</button>
-            </form>
-        </div>
+    <main class="main-container" id="callback-form">
+        <h1>Book Your Free Trial / Get In Touch</h1>
+        <form action="#" method="post">
+            <div class="form-group">
+                <label for="name">Parent / Student Name</label>
+                <input type="text" id="name" name="name" required placeholder="Enter full name">
+            </div>
+            <div class="form-group">
+                <label for="email">Email Address</label>
+                <input type="email" id="email" name="email" required placeholder="Enter email address">
+            </div>
+            <div class="form-group">
+                <label for="phone">WhatsApp / Phone Number</label>
+                <input type="tel" id="phone" name="phone" required placeholder="Enter contact number">
+            </div>
+            <div class="form-group">
+                <label for="level">Academic Level</label>
+                <select id="level" name="level">
+                    <option value="ks2">KS2 (Primary)</option>
+                    <option value="ks3">KS3 (Lower Secondary)</option>
+                    <option value="gcse">GCSE / IGCSE</option>
+                    <option value="alevel">A-Level / AS</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="message">Subjects or Preferred Time Slots</label>
+                <textarea id="message" name="message" rows="4" placeholder="Tell us about the subjects or requirements..."></textarea>
+            </div>
+            <button type="submit" class="submit-btn">Submit & Request Free Trial</button>
+        </form>
     </main>
 
-    <footer>
-        <p>&copy; 2026 eEdutran Online Tutoring. All rights reserved.</p>
-    </footer>
-
     <script>
-        function toggleDropdown(event) {
-            event.stopPropagation();
-            document.getElementById("subjectsDropdown").classList.toggle("show");
-        }
-
-        function toggleLevel(event, levelId) {
-            event.stopPropagation();
-            const list = document.getElementById(levelId);
-            list.classList.toggle("show");
-        }
-
-        window.onclick = function(event) {
-            if (!event.target.matches('.dropbtn') && !event.target.matches('.level-btn')) {
-                const dropdowns = document.getElementsByClassName("dropdown-content");
-                for (let i = 0; i < dropdowns.length; i++) {
-                    const openDropdown = dropdowns[i];
-                    if (openDropdown.classList.contains('show')) {
-                        openDropdown.classList.remove('show');
-                    }
-                }
-            }
-        };
-
-        if ('serviceWorker' in navigator) {
-            window.addEventListener('load', () => {
-                navigator.serviceWorker.register('/sw.js');
-            });
-        }
+      if ('serviceWorker' in navigator) {
+        window.addEventListener('load', () => {
+          navigator.serviceWorker.register('/sw.js')
+            .then((reg) => console.log('Service Worker registered successfully:', reg.scope))
+            .catch((err) => console.log('Service Worker registration failed:', err));
+        });
+      }
     </script>
 </body>
 </html>
