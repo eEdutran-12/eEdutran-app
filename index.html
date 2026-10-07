@@ -924,30 +924,111 @@
         </div>
     </div>
 
+     <!-- FAQ Section (Dropdown Accordion - Only questions visible initially) -->
     <div class="faq-section">
         <h3>Frequently Asked Questions</h3>
+        
         <div class="faq-item">
             <div class="faq-question" onclick="toggleFaq(this)">
                 <span>How can I book a free trial session?</span>
                 <span class="arrow">▼</span>
             </div>
             <div class="faq-answer">
-                You can easily book your <strong>free trial session</strong> by clicking any <strong>"Book Your Free Session Now"</strong> button across our website.
+                You can easily book your <strong>free trial session</strong> by clicking any <strong>"Book Your Free Session Now"</strong> button across our website. Simply fill in your details, and our team will get in touch with you immediately to schedule a convenient time slot!
+            </div>
+        </div>
+
+        <div class="faq-item">
+            <div class="faq-question" onclick="toggleFaq(this)">
+                <span>What happens after the trial session? Is there any obligation?</span>
+                <span class="arrow">▼</span>
+            </div>
+            <div class="faq-answer">
+                Everything after the trial will be <strong>directly communicated over on WhatsApp</strong> for your convenience. There are <strong>absolute zero obligations</strong> if you don't like it—feel completely free to walk away with <strong>no pressure or hidden catches</strong>!
+            </div>
+        </div>
+
+        <div class="faq-item">
+            <div class="faq-question" onclick="toggleFaq(this)">
+                <span>How do you conduct online tutoring sessions?</span>
+                <span class="arrow">▼</span>
+            </div>
+            <div class="faq-answer">
+                Our online tutoring sessions are hosted via <strong>Google Meet</strong> paired with advanced <strong>interactive virtual whiteboards</strong>. Students can write, draw, view diagrams live, and access all past session notes anytime for seamless <strong>collaborative learning</strong>.
+            </div>
+        </div>
+
+        <div class="faq-item">
+            <div class="faq-question" onclick="toggleFaq(this)">
+                <span>What subjects and levels do you teach? (Detailed Overview)</span>
+                <span class="arrow">▼</span>
+            </div>
+            <div class="faq-answer">
+                We provide expert, tailored tutoring across multiple foundational and advanced academic tiers:<br><br>
+                • <strong>KS2 Level (Primary):</strong> Comprehensive building blocks covering <strong>Math, English, Science, and Coding</strong>.<br>
+                • <strong>KS3 Level (Lower Secondary):</strong> Deep dives into <strong>English, Math, Physics, Chemistry, Biology, Geography, History, and Coding</strong>.<br>
+                • <strong>GCSE Level (Core Exams):</strong> Intensive exam-focused preparation for <strong>Math, Further Math, English, Physics, Chemistry, Biology, and ICT / Computer Science</strong> to secure top grades.<br>
+                • <strong>A-Level (Advanced Study):</strong> Rigorous mentoring for complex modules in <strong>Math, Further Math, Statistics, Mechanics, English, Physics, Chemistry, Biology, and Computer Science</strong> to conquer university entry requirements.
+            </div>
+        </div>
+
+        <div class="faq-item">
+            <div class="faq-question" onclick="toggleFaq(this)">
+                <span>Are you an agency or a tutoring company?</span>
+                <span class="arrow">▼</span>
+            </div>
+            <div class="faq-answer">
+                We are <strong>not any agency</strong>! We are a dedicated group of <strong>professional tutors</strong>. Parents get to contact and communicate with the tutors <strong>directly</strong> with complete transparency.
+            </div>
+        </div>
+
+        <div class="faq-item">
+            <div class="faq-question" onclick="toggleFaq(this)">
+                <span>What are your pricing and subscription charges?</span>
+                <span class="arrow">▼</span>
+            </div>
+            <div class="faq-answer">
+                Our standard charges are just <strong>£14 per hour</strong>, plus a mere <strong>£1 monthly fee</strong> for the number of subjects chosen. There are absolute <strong>zero hidden charges</strong>!
+            </div>
+        </div>
+
+        <div class="faq-item">
+            <div class="faq-question" onclick="toggleFaq(this)">
+                <span>What qualifications and experience do your tutors have?</span>
+                <span class="arrow">▼</span>
+            </div>
+            <div class="faq-answer">
+                All our tutors possess a minimum of <strong>10+ years of teaching experience</strong>, bringing deep academic expertise and proven student success results to every session.
+            </div>
+        </div>
+
+        <div class="faq-item">
+            <div class="faq-question" onclick="toggleFaq(this)">
+                <span>Can students access notes or pages from past sessions?</span>
+                <span class="arrow">▼</span>
+            </div>
+            <div class="faq-answer">
+                <strong>Yes!</strong> All pages tutored during sessions are <strong>safely stored</strong> and can be accessed anytime by students for revision or completing homework assignments.
             </div>
         </div>
     </div>
 
+    <!-- 5. Final Bottom Book Your Free Session Now -->
     <div class="bottom-cta" style="margin-bottom: 50px;">
         <a href="contact.html#callback-form" class="footer-cta-btn">Book Your Free Session Now</a>
     </div>
 
+    <!-- ================= END OF SECTIONS ================= -->
+
     <script>
+        // Toggle main dropdown menu
         function toggleDropdown(event) {
             event.stopPropagation();
             const dropdownContent = document.getElementById('subjectsDropdown');
             dropdownContent.classList.toggle('show');
         }
 
+        // Toggle individual level accordion lists
         function toggleLevel(event, listId) {
             event.stopPropagation();
             const allLists = document.getElementsByClassName("subjects-list");
@@ -961,6 +1042,7 @@
             targetList.classList.toggle("active");
         }
 
+        // Close dropdown when clicking anywhere outside of it
         window.onclick = function(event) {
             if (!event.target.closest('.dropdown')) {
                 const dropdownContent = document.getElementById('subjectsDropdown');
@@ -974,8 +1056,9 @@
             }
         }
 
+        // Manual Slider Logic for Parents Appreciation
         let slideIndex = 0;
-        const totalSlides = 2;
+        const totalSlides = 10;
 
         function moveSlide(n) {
             slideIndex += n;
@@ -987,13 +1070,32 @@
             updateSlider();
         }
 
-        function updateSlider() {
-            const track = document.getElementById('sliderTrack');
-            track.style.transform = 'translateX(' + (-slideIndex * 100) + '%)';
+        function currentSlide(n) {
+            slideIndex = n;
+            updateSlider();
         }
 
+        function updateSlider() {
+            const track = document.getElementById('sliderTrack');
+            const dots = document.getElementsByClassName('dot');
+            track.style.transform = 'translateX(' + (-slideIndex * 100) + '%)';
+            for (let i = 0; i < dots.length; i++) {
+                dots[i].classList.remove('active');
+            }
+            dots[slideIndex].classList.add('active');
+        }
+
+        // FAQ Accordion Dropdown Logic (Closes all other FAQs when one is opened)
         function toggleFaq(element) {
             const parentItem = element.parentElement;
+            const allFaqItems = document.querySelectorAll('.faq-item');
+
+            allFaqItems.forEach(item => {
+                if (item !== parentItem) {
+                    item.classList.remove('active');
+                }
+            });
+
             parentItem.classList.toggle('active');
         }
     </script>
