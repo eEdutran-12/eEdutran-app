@@ -918,5 +918,41 @@
     });
   }
 </script>
+    <script>
+  // Google Apps Script Web App URL
+  const scriptURL = 'https://script.google.com/macros/s/AKfycbx5l4BqvqqNWZ6-AYlV9hKIdrkcv2b0BConkG5JasvnAqo31FKnWCERPqK_Dh0UgFpT7w/exec';
+  const form = document.querySelector('form');
+
+  form.addEventListener('submit', e => {
+    e.preventDefault();
+    
+    // Disable submit button and show loading state
+    const submitBtn = form.querySelector('button[type="submit"]') || form.querySelector('button');
+    const originalText = submitBtn ? submitBtn.innerText : '';
+    if (submitBtn) {
+      submitBtn.disabled = true;
+      submitBtn.innerText = 'Submitting...';
+    }
+
+    // Send form data to Google Apps Script
+    fetch(scriptURL, { method: 'POST', body: new FormData(form) })
+      .then(response => {
+        alert('Thank you! Your free trial request has been submitted successfully.');
+        form.reset();
+        if (submitBtn) {
+          submitBtn.disabled = false;
+          submitBtn.innerText = originalText;
+        }
+      })
+      .catch(error => {
+        alert('Oops! Something went wrong. Please try again.');
+        console.error('Submission Error:', error.message);
+        if (submitBtn) {
+          submitBtn.disabled = false;
+          submitBtn.innerText = originalText;
+        }
+      });
+  });
+</script>
 </body>
 </html>
