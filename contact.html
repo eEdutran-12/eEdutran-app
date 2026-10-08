@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <link rel="manifest" href="manifest.json">
-<meta name="theme-color" content="#317EFB">
+    <meta name="theme-color" content="#317EFB">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Contact Us - eEdutran Online Tutoring</title>
@@ -591,7 +591,6 @@
 
     <!-- FIXED TOP HEADER -->
     <header class="top-header">
-        <!-- Logo -->
         <a href="#" class="logo-container">
             <div class="logo-icon">e</div>
             <div class="logo-text">
@@ -600,18 +599,14 @@
             </div>
         </a>
 
-        <!-- Navigation items: Homepage, Levels & Subjects, About, Free Trial CTA -->
         <nav class="nav-container">
-            <!-- Homepage Link -->
             <a href="index.html" class="nav-link">Homepage</a>
 
-            <!-- Exact Homepage Dropdown -->
             <div class="dropdown" id="levelsDropdown">
                 <button class="dropbtn" onclick="toggleDropdown(event)">
                     Levels & Subjects ▼
                 </button>
                 <div class="dropdown-content" id="subjectsDropdown">
-                    <!-- KS2 Level -->
                     <button class="level-accordion-btn" onclick="toggleLevel(event, 'ks2-list')">
                         KS2 Level <span>▼</span>
                     </button>
@@ -622,7 +617,6 @@
                         <a href="#" class="sub-subject-item">• Coding</a>
                     </div>
 
-                    <!-- KS3 Level -->
                     <button class="level-accordion-btn" onclick="toggleLevel(event, 'ks3-list')">
                         KS3 Level <span>▼</span>
                     </button>
@@ -637,7 +631,6 @@
                         <a href="#" class="sub-subject-item">• Coding</a>
                     </div>
 
-                    <!-- GCSE Level -->
                     <button class="level-accordion-btn" onclick="toggleLevel(event, 'gcse-list')">
                         GCSE Level <span>▼</span>
                     </button>
@@ -651,7 +644,6 @@
                         <a href="#" class="sub-subject-item">• ICT / Computer Science</a>
                     </div>
 
-                    <!-- A Level -->
                     <button class="level-accordion-btn" onclick="toggleLevel(event, 'alevel-list')">
                         A Level <span>▼</span>
                     </button>
@@ -669,17 +661,14 @@
                 </div>
             </div>
 
-            <!-- About Link -->
             <a href="about.html" class="nav-link">About</a>
 
-            <!-- Header CTA Free Trial Button -->
             <a href="#callback-form" class="header-cta-btn">
                 Free Trial
             </a>
         </nav>
     </header>
 
-    <!-- LEFT & RIGHT WAVY FLAGS HANGING DIRECTLY BELOW FIXED HEADER -->
     <a href="#" class="wavy-flag-left">
         <span>Reviews on</span>
         <span style="color: #000; font-weight: 900;">★ Trustpilot</span>
@@ -693,7 +682,6 @@
     <!-- MAIN CONTENT -->
     <main class="main-container">
 
-        <!-- Title Badge -->
         <div class="hero-title-badge">
             <div class="badge-text">
                 CONTACT eEDUTRAN
@@ -709,16 +697,13 @@
             Have questions about key stages, exam boards, or scheduling? Reach out to us on WhatsApp or fill in the short form below to request a callback and claim your free trial.
         </p>
 
-        <!-- CTA WhatsApp Button -->
         <div class="cta-banner-container">
             <a href="https://wa.me/447462215924" target="_blank" class="inline-cta-btn">
                 💬 CHAT ON WHATSAPP (+44 7462 215924)
             </a>
         </div>
 
-        <!-- DIRECT CONTACT & TEACHING HOURS CARDS -->
         <div class="grid-2">
-            <!-- Card 1: Direct Contact Info -->
             <div class="card-item bg-card-slate">
                 <div class="card-heading neon-cyan">
                     <span>📱</span> Direct Reachability
@@ -739,7 +724,6 @@
                 </div>
             </div>
 
-            <!-- Card 2: Teaching Hours Everyday -->
             <div class="card-item bg-card-indigo">
                 <div class="card-heading neon-yellow">
                     <span>⏰</span> Teaching Hours Everyday
@@ -770,56 +754,56 @@
                 Fill in your details and we will contact you on WhatsApp with class availability.
             </p>
 
-            <form action="#" method="POST" onsubmit="event.preventDefault(); alert('Thank you! We will get in touch with you shortly on WhatsApp.');">
+            <form id="contactForm">
                 
                 <!-- 1. Student Name -->
                 <div class="form-section-title">1. Student Details</div>
                 <div style="margin-bottom: 15px;">
                     <label class="form-label">Name of Student *</label>
-                    <input type="text" class="form-control" placeholder="Enter student's full name" required>
+                    <input type="text" name="Student Name" class="form-control" placeholder="Enter student's full name" required>
                 </div>
 
                 <!-- 2. Year of Study -->
                 <div class="form-section-title">2. Year or Grade of Study *</div>
                 <div class="radio-grid">
-                    <label class="custom-option"><input type="radio" name="year_study" value="Year 4" required> Year 4</label>
-                    <label class="custom-option"><input type="radio" name="year_study" value="Year 5"> Year 5</label>
-                    <label class="custom-option"><input type="radio" name="year_study" value="Year 6"> Year 6</label>
-                    <label class="custom-option"><input type="radio" name="year_study" value="Year 7"> Year 7</label>
-                    <label class="custom-option"><input type="radio" name="year_study" value="Year 8"> Year 8</label>
-                    <label class="custom-option"><input type="radio" name="year_study" value="Year 9"> Year 9</label>
-                    <label class="custom-option"><input type="radio" name="year_study" value="Year 10"> Year 10 (GCSE)</label>
-                    <label class="custom-option"><input type="radio" name="year_study" value="Year 11"> Year 11 (GCSE)</label>
-                    <label class="custom-option"><input type="radio" name="year_study" value="Year 12"> Year 12 (A-Level)</label>
-                    <label class="custom-option"><input type="radio" name="year_study" value="Year 13"> Year 13 (A-Level)</label>
+                    <label class="custom-option"><input type="radio" name="Year Level" value="Year 4" required> Year 4</label>
+                    <label class="custom-option"><input type="radio" name="Year Level" value="Year 5"> Year 5</label>
+                    <label class="custom-option"><input type="radio" name="Year Level" value="Year 6"> Year 6</label>
+                    <label class="custom-option"><input type="radio" name="Year Level" value="Year 7"> Year 7</label>
+                    <label class="custom-option"><input type="radio" name="Year Level" value="Year 8"> Year 8</label>
+                    <label class="custom-option"><input type="radio" name="Year Level" value="Year 9"> Year 9</label>
+                    <label class="custom-option"><input type="radio" name="Year Level" value="Year 10"> Year 10 (GCSE)</label>
+                    <label class="custom-option"><input type="radio" name="Year Level" value="Year 11"> Year 11 (GCSE)</label>
+                    <label class="custom-option"><input type="radio" name="Year Level" value="Year 12"> Year 12 (A-Level)</label>
+                    <label class="custom-option"><input type="radio" name="Year Level" value="Year 13"> Year 13 (A-Level)</label>
                 </div>
 
                 <!-- 3. Subjects chosen -->
                 <div class="form-section-title">3. Subjects Chosen for Guidance (Select All That Apply)</div>
                 <div class="checkbox-grid">
-                    <label class="custom-option"><input type="checkbox" name="subject" value="Math"> Math</label>
-                    <label class="custom-option"><input type="checkbox" name="subject" value="Further Math"> Further Math</label>
-                    <label class="custom-option"><input type="checkbox" name="subject" value="Statistics"> Statistics</label>
-                    <label class="custom-option"><input type="checkbox" name="subject" value="Mechanics"> Mechanics</label>
-                    <label class="custom-option"><input type="checkbox" name="subject" value="Physics"> Physics</label>
-                    <label class="custom-option"><input type="checkbox" name="subject" value="Chemistry"> Chemistry</label>
-                    <label class="custom-option"><input type="checkbox" name="subject" value="Biology"> Biology</label>
-                    <label class="custom-option"><input type="checkbox" name="subject" value="English"> English</label>
-                    <label class="custom-option"><input type="checkbox" name="subject" value="Geography"> Geography</label>
-                    <label class="custom-option"><input type="checkbox" name="subject" value="History"> History</label>
-                    <label class="custom-option"><input type="checkbox" name="subject" value="Computer Science / ICT"> Computer Science</label>
-                    <label class="custom-option"><input type="checkbox" name="subject" value="Coding"> Coding</label>
+                    <label class="custom-option"><input type="checkbox" name="Subjects" value="Math"> Math</label>
+                    <label class="custom-option"><input type="checkbox" name="Subjects" value="Further Math"> Further Math</label>
+                    <label class="custom-option"><input type="checkbox" name="Subjects" value="Statistics"> Statistics</label>
+                    <label class="custom-option"><input type="checkbox" name="Subjects" value="Mechanics"> Mechanics</label>
+                    <label class="custom-option"><input type="checkbox" name="Subjects" value="Physics"> Physics</label>
+                    <label class="custom-option"><input type="checkbox" name="Subjects" value="Chemistry"> Chemistry</label>
+                    <label class="custom-option"><input type="checkbox" name="Subjects" value="Biology"> Biology</label>
+                    <label class="custom-option"><input type="checkbox" name="Subjects" value="English"> English</label>
+                    <label class="custom-option"><input type="checkbox" name="Subjects" value="Geography"> Geography</label>
+                    <label class="custom-option"><input type="checkbox" name="Subjects" value="History"> History</label>
+                    <label class="custom-option"><input type="checkbox" name="Subjects" value="Computer Science / ICT"> Computer Science</label>
+                    <label class="custom-option"><input type="checkbox" name="Subjects" value="Coding"> Coding</label>
                 </div>
 
                 <!-- 4. Phone Number with International ISD Code -->
                 <div class="form-section-title">4. WhatsApp Contact Number *</div>
                 <div class="phone-group">
-                    <select class="form-control phone-code-select" required>
+                    <select name="Country Code" class="form-control phone-code-select" required>
                         <option value="+44">🇬🇧 UK (+44)</option>
                         <option value="+1">🇺🇸 USA/CAN (+1)</option>
                         <option value="+91">🇮🇳 IND (+91)</option>
                         <option value="+971">🇦🇪 UAE (+971)</option>
-                        <option value="+65">🇸🇬 SGP (+65)</option>
+                        <option value="+65">🇸GP (+65)</option>
                         <option value="+61">🇦🇺 AUS (+61)</option>
                         <option value="+966">🇸🇦 KSA (+966)</option>
                         <option value="+974">🇶🇦 QAT (+974)</option>
@@ -831,7 +815,7 @@
                         <option value="other">🌐 Other Country</option>
                     </select>
 
-                    <input type="tel" class="form-control phone-number-input" placeholder="WhatsApp Number" required>
+                    <input type="tel" name="WhatsApp Number" class="form-control phone-number-input" placeholder="WhatsApp Number" required>
                 </div>
 
                 <p style="font-size: 11px; color: #a4b0be; margin-top: 12px; line-height: 1.4;">
@@ -845,7 +829,6 @@
             </form>
         </div>
 
-        <!-- FOOTER CTA -->
         <div class="footer-cta-container">
             <h2 style="font-size: 24px; font-weight: 900; margin-bottom: 8px;">
                 Prefer to Talk Right Away?
@@ -860,14 +843,12 @@
 
     </main>
 
-    <!-- FOOTER -->
     <footer>
         <p>© 2026 eEdutran Online Tutoring. All rights reserved. Premier UK & International Online Education.</p>
     </footer>
 
-    <!-- JAVASCRIPT FOR DROPDOWNS & ACCORDIONS -->
+    <!-- DROPDOWN & ACCORDION SCRIPTS -->
     <script>
-        // Toggle main Levels & Subjects dropdown
         function toggleDropdown(event) {
             event.stopPropagation();
             const dropdown = document.getElementById('levelsDropdown');
@@ -877,26 +858,22 @@
             menu.classList.toggle('show');
         }
 
-        // Toggle accordion level sub-lists
         function toggleLevel(event, listId) {
             event.stopPropagation();
             const selectedList = document.getElementById(listId);
             const allSubLists = document.querySelectorAll('.sub-subject-list');
 
-            // Close all other accordion sections
             allSubLists.forEach(list => {
                 if (list.id !== listId) {
                     list.classList.remove('open');
                 }
             });
 
-            // Toggle current target accordion section
             if (selectedList) {
                 selectedList.classList.toggle('open');
             }
         }
 
-        // Close dropdown when clicking outside
         window.addEventListener('click', function(e) {
             const dropdown = document.getElementById('levelsDropdown');
             const menu = document.getElementById('subjectsDropdown');
@@ -909,50 +886,51 @@
             }
         });
     </script>
-   <script>
-  if ('serviceWorker' in navigator) {
-    window.addEventListener('load', () => {
-      navigator.serviceWorker.register('/sw.js')
-        .then((reg) => console.log('Service Worker registered successfully:', reg.scope))
-        .catch((err) => console.log('Service Worker registration failed:', err));
-    });
-  }
-</script>
+
+    <!-- SERVICE WORKER -->
     <script>
-  // Google Apps Script Web App URL
-  const scriptURL = 'https://script.google.com/macros/s/AKfycbx5l4BqvqqNWZ6-AYlV9hKIdrkcv2b0BConkG5JasvnAqo31FKnWCERPqK_Dh0UgFpT7w/exec';
-  const form = document.querySelector('form');
-
-  form.addEventListener('submit', e => {
-    e.preventDefault();
-    
-    // Disable submit button and show loading state
-    const submitBtn = form.querySelector('button[type="submit"]') || form.querySelector('button');
-    const originalText = submitBtn ? submitBtn.innerText : '';
-    if (submitBtn) {
-      submitBtn.disabled = true;
-      submitBtn.innerText = 'Submitting...';
-    }
-
-    // Send form data to Google Apps Script
-    fetch(scriptURL, { method: 'POST', body: new FormData(form) })
-      .then(response => {
-        alert('Thank you! Your free trial request has been submitted successfully.');
-        form.reset();
-        if (submitBtn) {
-          submitBtn.disabled = false;
-          submitBtn.innerText = originalText;
+        if ('serviceWorker' in navigator) {
+            window.addEventListener('load', () => {
+                navigator.serviceWorker.register('/sw.js')
+                    .then((reg) => console.log('Service Worker registered successfully:', reg.scope))
+                    .catch((err) => console.log('Service Worker registration failed:', err));
+            });
         }
-      })
-      .catch(error => {
-        alert('Oops! Something went wrong. Please try again.');
-        console.error('Submission Error:', error.message);
-        if (submitBtn) {
-          submitBtn.disabled = false;
-          submitBtn.innerText = originalText;
-        }
-      });
-  });
-</script>
+    </script>
+
+    <!-- GOOGLE APPS SCRIPT SUBMISSION HANDLER -->
+    <script>
+        const scriptURL = 'https://script.google.com/macros/s/AKfycbx5l4BqvqqNWZ6-AYlV9hKIdrkcv2b0BConkG5JasvnAqo31FKnWCERPqK_Dh0UgFpT7w/exec';
+        const form = document.getElementById('contactForm');
+
+        form.addEventListener('submit', e => {
+            e.preventDefault();
+            
+            const submitBtn = form.querySelector('button[type="submit"]');
+            const originalText = submitBtn ? submitBtn.innerText : '';
+            if (submitBtn) {
+                submitBtn.disabled = true;
+                submitBtn.innerText = 'Submitting...';
+            }
+
+            fetch(scriptURL, { method: 'POST', body: new FormData(form) })
+                .then(response => {
+                    alert('Thank you! Your free trial request has been submitted successfully.');
+                    form.reset();
+                    if (submitBtn) {
+                        submitBtn.disabled = false;
+                        submitBtn.innerText = originalText;
+                    }
+                })
+                .catch(error => {
+                    alert('Oops! Something went wrong. Please try again.');
+                    console.error('Submission Error:', error.message);
+                    if (submitBtn) {
+                        submitBtn.disabled = false;
+                        submitBtn.innerText = originalText;
+                    }
+                });
+        });
+    </script>
 </body>
 </html>
