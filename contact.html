@@ -1,477 +1,558 @@
-
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="theme-color" content="#123b72">
-  <title>Contact Us | eEdutran Online Tutoring</title>
-  <meta name="description" content="Register your interest in online tutoring with eEdutran.">
-
-  <style>
-    :root {
-      --primary: #123b72;
-      --primary-dark: #0b2850;
-      --accent: #f5b82e;
-      --background: #f3f6fb;
-      --text: #202b3c;
-      --muted: #667085;
-      --border: #d9e1ec;
-      --success: #147d46;
-      --error: #b42318;
-      --white: #ffffff;
-    }
-
-    * { box-sizing: border-box; }
-
-    body {
-      margin: 0;
-      background: var(--background);
-      color: var(--text);
-      font-family: Arial, Helvetica, sans-serif;
-      line-height: 1.6;
-    }
-
-    header {
-      background: var(--primary);
-      color: var(--white);
-      padding: 22px 16px;
-      text-align: center;
-      border-bottom: 4px solid var(--accent);
-    }
-
-    header h1 {
-      margin: 0;
-      font-size: clamp(24px, 5vw, 34px);
-      line-height: 1.3;
-    }
-
-    header p {
-      margin: 8px 0 0;
-      color: #e7eef9;
-      font-size: 15px;
-    }
-
-    .container {
-      width: min(100% - 32px, 680px);
-      margin: 36px auto;
-    }
-
-    .form-card {
-      padding: clamp(20px, 5vw, 36px);
-      background: var(--white);
-      border: 1px solid #e8edf5;
-      border-radius: 16px;
-      box-shadow: 0 8px 30px rgba(18, 59, 114, 0.09);
-    }
-
-    .form-card h2 {
-      margin: 0 0 8px;
-      color: var(--primary);
-      font-size: 26px;
-    }
-
-    .intro {
-      margin: 0 0 26px;
-      color: var(--muted);
-      font-size: 15px;
-    }
-
-    .form-group { margin-bottom: 21px; }
-
-    label, .field-label {
-      display: block;
-      margin-bottom: 8px;
-      font-size: 15px;
-      font-weight: 700;
-    }
-
-    .required { color: var(--error); }
-
-    input[type="text"],
-    input[type="tel"],
-    select {
-      width: 100%;
-      min-height: 48px;
-      padding: 12px 14px;
-      border: 1px solid var(--border);
-      border-radius: 8px;
-      background: var(--white);
-      color: var(--text);
-      font: inherit;
-      font-size: 16px;
-    }
-
-    input:focus, select:focus {
-      outline: 2px solid rgba(18, 59, 114, 0.2);
-      border-color: var(--primary);
-    }
-
-    .help-text {
-      display: block;
-      margin-top: 6px;
-      color: var(--muted);
-      font-size: 13px;
-    }
-
-    .subjects-box {
-      padding: 15px;
-      border: 1px solid var(--border);
-      border-radius: 10px;
-      background: #fbfcfe;
-    }
-
-    .subject-option {
-      display: flex;
-      align-items: center;
-      gap: 11px;
-      padding: 10px 5px;
-      margin: 0;
-      border-bottom: 1px solid #edf0f5;
-      cursor: pointer;
-      font-weight: 400;
-    }
-
-    .subject-option:last-child { border-bottom: none; }
-
-    .subject-option input {
-      width: 18px;
-      height: 18px;
-      flex-shrink: 0;
-      accent-color: var(--primary);
-    }
-
-    .whatsapp-fields {
-      display: grid;
-      grid-template-columns: minmax(120px, 0.8fr) minmax(0, 1.6fr);
-      gap: 12px;
-    }
-
-    button[type="submit"] {
-      width: 100%;
-      min-height: 52px;
-      padding: 14px 20px;
-      margin-top: 5px;
-      border: none;
-      border-radius: 9px;
-      background: var(--primary);
-      color: var(--white);
-      font-size: 16px;
-      font-weight: 700;
-      cursor: pointer;
-    }
-
-    button[type="submit"]:hover:not(:disabled) {
-      background: var(--primary-dark);
-    }
-
-    button[type="submit"]:disabled {
-      opacity: 0.65;
-      cursor: wait;
-    }
-
-    #formMessage {
-      display: none;
-      padding: 13px 15px;
-      margin: 18px 0 0;
-      border-radius: 8px;
-      font-size: 14px;
-      overflow-wrap: anywhere;
-    }
-
-    #formMessage.success {
-      display: block;
-      color: var(--success);
-      background: #eaf7ef;
-      border: 1px solid #b8e3c7;
-    }
-
-    #formMessage.error {
-      display: block;
-      color: var(--error);
-      background: #fff0ef;
-      border: 1px solid #f2c5c2;
-    }
-
-    .privacy-note {
-      margin-top: 16px;
-      color: var(--muted);
-      font-size: 12px;
-      text-align: center;
-    }
-
-    footer {
-      padding: 20px 16px 30px;
-      color: var(--muted);
-      font-size: 14px;
-      text-align: center;
-    }
-
-    footer a {
-      color: var(--primary);
-      font-weight: 700;
-      text-decoration: none;
-    }
-
-    footer a:hover { text-decoration: underline; }
-
-    .sr-only {
-      position: absolute;
-      width: 1px;
-      height: 1px;
-      padding: 0;
-      margin: -1px;
-      overflow: hidden;
-      clip: rect(0, 0, 0, 0);
-      white-space: nowrap;
-      border: 0;
-    }
-
-    @media (max-width: 420px) {
-      .container {
-        width: min(100% - 20px, 680px);
-        margin: 20px auto;
-      }
-
-      .form-card { padding: 20px 16px; }
-
-      .whatsapp-fields {
-        grid-template-columns: 1fr;
-        gap: 14px;
-      }
-    }
-  </style>
-</head>
-
-<body>
-  <header>
-    <h1>eEdutran Online Tutoring</h1>
-    <p>Personalised online learning to help students succeed</p>
-  </header>
-
-  <main class="container">
-    <section class="form-card" aria-labelledby="formTitle">
-      <h2 id="formTitle">Student Enquiry Form</h2>
-      <p class="intro">
-        Complete the form below and tell us which subjects you would like
-        help with. We will use your details to follow up on your enquiry.
-      </p>
-
-      <form
-        id="contactForm"
-        action="https://script.google.com/macros/s/AKfycbwTa0G2S5sqQlWo49rzHcJoaZobIG2CavpA4sPGCORnXiyLHOczdOEd1YBA0ZDkhwOa/exec"
-        method="POST"
-        target="blank"
-      >
-        <div class="form-group">
-          <label for="studentName">
-            Student Name <span class="required">*</span>
-          </label>
-          <input
-            type="text"
-            id="studentName"
-            name="studentName"
-            placeholder="Enter the student's full name"
-            autocomplete="name"
-            maxlength="120"
-            required
-          >
-        </div>
-
-        <div class="form-group">
-          <label for="yearLevel">
-            Year Level <span class="required">*</span>
-          </label>
-          <select id="yearLevel" name="yearLevel" required>
-            <option value="">Select year level</option>
-            <option value="Year 1">Year 1</option>
-            <option value="Year 2">Year 2</option>
-            <option value="Year 3">Year 3</option>
-            <option value="Year 4">Year 4</option>
-            <option value="Year 5">Year 5</option>
-            <option value="Year 6">Year 6</option>
-            <option value="Year 7">Year 7</option>
-            <option value="Year 8">Year 8</option>
-            <option value="Year 9">Year 9</option>
-            <option value="Year 10">Year 10</option>
-            <option value="Year 11">Year 11</option>
-            <option value="Year 12">Year 12</option>
-            <option value="Year 13">Year 13</option>
-            <option value="Other">Other</option>
-          </select>
-        </div>
-
-        <div class="form-group">
-          <span class="field-label">
-            Subjects Required <span class="required">*</span>
-          </span>
-
-          <div class="subjects-box" id="subjectsBox">
-            <label class="subject-option">
-              <input type="checkbox" name="subjects" value="Mathematics">
-              <span>Mathematics</span>
-            </label>
-            <label class="subject-option">
-              <input type="checkbox" name="subjects" value="Physics">
-              <span>Physics</span>
-            </label>
-            <label class="subject-option">
-              <input type="checkbox" name="subjects" value="Chemistry">
-              <span>Chemistry</span>
-            </label>
-            <label class="subject-option">
-              <input type="checkbox" name="subjects" value="Biology">
-              <span>Biology</span>
-            </label>
-          </div>
-          <span class="help-text">Select one or more subjects.</span>
-        </div>
-
-        <div class="form-group">
-          <span class="field-label">
-            WhatsApp Number <span class="required">*</span>
-          </span>
-
-          <div class="whatsapp-fields">
-            <div>
-              <label for="countryCode">Country Code</label>
-              <select id="countryCode" name="countryCode" required>
-                <option value="+44" selected>United Kingdom (+44)</option>
-                <option value="+91">India (+91)</option>
-                <option value="+1">USA / Canada (+1)</option>
-                <option value="+61">Australia (+61)</option>
-                <option value="+971">UAE (+971)</option>
-                <option value="+966">Saudi Arabia (+966)</option>
-                <option value="+92">Pakistan (+92)</option>
-                <option value="+880">Bangladesh (+880)</option>
-                <option value="+94">Sri Lanka (+94)</option>
-                <option value="+977">Nepal (+977)</option>
-                <option value="+27">South Africa (+27)</option>
-                <option value="+65">Singapore (+65)</option>
-                <option value="+60">Malaysia (+60)</option>
-                <option value="+234">Nigeria (+234)</option>
-                <option value="+254">Kenya (+254)</option>
-                <option value="+other">Other</option>
-              </select>
-            </div>
-
-            <div>
-              <label for="whatsappNumber">Phone Number</label>
-              <input
-                type="tel"
-                id="whatsappNumber"
-                name="whatsappNumber"
-                placeholder="Enter phone number"
-                autocomplete="tel-national"
-                inputmode="tel"
-                maxlength="25"
-                required
-              >
-            </div>
-          </div>
-
-          <span class="help-text">
-            Enter your number without repeating the country code.
-          </span>
-        </div>
-
-        <button type="submit" id="submitButton">Submit Enquiry</button>
-
-        <p id="formMessage" role="status" aria-live="polite"></p>
-
-        <p class="privacy-note">
-          Your details will be used to respond to your tutoring enquiry.
-        </p>
-      </form>
-    </section>
-  </main>
-
-  <footer>
-    <p>
-      Contact us on WhatsApp:
-      <a href="https://wa.me/447462215924"
-         target="_blank" rel="noopener noreferrer">+44 7462 215924</a>
-    </p>
-    <p>&copy; <span id="currentYear"></span> eEdutran Online Tutoring</p>
-  </footer>
-
-  <iframe
-    name="submissionFrame"
-    id="submissionFrame"
-    title="Form submission response"
-    class="sr-only"
-    tabindex="-1"
-  ></iframe>
-
-  <script>
-    (function () {
-      "use strict";
-
-      const form = document.getElementById("contactForm");
-      const button = document.getElementById("submitButton");
-      const message = document.getElementById("formMessage");
-      const frame = document.getElementById("submissionFrame");
-      const subjects = Array.from(
-        document.querySelectorAll('input[name="subjects"]')
-      );
-
-      let waitingForResponse = false;
-      let initialFrameLoadSeen = false;
-
-      document.getElementById("currentYear").textContent =
-        new Date().getFullYear();
-
-      function showMessage(text, type) {
-        message.textContent = text;
-        message.className = type;
-      }
-
-      frame.addEventListener("load", function () {
-        if (!initialFrameLoadSeen) {
-          initialFrameLoadSeen = true;
-          return;
-        }
-
-        if (!waitingForResponse) return;
-
-        waitingForResponse = false;
-        button.disabled = false;
-        button.textContent = "Submit Enquiry";
-
-        showMessage(
-          "The server returned a response, but this page cannot verify " +
-          "whether your enquiry was saved. Please check your Google Sheet. " +
-          "If no new row appears, please try again later or contact us.",
-          "success"
-        );
-      });
-
-      form.addEventListener("submit", function (event) {
-        message.textContent = "";
-        message.className = "";
-
-        if (!subjects.some(function (item) { return item.checked; })) {
-          event.preventDefault();
-          showMessage("Please select at least one subject.", "error");
-          document.getElementById("subjectsBox").scrollIntoView({
-            behavior: "smooth",
-            block: "center"
-          });
-          return;
-        }
-
-        if (waitingForResponse) {
-          event.preventDefault();
-          return;
-        }
-
-        waitingForResponse = true;
-        button.disabled = true;
-        button.textContent = "Submitting...";
-
-        showMessage("Submitting your enquiry. Please wait...", "success");
-      });
-    })();
-  </script>
-</body>
+<!DOCTYPE html>  <html lang="en">  
+<head>  
+  <meta charset="UTF-8">  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">  
+  <meta name="theme-color" content="#123b72">    <title>Contact Us | eEdutran Online Tutoring</title>  <meta
+name="description"
+content="Register your interest in online tutoring with eEdutran. Select your year level and subjects and provide your WhatsApp contact details."
+
+> 
+
+  <style>  
+    :root {  
+      --primary: #123b72;  
+      --primary-dark: #0b2850;  
+      --accent: #f5b82e;  
+      --background: #f3f6fb;  
+      --text: #202b3c;  
+      --muted: #667085;  
+      --border: #d9e1ec;  
+      --success: #147d46;  
+      --error: #b42318;  
+      --white: #ffffff;  
+    }  
+  
+    * {  
+      box-sizing: border-box;  
+    }  
+  
+    body {  
+      margin: 0;  
+      padding: 0;  
+      background: var(--background);  
+      color: var(--text);  
+      font-family: Arial, Helvetica, sans-serif;  
+      line-height: 1.6;  
+    }  
+  
+    header {  
+      background: var(--primary);  
+      color: var(--white);  
+      padding: 22px 16px;  
+      text-align: center;  
+      border-bottom: 4px solid var(--accent);  
+    }  
+  
+    header h1 {  
+      margin: 0;  
+      font-size: clamp(24px, 5vw, 34px);  
+      line-height: 1.3;  
+    }  
+  
+    header p {  
+      margin: 8px 0 0;  
+      font-size: 15px;  
+      color: #e7eef9;  
+    }  
+  
+    .container {  
+      width: min(100% - 32px, 680px);  
+      margin: 36px auto;  
+    }  
+  
+    .form-card {  
+      background: var(--white);  
+      padding: clamp(20px, 5vw, 36px);  
+      border-radius: 16px;  
+      box-shadow: 0 8px 30px rgba(18, 59, 114, 0.09);  
+      border: 1px solid #e8edf5;  
+    }  
+  
+    .form-card h2 {  
+      margin: 0 0 8px;  
+      color: var(--primary);  
+      font-size: 26px;  
+    }  
+  
+    .intro {  
+      margin: 0 0 26px;  
+      color: var(--muted);  
+      font-size: 15px;  
+    }  
+  
+    .form-group {  
+      margin-bottom: 21px;  
+    }  
+  
+    label,  
+    .field-label {  
+      display: block;  
+      margin-bottom: 8px;  
+      font-weight: 700;  
+      font-size: 15px;  
+    }  
+  
+    .required {  
+      color: var(--error);  
+    }  
+  
+    input[type="text"],  
+    input[type="tel"],  
+    select {  
+      width: 100%;  
+      min-height: 48px;  
+      padding: 12px 14px;  
+      border: 1px solid var(--border);  
+      border-radius: 8px;  
+      background: var(--white);  
+      color: var(--text);  
+      font: inherit;  
+      font-size: 16px;  
+      outline: none;  
+      transition: border-color 0.2s, box-shadow 0.2s;  
+    }  
+  
+    input:focus,  
+    select:focus {  
+      border-color: var(--primary);  
+      box-shadow: 0 0 0 3px rgba(18, 59, 114, 0.12);  
+    }  
+  
+    .help-text {  
+      display: block;  
+      margin-top: 6px;  
+      color: var(--muted);  
+      font-size: 13px;  
+    }  
+  
+    .subjects-box {  
+      padding: 15px;  
+      border: 1px solid var(--border);  
+      border-radius: 10px;  
+      background: #fbfcfe;  
+    }  
+  
+    .subject-option {  
+      display: flex;  
+      align-items: center;  
+      gap: 11px;  
+      padding: 10px 5px;  
+      margin: 0;  
+      cursor: pointer;  
+      font-weight: 400;  
+      border-bottom: 1px solid #edf0f5;  
+    }  
+  
+    .subject-option:last-child {  
+      border-bottom: none;  
+    }  
+  
+    .subject-option input {  
+      width: 18px;  
+      height: 18px;  
+      flex-shrink: 0;  
+      accent-color: var(--primary);  
+      cursor: pointer;  
+    }  
+  
+    .whatsapp-fields {  
+      display: grid;  
+      grid-template-columns: minmax(120px, 0.8fr) minmax(0, 1.6fr);  
+      gap: 12px;  
+    }  
+  
+    button[type="submit"] {  
+      width: 100%;  
+      min-height: 52px;  
+      padding: 14px 20px;  
+      margin-top: 5px;  
+      border: none;  
+      border-radius: 9px;  
+      background: var(--primary);  
+      color: var(--white);  
+      font-size: 16px;  
+      font-weight: 700;  
+      cursor: pointer;  
+      transition: background 0.2s, transform 0.2s;  
+    }  
+  
+    button[type="submit"]:hover:not(:disabled) {  
+      background: var(--primary-dark);  
+      transform: translateY(-1px);  
+    }  
+  
+    button[type="submit"]:disabled {  
+      opacity: 0.65;  
+      cursor: wait;  
+    }  
+  
+    #formMessage {  
+      display: none;  
+      padding: 13px 15px;  
+      margin: 18px 0 0;  
+      border-radius: 8px;  
+      font-size: 14px;  
+      overflow-wrap: anywhere;  
+    }  
+  
+    #formMessage.success {  
+      display: block;  
+      color: var(--success);  
+      background: #eaf7ef;  
+      border: 1px solid #b8e3c7;  
+    }  
+  
+    #formMessage.error {  
+      display: block;  
+      color: var(--error);  
+      background: #fff0ef;  
+      border: 1px solid #f2c5c2;  
+    }  
+  
+    footer {  
+      text-align: center;  
+      padding: 20px 16px 30px;  
+      color: var(--muted);  
+      font-size: 14px;  
+    }  
+  
+    footer a {  
+      color: var(--primary);  
+      font-weight: 700;  
+      text-decoration: none;  
+    }  
+  
+    footer a:hover {  
+      text-decoration: underline;  
+    }  
+  
+    .privacy-note {  
+      margin-top: 16px;  
+      color: var(--muted);  
+      font-size: 12px;  
+      text-align: center;  
+    }  
+  
+    .sr-only {  
+      position: absolute;  
+      width: 1px;  
+      height: 1px;  
+      padding: 0;  
+      margin: -1px;  
+      overflow: hidden;  
+      clip: rect(0, 0, 0, 0);  
+      white-space: nowrap;  
+      border: 0;  
+    }  
+  
+    @media (max-width: 420px) {  
+      .container {  
+        width: min(100% - 20px, 680px);  
+        margin: 20px auto;  
+      }  
+  
+      .form-card {  
+        padding: 20px 16px;  
+      }  
+  
+      .whatsapp-fields {  
+        grid-template-columns: 1fr;  
+        gap: 14px;  
+      }  
+    }  
+  </style>  </head>  <body>    <header>  
+    <h1>eEdutran Online Tutoring</h1>  
+    <p>Personalised online learning to help students succeed</p>  
+  </header>    <main class="container">  
+    <section class="form-card" aria-labelledby="formTitle">  <h2 id="formTitle">Student Enquiry Form</h2>  
+
+  <p class="intro">  
+    Complete the form below and tell us which subjects you would like  
+    help with. We will use your details to follow up on your enquiry.  
+  </p>  
+
+  <form  
+    id="contactForm"  
+    action="https://script.google.com/macros/s/AKfycbwTa0G2S5sqQlWo49rzHcJoaZobIG2CavpA4sPGCORnXiyLHOczdOEd1YBA0ZDkhwOa/exec"  
+    method="POST" 
+  target="submissionFrame"
+>
+  >  
+
+    <div class="form-group">  
+      <label for="studentName">  
+        Student Name <span class="required">*</span>  
+      </label>  
+
+      <input  
+        type="text"  
+        id="studentName"  
+        name="studentName"  
+        placeholder="Enter the student's full name"  
+        autocomplete="name"  
+        maxlength="120"  
+        required  
+      >  
+    </div>  
+
+    <div class="form-group">  
+      <label for="yearLevel">  
+        Year Level <span class="required">*</span>  
+      </label>  
+
+      <select  
+        id="yearLevel"  
+        name="yearLevel"  
+        required  
+      >  
+        <option value="">Select year level</option>  
+        <option value="Year 1">Year 1</option>  
+        <option value="Year 2">Year 2</option>  
+        <option value="Year 3">Year 3</option>  
+        <option value="Year 4">Year 4</option>  
+        <option value="Year 5">Year 5</option>  
+        <option value="Year 6">Year 6</option>  
+        <option value="Year 7">Year 7</option>  
+        <option value="Year 8">Year 8</option>  
+        <option value="Year 9">Year 9</option>  
+        <option value="Year 10">Year 10</option>  
+        <option value="Year 11">Year 11</option>  
+        <option value="Year 12">Year 12</option>  
+        <option value="Year 13">Year 13</option>  
+        <option value="Other">Other</option>  
+      </select>  
+    </div>  
+
+    <div class="form-group">  
+      <span class="field-label">  
+        Subjects Required <span class="required">*</span>  
+      </span>  
+
+      <div class="subjects-box" id="subjectsBox">  
+
+        <label class="subject-option">  
+          <input  
+            type="checkbox"  
+            name="subjects"  
+            value="Mathematics"  
+          >  
+          <span>Mathematics</span>  
+        </label>  
+
+        <label class="subject-option">  
+          <input  
+            type="checkbox"  
+            name="subjects"  
+            value="Physics"  
+          >  
+          <span>Physics</span>  
+        </label>  
+
+        <label class="subject-option">  
+          <input  
+            type="checkbox"  
+            name="subjects"  
+            value="Chemistry"  
+          >  
+          <span>Chemistry</span>  
+        </label>  
+
+        <label class="subject-option">  
+          <input  
+            type="checkbox"  
+            name="subjects"  
+            value="Biology"  
+          >  
+          <span>Biology</span>  
+        </label>  
+
+      </div>  
+
+      <span class="help-text">  
+        Select one or more subjects.  
+      </span>  
+    </div>  
+
+    <div class="form-group">  
+      <span class="field-label">  
+        WhatsApp Number <span class="required">*</span>  
+      </span>  
+
+      <div class="whatsapp-fields">  
+
+        <div>  
+          <label for="countryCode">Country Code</label>  
+
+          <select  
+            id="countryCode"  
+            name="countryCode"  
+            required  
+          >  
+            <option value="+44" selected>United Kingdom (+44)</option>  
+            <option value="+91">India (+91)</option>  
+            <option value="+1">USA / Canada (+1)</option>  
+            <option value="+61">Australia (+61)</option>  
+            <option value="+971">UAE (+971)</option>  
+            <option value="+966">Saudi Arabia (+966)</option>  
+            <option value="+92">Pakistan (+92)</option>  
+            <option value="+880">Bangladesh (+880)</option>  
+            <option value="+94">Sri Lanka (+94)</option>  
+            <option value="+977">Nepal (+977)</option>  
+            <option value="+27">South Africa (+27)</option>  
+            <option value="+65">Singapore (+65)</option>  
+            <option value="+60">Malaysia (+60)</option>  
+            <option value="+234">Nigeria (+234)</option>  
+            <option value="+254">Kenya (+254)</option>  
+            <option value="+other">Other</option>  
+          </select>  
+        </div>  
+
+        <div>  
+          <label for="whatsappNumber">Phone Number</label>  
+
+          <input  
+            type="tel"  
+            id="whatsappNumber"  
+            name="whatsappNumber"  
+            placeholder="Enter phone number"  
+            autocomplete="tel-national"  
+            inputmode="tel"  
+            maxlength="25"  
+            required  
+          >  
+        </div>  
+
+      </div>  
+
+      <span class="help-text">  
+        Choose your country code and enter your number without  
+        repeating the country code.  
+      </span>  
+    </div>  
+
+    <button type="submit" id="submitButton">  
+      Submit Enquiry  
+    </button>  
+
+    <p  
+      id="formMessage"  
+      role="status"  
+      aria-live="polite"  
+    ></p>  
+
+    <p class="privacy-note">  
+      Your details will be used to respond to your tutoring enquiry.  
+    </p>  
+
+  </form>  
+</section>
+
+  </main>    <footer>  
+    <p>  
+      Contact us on WhatsApp:  
+      <a  
+        href="https://wa.me/447462215924"  
+        target="_blank"  
+        rel="noopener noreferrer"  
+      >+44 7462 215924</a>  
+    </p>  <p>&copy; <span id="currentYear"></span> eEdutran Online Tutoring</p>
+
+  </footer>    <!-- Receives the Apps Script response without leaving this page. -->    <iframe  
+    name="submissionFrame"  
+    id="submissionFrame"  
+    title="Form submission response"  
+    class="sr-only"  
+    tabindex="-1"  
+  ></iframe>    <script>  
+    (function () {  
+      "use strict";  
+  
+      const form = document.getElementById("contactForm");  
+      const submitButton = document.getElementById("submitButton");  
+      const message = document.getElementById("formMessage");  
+      const frame = document.getElementById("submissionFrame");  
+      const subjectCheckboxes = Array.from(  
+        document.querySelectorAll('input[name="subjects"]')  
+      );  
+  
+      let submissionPending = false;  
+  
+      document.getElementById("currentYear").textContent =  
+        new Date().getFullYear();  
+  
+      function showMessage(text, type) {  
+        message.textContent = text;  
+        message.className = type;  
+      }  
+  
+      function clearMessage() {  
+        message.textContent = "";  
+        message.className = "";  
+      }  
+  
+      function updateButton(isSending) {  
+        submitButton.disabled = isSending;  
+        submitButton.textContent = isSending  
+          ? "Sending..."  
+          : "Submit Enquiry";  
+      }  
+  
+      form.addEventListener("submit", function (event) {  
+        clearMessage();  
+  
+        const selectedSubjects = subjectCheckboxes.some(  
+          function (checkbox) {  
+            return checkbox.checked;  
+          }  
+        );  
+  
+        if (!selectedSubjects) {  
+          event.preventDefault();  
+  
+          showMessage(  
+            "Please select at least one subject.",  
+            "error"  
+          );  
+  
+          document.getElementById("subjectsBox").scrollIntoView({  
+            behavior: "smooth",  
+            block: "center"  
+          });  
+  
+          return;  
+        }  
+  
+        if (submissionPending) {  
+          event.preventDefault();  
+          return;  
+        }  
+  
+        submissionPending = true;  
+        updateButton(true);  
+  
+        showMessage(  
+          "Sending your enquiry. Please wait...",  
+          "success"  
+        );  
+      });  
+  
+      frame.addEventListener("load", function () {  
+        if (!submissionPending) {  
+          return;  
+        }  
+  
+        submissionPending = false;  
+        updateButton(false);  
+  
+        showMessage(  
+          "The submission request has returned a response. " +  
+          "Please check your Google Sheet for a new row to confirm " +  
+          "that your enquiry was saved. If no row appears, contact us " +  
+          "or check the Apps Script execution log.",  
+          "success"  
+        );  
+      });  
+  
+    })();  
+  </script>  </body>  
 </html>
