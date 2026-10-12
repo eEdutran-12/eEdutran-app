@@ -898,39 +898,45 @@
         }
     </script>
 
-    <!-- GOOGLE APPS SCRIPT SUBMISSION HANDLER -->
-    <script>
-        const scriptURL = 'https://script.google.com/macros/s/AKfycbx5l4BqvqqNWZ6-AYlV9hKIdrkcv2b0BConkG5JasvnAqo31FKnWCERPqK_Dh0UgFpT7w/exec';
-        const form = document.getElementById('contactForm');
+<!-- GOOGLE APPS SCRIPT SUBMISSION HANDLER -->
+<script>
+    const scriptURL = 'https://script.google.com/macros/s/AKfycbx5l4BqvqqNWZ6-AYlV9hKIdrkcv2b0BConkG5JasvnAqo31FKnWCERPqK_Dh0UgFpT7w/exec';
+    const form = document.getElementById('contactForm');
 
-        form.addEventListener('submit', e => {
-            e.preventDefault();
-            
-            const submitBtn = form.querySelector('button[type="submit"]');
-            const originalText = submitBtn ? submitBtn.innerText : '';
+    form.addEventListener('submit', e => {
+        e.preventDefault();
+        
+        const submitBtn = form.querySelector('button[type="submit"]');
+        const originalText = submitBtn ? submitBtn.innerText : '';
+        if (submitBtn) {
+            submitBtn.disabled = true;
+            submitBtn.innerText = 'Submitting...';
+        }
+
+        // Send request using no-cors mode to bypass browser blocking
+        fetch(scriptURL, { 
+            method: 'POST', 
+            mode: 'no-cors',
+            body: new FormData(form) 
+        })
+        .then(() => {
+            alert('Thank you! Your free trial request has been submitted successfully.');
+            form.reset();
             if (submitBtn) {
-                submitBtn.disabled = true;
-                submitBtn.innerText = 'Submitting...';
+                submitBtn.disabled = false;
+                submitBtn.innerText = originalText;
             }
-
-            fetch(scriptURL, { method: 'POST', body: new FormData(form) })
-                .then(response => {
-                    alert('Thank you! Your free trial request has been submitted successfully.');
-                    form.reset();
-                    if (submitBtn) {
-                        submitBtn.disabled = false;
-                        submitBtn.innerText = originalText;
-                    }
-                })
-                .catch(error => {
-                    alert('Oops! Something went wrong. Please try again.');
-                    console.error('Submission Error:', error.message);
-                    if (submitBtn) {
-                        submitBtn.disabled = false;
-                        submitBtn.innerText = originalText;
-                    }
-                });
+        })
+        .catch(error => {
+            alert('Oops! Something went wrong. Please try again.');
+            console.error('Submission Error:', error);
+            if (submitBtn) {
+                submitBtn.disabled = false;
+                submitBtn.innerText = originalText;
+            }
         });
-    </script>
+    });
+</script>
+
 </body>
 </html>
