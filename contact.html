@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -584,6 +583,13 @@
             border: 1px solid #ff7979;
         }
 
+        #formMessage.success {
+            display: block;
+            color: #ffffff;
+            background: rgba(0, 184, 148, 0.25);
+            border: 1px solid #00b894;
+        }
+
         .footer-cta-container {
             text-align: center;
             background: rgba(0,0,0,0.35);
@@ -1036,11 +1042,9 @@
             const form = document.getElementById('callbackContactForm');
             const submitButton = document.getElementById('submitButton');
             const message = document.getElementById('formMessage');
-            const iframe = document.getElementById('submissionFrame');
 
             let submitting = false;
-            let initialLoadHandled = false;
-            let submissionStartedAt = 0;
+            let fallbackTimer = null;
 
             function showMessage(text, type) {
                 message.textContent = text;
@@ -1052,28 +1056,31 @@
                 submitting = false;
                 submitButton.disabled = false;
                 submitButton.textContent = 'SUBMIT & REQUEST CALLBACK ★';
+                if (fallbackTimer) {
+                    clearTimeout(fallbackTimer);
+                    fallbackTimer = null;
+                }
             }
 
-            /*
-             * The iframe load event cannot prove that the spreadsheet row
-             * was saved. It only indicates that a response page loaded.
-             */
-            iframe.addEventListener('load', function () {
-                if (!initialLoadHandled) {
-                    initialLoadHandled = true;
-                    return;
-                }
-
-                if (!submitting) {
+            window.addEventListener('message', function (event) {
+                if (!event.data || event.data.type !== 'eedutran-form-result') {
                     return;
                 }
 
                 resetButton();
 
-                showMessage(
-                    'A response was received from the form service, but this page cannot verify whether your enquiry was saved. If we do not contact you, please message us directly on WhatsApp at +44 7462 215924.',
-                    'info'
-                );
+                if (event.data.success) {
+                    form.reset();
+                    showMessage(
+                        '🎉 ' + (event.data.message || 'Thank you! Your enquiry has been received successfully. We will contact you on WhatsApp shortly.'),
+                        'success'
+                    );
+                } else {
+                    showMessage(
+                        event.data.message || 'Could not complete submission. Please message us on WhatsApp at +44 7462 215924.',
+                        'error'
+                    );
+                }
             });
 
             form.addEventListener('submit', function (event) {
@@ -1107,8 +1114,6 @@
                 }
 
                 submitting = true;
-                submissionStartedAt = Date.now();
-
                 submitButton.disabled = true;
                 submitButton.textContent = 'SUBMITTING...';
 
@@ -1117,23 +1122,15 @@
                     'info'
                 );
 
-                /*
-                 * If no iframe response arrives, restore the button and
-                 * avoid displaying a false success message.
-                 */
-                window.setTimeout(function () {
-                    if (
-                        submitting &&
-                        Date.now() - submissionStartedAt >= 15000
-                    ) {
+                fallbackTimer = window.setTimeout(function () {
+                    if (submitting) {
                         resetButton();
-
                         showMessage(
-                            'We could not confirm a response from the form service. Please contact us on WhatsApp at +44 7462 215924 before submitting again.',
-                            'error'
+                            'Request sent, but confirmation timed out. If we do not message you soon, please contact us on WhatsApp at +44 7462 215924.',
+                            'info'
                         );
                     }
-                }, 15000);
+                }, 12000);
             });
         })();
     </script>
