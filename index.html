@@ -19,13 +19,13 @@
             font-family: 'Comic Sans MS', 'Arial', sans-serif;
             color: #ffffff;
             min-height: 100vh;
-            padding-top: 100px;
+            padding-top: 145px;
             padding-bottom: 60px;
             overflow-x: hidden;
         }
 
         /* =========================
-           HEADER & NEW LOGO
+           LARGE PROFESSIONAL HEADER
         ========================= */
 
         header {
@@ -33,15 +33,16 @@
             top: 0;
             left: 0;
             width: 100%;
+            min-height: 112px;
             display: flex;
             justify-content: space-between;
             align-items: center;
-            padding: 10px 15px;
-            background: rgba(43, 152, 156, 0.98);
-            backdrop-filter: blur(8px);
+            padding: 12px 24px;
+            background: rgba(43, 152, 156, 0.99);
+            backdrop-filter: blur(10px);
             z-index: 1000;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.3);
-            gap: 8px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.35);
+            gap: 18px;
         }
 
         .logo-area {
@@ -51,10 +52,12 @@
             text-decoration: none;
         }
 
+        /* LARGE LOGO */
+
         .site-logo {
-            height: 55px;
+            height: 100px;
             width: auto;
-            max-width: 220px;
+            max-width: 430px;
             object-fit: contain;
             display: block;
         }
@@ -62,7 +65,8 @@
         nav {
             display: flex;
             align-items: center;
-            gap: 5px;
+            justify-content: center;
+            gap: 12px;
             flex-shrink: 0;
         }
 
@@ -70,13 +74,21 @@
             background: #1b1464;
             border: 2px solid #00e5ff;
             color: #00e5ff;
-            padding: 5px 8px;
-            border-radius: 15px;
+            padding: 12px 16px;
+            border-radius: 18px;
             font-family: 'Lucida Console', monospace;
-            font-size: 10px;
+            font-size: 14px;
             font-weight: bold;
             text-decoration: none;
             text-transform: uppercase;
+            white-space: nowrap;
+            transition: 0.25s ease;
+        }
+
+        .nav-link:hover {
+            background: #00e5ff;
+            color: #1b1464;
+            transform: translateY(-2px);
         }
 
         .dropdown {
@@ -88,13 +100,20 @@
             background: #6f1e51;
             border: 2px solid #ffea00;
             color: #ffea00;
-            padding: 5px 8px;
-            border-radius: 15px;
+            padding: 12px 15px;
+            border-radius: 18px;
             font-family: 'Trebuchet MS', sans-serif;
-            font-size: 10px;
+            font-size: 14px;
             font-weight: 900;
             cursor: pointer;
             text-transform: uppercase;
+            white-space: nowrap;
+            transition: 0.25s ease;
+        }
+
+        .dropbtn:hover {
+            background: #ffea00;
+            color: #6f1e51;
         }
 
         .dropdown-content {
@@ -102,16 +121,16 @@
             position: absolute;
             top: 100%;
             left: 0;
-            margin-top: 5px;
-            min-width: 200px;
-            max-height: 300px;
+            margin-top: 8px;
+            min-width: 230px;
+            max-height: 350px;
             overflow-y: auto;
             background: #1e1e2f;
             box-shadow: 0 8px 25px rgba(0,0,0,0.8);
-            z-index: 1001;
+            z-index: 1002;
             border-radius: 12px;
             border: 2px solid #ffea00;
-            padding: 8px;
+            padding: 10px;
         }
 
         .dropdown-content.show {
@@ -121,15 +140,15 @@
         .level-btn {
             background: #2c2c54;
             color: #ffea00;
-            padding: 8px 10px;
+            padding: 10px 12px;
             text-align: left;
             display: block;
             width: 100%;
-            margin-bottom: 6px;
+            margin-bottom: 7px;
             border-radius: 8px;
             border: 2px solid #ffea00;
             font-family: 'Verdana', sans-serif;
-            font-size: 11px;
+            font-size: 13px;
             font-weight: bold;
             cursor: pointer;
             text-transform: uppercase;
@@ -143,7 +162,7 @@
             display: none;
             background: #1289A7;
             padding: 8px;
-            margin-bottom: 6px;
+            margin-bottom: 7px;
             border-radius: 6px;
             border: 1px dashed #00e676;
         }
@@ -153,14 +172,14 @@
         }
 
         .subjects-list a {
-            padding: 6px 8px;
+            padding: 8px 10px;
             text-decoration: none;
             display: block;
             color: #ffffff;
             background: rgba(0, 0, 0, 0.2);
             margin-bottom: 4px;
             border-radius: 4px;
-            font-size: 11px;
+            font-size: 12px;
         }
 
         .subjects-list a:hover {
@@ -171,38 +190,62 @@
             background: #e58e26;
             border: 2px solid #fff200;
             color: #ffffff;
-            padding: 5px 8px;
-            border-radius: 15px;
+            padding: 12px 17px;
+            border-radius: 18px;
             font-family: 'Impact', sans-serif;
-            font-size: 10px;
+            font-size: 14px;
             text-transform: uppercase;
             cursor: pointer;
             flex-shrink: 0;
             text-decoration: none;
             display: inline-block;
+            white-space: nowrap;
+            transition: 0.25s ease;
+        }
+
+        .header-cta-btn:hover {
+            background: #ffea00;
+            color: #6f1e51;
+            transform: translateY(-2px);
         }
 
         /* =========================
-           FLAGS
+           TRUST BANNERS
+           NOW BELOW THE HEADER
+           IN NORMAL PAGE FLOW
         ========================= */
+
+        .trust-banner-row {
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px 10px;
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            gap: 15px;
+            position: relative;
+            z-index: 1;
+        }
 
         .wavy-flag-left,
         .wavy-flag-right {
-            position: absolute;
-            top: 54px;
-            padding: 8px 14px;
+            position: relative;
+            top: auto;
+            padding: 10px 18px;
             font-family: 'Georgia', serif;
-            font-size: 12px;
+            font-size: 14px;
             font-style: italic;
-            border-radius: 0 0 12px 12px;
+            border-radius: 0 0 14px 14px;
             box-shadow: 0 6px 15px rgba(0,0,0,0.3);
-            z-index: 999;
             animation: waveMotion 3s ease-in-out infinite alternate;
             transform-origin: top center;
+            display: inline-block;
+            max-width: 48%;
+            text-align: center;
         }
 
         .wavy-flag-left {
-            left: 20px;
             background: linear-gradient(135deg, #00b09b, #96c93d);
             border: 2px solid #fff;
             color: #111;
@@ -215,14 +258,13 @@
         }
 
         .wavy-flag-right {
-            right: 20px;
             background: linear-gradient(135deg, #f857a6, #ff5858);
             border: 2px solid #fff;
             color: #ffffff;
             font-weight: bold;
             font-style: normal;
             font-family: 'Arial Black', sans-serif;
-            font-size: 11px;
+            font-size: 13px;
             text-transform: uppercase;
         }
 
@@ -230,6 +272,7 @@
             0% {
                 transform: rotate(-2deg) translateY(0);
             }
+
             100% {
                 transform: rotate(2deg) translateY(2px);
             }
@@ -243,7 +286,7 @@
             display: flex;
             justify-content: space-between;
             align-items: center;
-            padding: 25px 20px 20px 20px;
+            padding: 25px 20px 20px;
             max-width: 1200px;
             margin: 0 auto;
             flex-wrap: wrap;
@@ -351,7 +394,7 @@
 
         .why-choose-title {
             text-align: center;
-            margin: 35px 0 20px 0;
+            margin: 35px 0 20px;
         }
 
         .why-choose-title span {
@@ -364,6 +407,7 @@
             border-radius: 18px;
             text-transform: uppercase;
             box-shadow: 0 4px 15px rgba(255, 71, 87, 0.4);
+            display: inline-block;
         }
 
         .features-container {
@@ -457,6 +501,12 @@
             text-transform: uppercase;
             text-decoration: none;
             display: inline-block;
+            transition: 0.25s ease;
+        }
+
+        .footer-cta-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 6px 15px rgba(0,0,0,0.3);
         }
 
         /* =========================
@@ -465,7 +515,7 @@
 
         .section-divider {
             max-width: 1000px;
-            margin: 50px auto 20px auto;
+            margin: 50px auto 20px;
             padding: 0 15px;
         }
 
@@ -476,7 +526,7 @@
             padding: 25px;
             text-align: center;
             max-width: 900px;
-            margin: 0 auto 30px auto;
+            margin: 0 auto 30px;
             box-shadow: 0 8px 20px rgba(0,0,0,0.4);
         }
 
@@ -528,7 +578,7 @@
             padding: 20px;
             text-align: center;
             max-width: 900px;
-            margin: 0 auto 30px auto;
+            margin: 0 auto 30px;
             font-size: 16px;
             font-weight: bold;
             color: #feca57;
@@ -544,7 +594,7 @@
             border-radius: 15px;
             padding: 15px;
             max-width: 900px;
-            margin: 0 auto 35px auto;
+            margin: 0 auto 35px;
             text-align: center;
             overflow: hidden;
             position: relative;
@@ -572,6 +622,7 @@
             0% {
                 transform: translateX(0);
             }
+
             100% {
                 transform: translateX(-50%);
             }
@@ -616,7 +667,7 @@
             border-radius: 20px;
             padding: 25px;
             max-width: 900px;
-            margin: 0 auto 35px auto;
+            margin: 0 auto 35px;
             text-align: center;
             position: relative;
         }
@@ -742,7 +793,7 @@
             border-radius: 20px;
             padding: 25px;
             max-width: 900px;
-            margin: 0 auto 35px auto;
+            margin: 0 auto 35px;
         }
 
         .faq-section h3 {
@@ -772,6 +823,7 @@
             justify-content: space-between;
             align-items: center;
             user-select: none;
+            gap: 10px;
         }
 
         .faq-question:hover {
@@ -780,6 +832,7 @@
 
         .faq-question .arrow {
             transition: transform 0.3s ease;
+            flex-shrink: 0;
         }
 
         .faq-item.active .faq-question .arrow {
@@ -801,64 +854,344 @@
         }
 
         /* =========================
-           MOBILE RESPONSIVE LOGO
+           TABLET RESPONSIVE
         ========================= */
 
-        @media (max-width: 768px) {
+        @media (max-width: 1100px) {
             header {
-                padding: 8px 10px;
-                gap: 5px;
+                padding: 10px 15px;
+                gap: 10px;
             }
 
             .site-logo {
-                height: 42px;
-                max-width: 140px;
+                height: 80px;
+                max-width: 320px;
             }
 
             nav {
-                gap: 3px;
+                gap: 7px;
             }
 
             .nav-link,
             .dropbtn {
-                padding: 4px 6px;
-                font-size: 9px;
+                padding: 10px 11px;
+                font-size: 12px;
             }
 
             .header-cta-btn {
-                padding: 4px 6px;
-                font-size: 9px;
+                padding: 10px 12px;
+                font-size: 12px;
+            }
+
+            body {
+                padding-top: 125px;
             }
         }
+
+        /* =========================
+           MOBILE RESPONSIVE
+        ========================= */
+
+        @media (max-width: 768px) {
+
+            header {
+                min-height: auto;
+                flex-direction: column;
+                justify-content: center;
+                gap: 8px;
+                padding: 8px 10px 10px;
+            }
+
+            .logo-area {
+                justify-content: center;
+                width: 100%;
+            }
+
+            .site-logo {
+                height: 75px;
+                max-width: min(90vw, 400px);
+            }
+
+            nav {
+                width: 100%;
+                justify-content: center;
+                flex-wrap: wrap;
+                gap: 7px;
+            }
+
+            .nav-link,
+            .dropbtn {
+                padding: 9px 11px;
+                font-size: 11px;
+            }
+
+            .header-cta-btn {
+                padding: 9px 12px;
+                font-size: 11px;
+            }
+
+            body {
+                padding-top: 150px;
+            }
+
+            .trust-banner-row {
+                padding: 0 12px 10px;
+                gap: 10px;
+            }
+
+            .wavy-flag-left,
+            .wavy-flag-right {
+                font-size: 11px;
+                padding: 8px 10px;
+            }
+
+            .wavy-flag-right {
+                font-size: 10px;
+            }
+
+            .hero-section {
+                padding-top: 20px;
+            }
+
+            .hero-text h1 {
+                font-size: 28px;
+            }
+
+            .hero-text h2 {
+                font-size: 16px;
+            }
+
+            .appreciation-section,
+            .faq-section {
+                margin-left: 12px;
+                margin-right: 12px;
+            }
+
+            .students-ticker-box {
+                margin-left: 12px;
+                margin-right: 12px;
+            }
+        }
+
+        /* =========================
+           SMALL MOBILE PHONES
+        ========================= */
 
         @media (max-width: 480px) {
-            .site-logo {
-                height: 35px;
-                max-width: 105px;
+
+            header {
+                padding: 6px 8px 8px;
+                gap: 6px;
             }
 
-            .nav-link {
-                padding: 4px 5px;
+            .site-logo {
+                height: 68px;
+                max-width: 95vw;
+            }
+
+            nav {
+                gap: 5px;
+            }
+
+            .nav-link,
+            .dropbtn {
+                padding: 8px 8px;
+                font-size: 9px;
+                border-radius: 13px;
+            }
+
+            .header-cta-btn {
+                padding: 8px 10px;
+                font-size: 10px;
+                border-radius: 13px;
+            }
+
+            body {
+                padding-top: 140px;
+            }
+
+            .trust-banner-row {
+                padding: 0 8px 8px;
+                gap: 6px;
+            }
+
+            .wavy-flag-left,
+            .wavy-flag-right {
+                padding: 7px 6px;
+                font-size: 9px;
+                max-width: 49%;
+                border-radius: 0 0 10px 10px;
+            }
+
+            .wavy-flag-right {
                 font-size: 8px;
             }
 
+            .hero-section {
+                padding: 18px 12px;
+                gap: 15px;
+            }
+
+            .hero-text {
+                min-width: 100%;
+                text-align: center;
+            }
+
+            .hero-text h2 {
+                font-size: 15px;
+            }
+
+            .hero-text h1 {
+                font-size: 26px;
+            }
+
+            .hero-illustration {
+                min-width: 100%;
+            }
+
+            .avatar-box {
+                padding: 15px;
+            }
+
+            .uk-sessions-wrapper {
+                margin: 15px auto;
+            }
+
+            .uk-sessions-box {
+                padding: 12px;
+            }
+
+            .uk-sessions-box h3 {
+                font-size: 14px;
+            }
+
+            .uk-content {
+                gap: 10px;
+            }
+
+            .uk-map-mock,
+            .uk-cities-box {
+                min-width: 100%;
+            }
+
+            .uk-catchphrase {
+                min-width: 100%;
+                font-size: 16px;
+            }
+
+            .why-choose-title span {
+                font-size: 13px;
+                padding: 8px 12px;
+            }
+
+            .feature-column {
+                min-width: 100%;
+            }
+
+            .footer-cta-btn {
+                padding: 11px 18px;
+                font-size: 12px;
+            }
+
+            .how-we-work-box {
+                padding: 15px;
+            }
+
+            .step-card {
+                min-width: 100%;
+            }
+
+            .banner-three {
+                margin-left: 12px;
+                margin-right: 12px;
+                font-size: 13px;
+                padding: 15px;
+            }
+
+            .appreciation-section {
+                padding: 15px 10px;
+            }
+
+            .appreciation-section h3 {
+                font-size: 15px;
+            }
+
+            .slider-container {
+                padding: 10px 30px;
+            }
+
+            .slider-btn {
+                width: 30px;
+                height: 30px;
+                font-size: 14px;
+            }
+
+            .appreciation-card {
+                padding: 14px;
+            }
+
+            .appreciation-card p {
+                font-size: 12px;
+            }
+
+            .faq-section {
+                padding: 15px;
+            }
+
+            .faq-section h3 {
+                font-size: 17px;
+            }
+
+            .faq-question {
+                padding: 12px;
+                font-size: 12px;
+            }
+
+            .faq-answer {
+                padding: 12px;
+                font-size: 12px;
+            }
+        }
+
+        /* =========================
+           VERY SMALL PHONES
+        ========================= */
+
+        @media (max-width: 360px) {
+
+            .site-logo {
+                height: 58px;
+            }
+
+            .nav-link,
             .dropbtn {
-                padding: 4px 5px;
+                padding: 7px 6px;
                 font-size: 8px;
             }
 
             .header-cta-btn {
-                padding: 4px 5px;
+                padding: 7px 8px;
+                font-size: 9px;
+            }
+
+            body {
+                padding-top: 125px;
+            }
+
+            .wavy-flag-left,
+            .wavy-flag-right {
                 font-size: 8px;
+                padding: 6px 4px;
             }
         }
+
     </style>
 </head>
 
 <body>
 
     <!-- =========================
-         HEADER WITH YOUR NEW LOGO
+         HEADER
     ========================= -->
 
     <header>
@@ -950,15 +1283,20 @@
     </header>
 
     <!-- =========================
-         TRUST FLAGS
+         TRUST BANNERS
+         IN NORMAL FLOW
     ========================= -->
 
-    <div class="wavy-flag-left">
-        Reviews on <span>★ Trustpilot</span>
-    </div>
+    <div class="trust-banner-row">
 
-    <div class="wavy-flag-right">
-        UK'S Most Trusted Tutoring
+        <div class="wavy-flag-left">
+            Reviews on <span>★ Trustpilot</span>
+        </div>
+
+        <div class="wavy-flag-right">
+            UK'S Most Trusted Tutoring
+        </div>
+
     </div>
 
     <!-- =========================
@@ -1149,261 +1487,7 @@
 
         <h4>Students Progress Stream</h4>
 
-        <div class="ticker-track">
-
-            <!-- FIRST SET -->
-
-            <div class="student-pill">
-                <div class="info">Liam Smith (Year 5 - Math)</div>
-                <div class="review-line">Improved confidence fast!</div>
-            </div>
-
-            <div class="student-pill">
-                <div class="info">Olivia Jones (GCSE - Physics)</div>
-                <div class="review-line">Top grades achieved!</div>
-            </div>
-
-            <div class="student-pill">
-                <div class="info">Noah Brown (KS3 - English)</div>
-                <div class="review-line">Very engaging sessions.</div>
-            </div>
-
-            <div class="student-pill">
-                <div class="info">Emma Davis (A-Level Chemistry)</div>
-                <div class="review-line">Complex concepts made easy.</div>
-            </div>
-
-            <div class="student-pill">
-                <div class="info">Lucas Wilson (Year 6 - Science)</div>
-                <div class="review-line">Fun experiments online!</div>
-            </div>
-
-            <div class="student-pill">
-                <div class="info">Sophia Miller (GCSE - Math)</div>
-                <div class="review-line">Passed with a Grade 9.</div>
-            </div>
-
-            <div class="student-pill">
-                <div class="info">Ethan Taylor (KS2 - Coding)</div>
-                <div class="review-line">Coding skills doubled.</div>
-            </div>
-
-            <div class="student-pill">
-                <div class="info">Isabella Anderson (A-Level Biology)</div>
-                <div class="review-line">Brilliant explanation flow.</div>
-            </div>
-
-            <div class="student-pill">
-                <div class="info">Mason Thomas (KS3 - Geography)</div>
-                <div class="review-line">Interactive maps are cool.</div>
-            </div>
-
-            <div class="student-pill">
-                <div class="info">Ava Jackson (Year 4 - Math)</div>
-                <div class="review-line">Math is now her favorite!</div>
-            </div>
-
-            <div class="student-pill">
-                <div class="info">Logan White (GCSE - Further Math)</div>
-                <div class="review-line">Cleared all exam phobia.</div>
-            </div>
-
-            <div class="student-pill">
-                <div class="info">Mia Harris (KS3 - History)</div>
-                <div class="review-line">Stories are told vividly.</div>
-            </div>
-
-            <div class="student-pill">
-                <div class="info">Alexander Martin (A-Level Mechanics)</div>
-                <div class="review-line">Exceptional calculation help.</div>
-            </div>
-
-            <div class="student-pill">
-                <div class="info">Harper Clark (Year 6 - Science)</div>
-                <div class="review-line">Loved the quizzes.</div>
-            </div>
-
-            <div class="student-pill">
-                <div class="info">Benjamin Lewis (GCSE - ICT)</div>
-                <div class="review-line">Clear diagrams and notes.</div>
-            </div>
-
-            <div class="student-pill">
-                <div class="info">Charlotte Walker (KS2 - Math)</div>
-                <div class="review-line">No more tears during math.</div>
-            </div>
-
-            <div class="student-pill">
-                <div class="info">James Hall (A-Level Physics)</div>
-                <div class="review-line">Top-tier tutoring standards.</div>
-            </div>
-
-            <div class="student-pill">
-                <div class="info">Amelia Allen (KS3 - Coding)</div>
-                <div class="review-line">Creative logic boosted.</div>
-            </div>
-
-            <div class="student-pill">
-                <div class="info">Henry Young (Year 5 - Science)</div>
-                <div class="review-line">Fascinating tutoring style.</div>
-            </div>
-
-            <div class="student-pill">
-                <div class="info">Evelyn King (GCSE - English)</div>
-                <div class="review-line">Essay structure mastered.</div>
-            </div>
-
-            <div class="student-pill">
-                <div class="info">Sebastian Wright (KS3 - Math)</div>
-                <div class="review-line">Algebra made simple.</div>
-            </div>
-
-            <div class="student-pill">
-                <div class="info">Abigail Scott (A-Level Statistics)</div>
-                <div class="review-line">Data analytics cracked.</div>
-            </div>
-
-            <div class="student-pill">
-                <div class="info">Jack Green (Year 4 - English)</div>
-                <div class="review-line">Spelling tests improved.</div>
-            </div>
-
-            <div class="student-pill">
-                <div class="info">Emily Baker (GCSE - Physics)</div>
-                <div class="review-line">Practiced past papers well.</div>
-            </div>
-
-            <div class="student-pill">
-                <div class="info">Owen Adams (KS3 - Science)</div>
-                <div class="review-line">Great interactive boards.</div>
-            </div>
-
-            <div class="student-pill">
-                <div class="info">Chloe Nelson (Year 6 - Math)</div>
-                <div class="review-line">SATS prep was smooth.</div>
-            </div>
-
-            <div class="student-pill">
-                <div class="info">Samuel Carter (A-Level Computer Science)</div>
-                <div class="review-line">In-depth concept review.</div>
-            </div>
-
-            <div class="student-pill">
-                <div class="info">Ella Mitchell (KS2 - Science)</div>
-                <div class="review-line">Fun learning environment.</div>
-            </div>
-
-            <div class="student-pill">
-                <div class="info">Daniel Perez (GCSE - Math)</div>
-                <div class="review-line">Jumped two grade boundaries.</div>
-            </div>
-
-            <div class="student-pill">
-                <div class="info">Grace Roberts (KS3 - Geography)</div>
-                <div class="review-line">Very structured classes.</div>
-            </div>
-
-            <div class="student-pill">
-                <div class="info">Matthew Turner (Year 5 - English)</div>
-                <div class="review-line">Vocabulary expanded.</div>
-            </div>
-
-            <div class="student-pill">
-                <div class="info">Zoe Phillips (A-Level Physics)</div>
-                <div class="review-line">Mechanics became intuitive.</div>
-            </div>
-
-            <div class="student-pill">
-                <div class="info">Joseph Campbell (KS3 - History)</div>
-                <div class="review-line">Historical insights rock.</div>
-            </div>
-
-            <div class="student-pill">
-                <div class="info">Victoria Parker (GCSE - Chemistry)</div>
-                <div class="review-line">A* predicted now.</div>
-            </div>
-
-            <div class="student-pill">
-                <div class="info">David Evans (Year 4 - Math)</div>
-                <div class="review-line">Wonderful patient tutors.</div>
-            </div>
-
-            <div class="student-pill">
-                <div class="info">Lily Edwards (KS2 - English)</div>
-                <div class="review-line">Loved story analysis.</div>
-            </div>
-
-            <div class="student-pill">
-                <div class="info">Carter Collins (A-Level Further Math)</div>
-                <div class="review-line">Pure math simplified.</div>
-            </div>
-
-            <div class="student-pill">
-                <div class="info">Hannah Stewart (GCSE - Biology)</div>
-                <div class="review-line">Cell biology memorized easily.</div>
-            </div>
-
-            <div class="student-pill">
-                <div class="info">Julian Sanchez (KS3 - Physics)</div>
-                <div class="review-line">Energy modules cleared.</div>
-            </div>
-
-            <div class="student-pill">
-                <div class="info">Leah Morris (Year 6 - Science)</div>
-                <div class="review-line">Fantastic explanations.</div>
-            </div>
-
-            <div class="student-pill">
-                <div class="info">Grayson Rogers (GCSE - English)</div>
-                <div class="review-line">Poetry analysis unlocked.</div>
-            </div>
-
-            <div class="student-pill">
-                <div class="info">Scarlett Reed (A-Level Chemistry)</div>
-                <div class="review-line">Top notch lab guidance.</div>
-            </div>
-
-            <div class="student-pill">
-                <div class="info">Luke Cook (KS3 - Math)</div>
-                <div class="review-line">Fractions made transparent.</div>
-            </div>
-
-            <div class="student-pill">
-                <div class="info">Stella Morgan (Year 5 - Science)</div>
-                <div class="review-line">Always looking forward to class.</div>
-            </div>
-
-            <div class="student-pill">
-                <div class="info">Gabriel Bell (GCSE - Physics)</div>
-                <div class="review-line">Electricity equations solved.</div>
-            </div>
-
-            <div class="student-pill">
-                <div class="info">Paisley Murphy (KS2 - Math)</div>
-                <div class="review-line">Multiplication tables mastered.</div>
-            </div>
-
-            <div class="student-pill">
-                <div class="info">Ryan Bailey (A-Level Biology)</div>
-                <div class="review-line">Genetics section aced.</div>
-            </div>
-
-            <div class="student-pill">
-                <div class="info">Penelope Rivera (KS3 - English)</div>
-                <div class="review-line">Grammar rules cleared.</div>
-            </div>
-
-            <div class="student-pill">
-                <div class="info">Nathan Cooper (Year 6 - Math)</div>
-                <div class="review-line">Amazing score boost.</div>
-            </div>
-
-            <div class="student-pill">
-                <div class="info">Ellie Richardson (GCSE - Chemistry)</div>
-                <div class="review-line">Bonding topics finally clicked.</div>
-            </div>
-
-            <!-- DUPLICATE SET FOR SEAMLESS ANIMATION -->
+        <div class="ticker-track" id="tickerTrack">
 
             <div class="student-pill">
                 <div class="info">Liam Smith (Year 5 - Math)</div>
@@ -1674,7 +1758,6 @@
 
             <div class="slider-track" id="sliderTrack">
 
-                <!-- Slide 1 -->
                 <div class="slide-item">
                     <div class="appreciation-card">
                         <span class="subj-tag">KS2 - Math</span>
@@ -1687,7 +1770,6 @@
                     </div>
                 </div>
 
-                <!-- Slide 2 -->
                 <div class="slide-item">
                     <div class="appreciation-card">
                         <span class="subj-tag">GCSE - Physics</span>
@@ -1699,7 +1781,6 @@
                     </div>
                 </div>
 
-                <!-- Slide 3 -->
                 <div class="slide-item">
                     <div class="appreciation-card">
                         <span class="subj-tag">KS3 - English</span>
@@ -1711,7 +1792,6 @@
                     </div>
                 </div>
 
-                <!-- Slide 4 -->
                 <div class="slide-item">
                     <div class="appreciation-card">
                         <span class="subj-tag">A-Level - Chemistry</span>
@@ -1723,7 +1803,6 @@
                     </div>
                 </div>
 
-                <!-- Slide 5 -->
                 <div class="slide-item">
                     <div class="appreciation-card">
                         <span class="subj-tag">KS2 - Science</span>
@@ -1735,7 +1814,6 @@
                     </div>
                 </div>
 
-                <!-- Slide 6 -->
                 <div class="slide-item">
                     <div class="appreciation-card">
                         <span class="subj-tag">GCSE - Math</span>
@@ -1747,7 +1825,6 @@
                     </div>
                 </div>
 
-                <!-- Slide 7 -->
                 <div class="slide-item">
                     <div class="appreciation-card">
                         <span class="subj-tag">KS3 - Geography</span>
@@ -1759,7 +1836,6 @@
                     </div>
                 </div>
 
-                <!-- Slide 8 -->
                 <div class="slide-item">
                     <div class="appreciation-card">
                         <span class="subj-tag">A-Level - Biology</span>
@@ -1771,7 +1847,6 @@
                     </div>
                 </div>
 
-                <!-- Slide 9 -->
                 <div class="slide-item">
                     <div class="appreciation-card">
                         <span class="subj-tag">KS2 - Coding</span>
@@ -1783,7 +1858,6 @@
                     </div>
                 </div>
 
-                <!-- Slide 10 -->
                 <div class="slide-item">
                     <div class="appreciation-card">
                         <span class="subj-tag">GCSE - Further Math</span>
@@ -1975,7 +2049,8 @@
     ========================= -->
 
     <script>
-        // Toggle main dropdown menu
+
+        // Dropdown menu
 
         function toggleDropdown(event) {
             event.stopPropagation();
@@ -1987,7 +2062,7 @@
         }
 
 
-        // Toggle individual level accordion lists
+        // Level accordion
 
         function toggleLevel(event, listId) {
             event.stopPropagation();
@@ -2010,7 +2085,7 @@
 
         // Close dropdown when clicking outside
 
-        window.onclick = function(event) {
+        window.addEventListener('click', function(event) {
 
             if (!event.target.closest('.dropdown')) {
 
@@ -2028,7 +2103,22 @@
                     allLists[i].classList.remove("active");
                 }
             }
-        };
+        });
+
+
+        // Duplicate ticker cards automatically for seamless scrolling
+
+        const tickerTrack =
+            document.getElementById('tickerTrack');
+
+        if (tickerTrack) {
+            const originalCards =
+                Array.from(tickerTrack.children);
+
+            originalCards.forEach(card => {
+                tickerTrack.appendChild(card.cloneNode(true));
+            });
+        }
 
 
         // Parents appreciation slider
