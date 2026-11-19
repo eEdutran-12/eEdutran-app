@@ -5,7 +5,8 @@
     <meta name="theme-color" content="#317EFB">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>eEdutran</title>
+    <title>eEdutran Online Tutoring</title>
+
     <style>
         * {
             box-sizing: border-box;
@@ -22,6 +23,10 @@
             padding-bottom: 60px;
             overflow-x: hidden;
         }
+
+        /* =========================
+           HEADER & NEW LOGO
+        ========================= */
 
         header {
             position: fixed;
@@ -42,36 +47,16 @@
         .logo-area {
             display: flex;
             align-items: center;
-            gap: 6px;
             flex-shrink: 0;
             text-decoration: none;
         }
 
-        .logo-icon {
-            width: 32px;
-            height: 32px;
-            background: conic-gradient(from 180deg at 50% 50%, #9b51e0, #27ae60, #f2c94c, #eb5757, #9b51e0);
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 15px;
-            font-weight: 900;
-            color: #fff;
-        }
-
-        .logo-text h1 {
-            font-family: 'Verdana', sans-serif;
-            font-size: 13px;
-            font-weight: 900;
-            color: #ffffff;
-        }
-
-        .logo-text span {
-            font-family: 'Courier New', monospace;
-            font-size: 7px;
-            color: #76ff03;
-            font-weight: bold;
+        .site-logo {
+            height: 55px;
+            width: auto;
+            max-width: 220px;
+            object-fit: contain;
+            display: block;
         }
 
         nav {
@@ -197,7 +182,12 @@
             display: inline-block;
         }
 
-        .wavy-flag-left, .wavy-flag-right {
+        /* =========================
+           FLAGS
+        ========================= */
+
+        .wavy-flag-left,
+        .wavy-flag-right {
             position: absolute;
             top: 54px;
             padding: 8px 14px;
@@ -237,9 +227,17 @@
         }
 
         @keyframes waveMotion {
-            0% { transform: rotate(-2deg) translateY(0); }
-            100% { transform: rotate(2deg) translateY(2px); }
+            0% {
+                transform: rotate(-2deg) translateY(0);
+            }
+            100% {
+                transform: rotate(2deg) translateY(2px);
+            }
         }
+
+        /* =========================
+           HERO SECTION
+        ========================= */
 
         .hero-section {
             display: flex;
@@ -286,6 +284,10 @@
             text-align: center;
         }
 
+        /* =========================
+           UK SESSIONS
+        ========================= */
+
         .uk-sessions-wrapper {
             max-width: 1050px;
             margin: 25px auto;
@@ -314,7 +316,8 @@
             gap: 15px;
         }
 
-        .uk-map-mock, .uk-cities-box {
+        .uk-map-mock,
+        .uk-cities-box {
             font-size: 12px;
             color: #00e676;
             background: #2f3640;
@@ -341,6 +344,10 @@
             padding: 5px;
             line-height: 1.3;
         }
+
+        /* =========================
+           WHY CHOOSE US
+        ========================= */
 
         .why-choose-title {
             text-align: center;
@@ -385,10 +392,53 @@
             margin-bottom: 15px;
         }
 
-        .feature-item-1 { background: #b71540; border: 2px solid #ff6b81; padding: 12px; margin-bottom: 10px; border-radius: 12px; text-align: center; font-size: 13px; font-weight: bold; }
-        .feature-item-2 { background: #0c2461; border: 2px solid #4a69bd; padding: 12px; margin-bottom: 10px; border-radius: 12px; text-align: center; font-size: 13px; font-weight: bold; }
-        .feature-item-3 { background: #e55039; border: 2px solid #f6b93b; padding: 12px; margin-bottom: 10px; border-radius: 12px; text-align: center; font-size: 13px; font-weight: bold; }
-        .feature-item-4 { background: #1e3799; border: 2px solid #00d2d3; padding: 12px; margin-bottom: 10px; border-radius: 12px; text-align: center; font-size: 13px; font-weight: bold; }
+        .feature-item-1 {
+            background: #b71540;
+            border: 2px solid #ff6b81;
+            padding: 12px;
+            margin-bottom: 10px;
+            border-radius: 12px;
+            text-align: center;
+            font-size: 13px;
+            font-weight: bold;
+        }
+
+        .feature-item-2 {
+            background: #0c2461;
+            border: 2px solid #4a69bd;
+            padding: 12px;
+            margin-bottom: 10px;
+            border-radius: 12px;
+            text-align: center;
+            font-size: 13px;
+            font-weight: bold;
+        }
+
+        .feature-item-3 {
+            background: #e55039;
+            border: 2px solid #f6b93b;
+            padding: 12px;
+            margin-bottom: 10px;
+            border-radius: 12px;
+            text-align: center;
+            font-size: 13px;
+            font-weight: bold;
+        }
+
+        .feature-item-4 {
+            background: #1e3799;
+            border: 2px solid #00d2d3;
+            padding: 12px;
+            margin-bottom: 10px;
+            border-radius: 12px;
+            text-align: center;
+            font-size: 13px;
+            font-weight: bold;
+        }
+
+        /* =========================
+           CTA BUTTONS
+        ========================= */
 
         .bottom-cta {
             text-align: center;
@@ -408,6 +458,10 @@
             text-decoration: none;
             display: inline-block;
         }
+
+        /* =========================
+           HOW WE WORK
+        ========================= */
 
         .section-divider {
             max-width: 1000px;
@@ -463,6 +517,10 @@
             color: #f1f2f6;
         }
 
+        /* =========================
+           SCHOLARSHIP BANNER
+        ========================= */
+
         .banner-three {
             background: linear-gradient(90deg, #341f97, #546de5);
             border: 3px dashed #feca57;
@@ -475,6 +533,10 @@
             font-weight: bold;
             color: #feca57;
         }
+
+        /* =========================
+           STUDENT TICKER
+        ========================= */
 
         .students-ticker-box {
             background: #2c3e50;
@@ -507,8 +569,12 @@
         }
 
         @keyframes tickerMove {
-            0% { transform: translateX(0); }
-            100% { transform: translateX(-50%); }
+            0% {
+                transform: translateX(0);
+            }
+            100% {
+                transform: translateX(-50%);
+            }
         }
 
         .student-pill {
@@ -539,6 +605,10 @@
             overflow: hidden;
             text-overflow: ellipsis;
         }
+
+        /* =========================
+           PARENT APPRECIATION SLIDER
+        ========================= */
 
         .appreciation-section {
             background: #3b3b98;
@@ -662,6 +732,10 @@
             background: #55efc4;
         }
 
+        /* =========================
+           FAQ
+        ========================= */
+
         .faq-section {
             background: #222f3e;
             border: 3px solid #ff9ff3;
@@ -725,26 +799,90 @@
         .faq-item.active .faq-answer {
             display: block;
         }
+
+        /* =========================
+           MOBILE RESPONSIVE LOGO
+        ========================= */
+
+        @media (max-width: 768px) {
+            header {
+                padding: 8px 10px;
+                gap: 5px;
+            }
+
+            .site-logo {
+                height: 42px;
+                max-width: 140px;
+            }
+
+            nav {
+                gap: 3px;
+            }
+
+            .nav-link,
+            .dropbtn {
+                padding: 4px 6px;
+                font-size: 9px;
+            }
+
+            .header-cta-btn {
+                padding: 4px 6px;
+                font-size: 9px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .site-logo {
+                height: 35px;
+                max-width: 105px;
+            }
+
+            .nav-link {
+                padding: 4px 5px;
+                font-size: 8px;
+            }
+
+            .dropbtn {
+                padding: 4px 5px;
+                font-size: 8px;
+            }
+
+            .header-cta-btn {
+                padding: 4px 5px;
+                font-size: 8px;
+            }
+        }
     </style>
 </head>
+
 <body>
+
+    <!-- =========================
+         HEADER WITH YOUR NEW LOGO
+    ========================= -->
 
     <header>
         <a href="index.html" class="logo-area">
-            <div class="logo-icon">G</div>
-            <div class="logo-text">
-                <h1>eEdutran</h1>
-                <span>Online Tutoring</span>
-            </div>
+            <img src="eedutran-logo.png"
+                 alt="eEdutran Online Tutoring"
+                 class="site-logo">
         </a>
 
         <nav>
             <a href="about.html" class="nav-link">About</a>
-            
+
             <div class="dropdown">
-                <button class="dropbtn" type="button" onclick="toggleDropdown(event)">Levels & Subjects</button>
+                <button class="dropbtn" type="button" onclick="toggleDropdown(event)">
+                    Levels & Subjects
+                </button>
+
                 <div class="dropdown-content" id="subjectsDropdown">
-                    <button class="level-btn" type="button" onclick="toggleLevel(event, 'ks2-list')">KS2 Level ▼</button>
+
+                    <button class="level-btn" type="button"
+                        onclick="toggleLevel(event, 'ks2-list')">
+                        KS2 Level ▼
+                    </button>
+
                     <div class="subjects-list" id="ks2-list">
                         <a href="contact.html#callback-form">Science</a>
                         <a href="contact.html#callback-form">Math</a>
@@ -752,7 +890,11 @@
                         <a href="contact.html#callback-form">Coding</a>
                     </div>
 
-                    <button class="level-btn" type="button" onclick="toggleLevel(event, 'ks3-list')">KS3 Level ▼</button>
+                    <button class="level-btn" type="button"
+                        onclick="toggleLevel(event, 'ks3-list')">
+                        KS3 Level ▼
+                    </button>
+
                     <div class="subjects-list" id="ks3-list">
                         <a href="contact.html#callback-form">English</a>
                         <a href="contact.html#callback-form">Math</a>
@@ -764,7 +906,11 @@
                         <a href="contact.html#callback-form">Coding</a>
                     </div>
 
-                    <button class="level-btn" type="button" onclick="toggleLevel(event, 'gcse-list')">GCSE Level ▼</button>
+                    <button class="level-btn" type="button"
+                        onclick="toggleLevel(event, 'gcse-list')">
+                        GCSE Level ▼
+                    </button>
+
                     <div class="subjects-list" id="gcse-list">
                         <a href="contact.html#callback-form">English</a>
                         <a href="contact.html#callback-form">Math</a>
@@ -775,7 +921,11 @@
                         <a href="contact.html#callback-form">ICT / Computer Science</a>
                     </div>
 
-                    <button class="level-btn" type="button" onclick="toggleLevel(event, 'alevel-list')">A Level ▼</button>
+                    <button class="level-btn" type="button"
+                        onclick="toggleLevel(event, 'alevel-list')">
+                        A Level ▼
+                    </button>
+
                     <div class="subjects-list" id="alevel-list">
                         <a href="contact.html#callback-form">English</a>
                         <a href="contact.html#callback-form">Math</a>
@@ -794,299 +944,865 @@
             <a href="contact.html" class="nav-link">Contact</a>
         </nav>
 
-        <a href="contact.html#callback-form" class="header-cta-btn">Free Trial</a>
+        <a href="contact.html#callback-form" class="header-cta-btn">
+            Free Trial
+        </a>
     </header>
+
+    <!-- =========================
+         TRUST FLAGS
+    ========================= -->
 
     <div class="wavy-flag-left">
         Reviews on <span>★ Trustpilot</span>
     </div>
+
     <div class="wavy-flag-right">
         UK'S Most Trusted Tutoring
     </div>
 
+    <!-- =========================
+         HERO SECTION
+    ========================= -->
+
     <section class="hero-section">
         <div class="hero-text">
-            <h2>Welcome to eEdutran:<br>A Trustworthy Online Teaching Platform</h2>
-            <h1>Transform CONFUSION <br>Into CONFIDENCE</h1>
+            <h2>
+                Welcome to eEdutran:<br>
+                A Trustworthy Online Teaching Platform
+            </h2>
+
+            <h1>
+                Transform CONFUSION <br>
+                Into CONFIDENCE
+            </h1>
         </div>
+
         <div class="hero-illustration">
             <div class="avatar-box">
-                <div style="font-size: 54px; margin-bottom: 8px;">👦📖💡</div>
-                <p style="font-family: 'Comic Sans MS'; color: #00e5ff; font-size: 13px;">Interactive Learning Sessions</p>
+                <div style="font-size: 54px; margin-bottom: 8px;">
+                    👦📖💡
+                </div>
+
+                <p style="font-family: 'Comic Sans MS'; color: #00e5ff; font-size: 13px;">
+                    Interactive Learning Sessions
+                </p>
             </div>
         </div>
     </section>
 
+    <!-- =========================
+         UK ONLINE SESSIONS
+    ========================= -->
+
     <div class="uk-sessions-wrapper">
         <div class="uk-sessions-box">
+
             <h3>DEDICATED ONLINE SESSIONS ACROSS THE UK</h3>
+
             <div class="uk-content">
+
                 <div class="uk-map-mock">
-                 250+ Students till date<br>
-                38,000+ Lesson Hours
+                    250+ Students till date<br>
+                    38,000+ Lesson Hours
                 </div>
+
                 <div class="uk-catchphrase">
                     £14 per hour Lessons - Try it now!
                 </div>
+
                 <div class="uk-cities-box">
-                    <span style="color: #00ffff;"></span>Bristol, Birmingham,<br>Scotland, Wales, Edinburgh,<br>Yorkshire, Lancashire, Kent, Essex, Hampshire
+                    Bristol, Birmingham,<br>
+                    Scotland, Wales, Edinburgh,<br>
+                    Yorkshire, Lancashire, Kent, Essex, Hampshire
                 </div>
+
             </div>
         </div>
     </div>
+
+    <!-- =========================
+         WHY CHOOSE US
+    ========================= -->
 
     <div class="why-choose-title">
         <span>Why Parents & Students Love Us!</span>
     </div>
 
     <div class="features-container">
+
         <div class="feature-column">
             <div class="column-header">📖 FOR STUDENTS</div>
-            <div class="feature-item-1">Personalized Learning Paths</div>
-            <div class="feature-item-2">Interactive Virtual Classrooms</div>
-            <div class="feature-item-3">24/7 Tutor Support</div>
-            <div class="feature-item-4">Regular Tests and Mocks</div>
+
+            <div class="feature-item-1">
+                Personalized Learning Paths
+            </div>
+
+            <div class="feature-item-2">
+                Interactive Virtual Classrooms
+            </div>
+
+            <div class="feature-item-3">
+                24/7 Tutor Support
+            </div>
+
+            <div class="feature-item-4">
+                Regular Tests and Mocks
+            </div>
         </div>
 
         <div class="feature-column">
             <div class="column-header">👥 FOR PARENTS</div>
-            <div class="feature-item-2">Direct Communication with Tutors</div>
-            <div class="feature-item-3">Real-time Progress Tracking</div>
-            <div class="feature-item-1">Affordable, Pocket-Friendly Plans</div>
-            <div class="feature-item-4">Sharing Student Academic Progress</div>
+
+            <div class="feature-item-2">
+                Direct Communication with Tutors
+            </div>
+
+            <div class="feature-item-3">
+                Real-time Progress Tracking
+            </div>
+
+            <div class="feature-item-1">
+                Affordable, Pocket-Friendly Plans
+            </div>
+
+            <div class="feature-item-4">
+                Sharing Student Academic Progress
+            </div>
         </div>
+
     </div>
+
+    <!-- =========================
+         FREE TRIAL CTA
+    ========================= -->
 
     <div class="bottom-cta">
-        <a href="contact.html#callback-form" class="footer-cta-btn">BOOK YOUR FREE TRIAL SESSION NOW★</a>
+        <a href="contact.html#callback-form" class="footer-cta-btn">
+            BOOK YOUR FREE TRIAL SESSION NOW★
+        </a>
     </div>
+
+    <!-- =========================
+         HOW WE WORK
+    ========================= -->
 
     <div class="section-divider">
+
         <div class="how-we-work-box">
+
             <h3>How We Work</h3>
+
             <div class="steps-container">
+
                 <div class="step-card">
                     <h4>Step-1</h4>
-                    <p>Book a free session and share your learning goals with our academic experts.</p>
+                    <p>
+                        Book a free session and share your learning goals
+                        with our academic experts.
+                    </p>
                 </div>
+
                 <div class="step-card">
                     <h4>Step-2</h4>
-                    <p>Get matched with the ideal expert tutor tailored to student level and requirements.</p>
+                    <p>
+                        Get matched with the ideal expert tutor tailored
+                        to student level and requirements.
+                    </p>
                 </div>
+
                 <div class="step-card">
                     <h4>Step-3</h4>
-                    <p>Start interactive lessons and watch academic performance soar!</p>
+                    <p>
+                        Start interactive lessons and watch academic
+                        performance soar!
+                    </p>
                 </div>
+
             </div>
+
             <div style="margin-top: 15px;">
-                <a href="contact.html#callback-form" class="footer-cta-btn" style="padding: 10px 24px; font-size: 13px;">Book Your Free Session Now</a>
+                <a href="contact.html#callback-form"
+                   class="footer-cta-btn"
+                   style="padding: 10px 24px; font-size: 13px;">
+                    Book Your Free Session Now
+                </a>
             </div>
+
         </div>
     </div>
+
+    <!-- =========================
+         SCHOLARSHIP BANNER
+    ========================= -->
 
     <div class="banner-three">
-        🚀 BANNER - 3: Special Limited Time Scholarship & Discount Offers Available This Term! 🚀
+        🚀 BANNER - 3: Special Limited Time Scholarship & Discount
+        Offers Available This Term! 🚀
     </div>
 
-    <!-- 3. Name of 50 Students with Year, Subject & Short Review Ticker (Fast & No Numbers) -->
-    <div class="students-ticker-box">
-        <h4>Students Progress Stream</h4>
-        <div class="ticker-track">
-            <!-- 50 Items without numbering, containing name, year, subject and short review line -->
-            <div class="student-pill"><div class="info">Liam Smith (Year 5 - Math)</div><div class="review-line">Improved confidence fast!</div></div>
-            <div class="student-pill"><div class="info">Olivia Jones (GCSE - Physics)</div><div class="review-line">Top grades achieved!</div></div>
-            <div class="student-pill"><div class="info">Noah Brown (KS3 - English)</div><div class="review-line">Very engaging sessions.</div></div>
-            <div class="student-pill"><div class="info">Emma Davis (A-Level Chemistry)</div><div class="review-line">Complex concepts made easy.</div></div>
-            <div class="student-pill"><div class="info">Lucas Wilson (Year 6 - Science)</div><div class="review-line">Fun experiments online!</div></div>
-            <div class="student-pill"><div class="info">Sophia Miller (GCSE - Math)</div><div class="review-line">Passed with a Grade 9.</div></div>
-            <div class="student-pill"><div class="info">Ethan Taylor (KS2 - Coding)</div><div class="review-line">Coding skills doubled.</div></div>
-            <div class="student-pill"><div class="info">Isabella Anderson (A-Level Biology)</div><div class="review-line">Brilliant explanation flow.</div></div>
-            <div class="student-pill"><div class="info">Mason Thomas (KS3 - Geography)</div><div class="review-line">Interactive maps are cool.</div></div>
-            <div class="student-pill"><div class="info">Ava Jackson (Year 4 - Math)</div><div class="review-line">Math is now her favorite!</div></div>
-            <div class="student-pill"><div class="info">Logan White (GCSE - Further Math)</div><div class="review-line">Cleared all exam phobia.</div></div>
-            <div class="student-pill"><div class="info">Mia Harris (KS3 - History)</div><div class="review-line">Stories are told vividly.</div></div>
-            <div class="student-pill"><div class="info">Alexander Martin (A-Level Mechanics)</div><div class="review-line">Exceptional calculation help.</div></div>
-            <div class="student-pill"><div class="info">Harper Clark (Year 6 - Science)</div><div class="review-line">Loved the quizzes.</div></div>
-            <div class="student-pill"><div class="info">Benjamin Lewis (GCSE - ICT)</div><div class="review-line">Clear diagrams and notes.</div></div>
-            <div class="student-pill"><div class="info">Charlotte Walker (KS2 - Math)</div><div class="review-line">No more tears during math.</div></div>
-            <div class="student-pill"><div class="info">James Hall (A-Level Physics)</div><div class="review-line">Top-tier tutoring standards.</div></div>
-            <div class="student-pill"><div class="info">Amelia Allen (KS3 - Coding)</div><div class="review-line">Creative logic boosted.</div></div>
-            <div class="student-pill"><div class="info">Henry Young (Year 5 - Science)</div><div class="review-line">Fascinating tutoring style.</div></div>
-            <div class="student-pill"><div class="info">Evelyn King (GCSE - English)</div><div class="review-line">Essay structure mastered.</div></div>
-            <div class="student-pill"><div class="info">Sebastian Wright (KS3 - Math)</div><div class="review-line">Algebra made simple.</div></div>
-            <div class="student-pill"><div class="info">Abigail Scott (A-Level Statistics)</div><div class="review-line">Data analytics cracked.</div></div>
-            <div class="student-pill"><div class="info">Jack Green (Year 4 - English)</div><div class="review-line">Spelling tests improved.</div></div>
-            <div class="student-pill"><div class="info">Emily Baker (GCSE - Physics)</div><div class="review-line">Practiced past papers well.</div></div>
-            <div class="student-pill"><div class="info">Owen Adams (KS3 - Science)</div><div class="review-line">Great interactive boards.</div></div>
-            <div class="student-pill"><div class="info">Chloe Nelson (Year 6 - Math)</div><div class="review-line">SATS prep was smooth.</div></div>
-            <div class="student-pill"><div class="info">Samuel Carter (A-Level Computer Science)</div><div class="review-line">In-depth concept review.</div></div>
-            <div class="student-pill"><div class="info">Ella Mitchell (KS2 - Science)</div><div class="review-line">Fun learning environment.</div></div>
-            <div class="student-pill"><div class="info">Daniel Perez (GCSE - Math)</div><div class="review-line">Jumped two grade boundaries.</div></div>
-            <div class="student-pill"><div class="info">Grace Roberts (KS3 - Geography)</div><div class="review-line">Very structured classes.</div></div>
-            <div class="student-pill"><div class="info">Matthew Turner (Year 5 - English)</div><div class="review-line">Vocabulary expanded.</div></div>
-            <div class="student-pill"><div class="info">Zoe Phillips (A-Level Physics)</div><div class="review-line">Mechanics became intuitive.</div></div>
-            <div class="student-pill"><div class="info">Joseph Campbell (KS3 - History)</div><div class="review-line">Historical insights rock.</div></div>
-            <div class="student-pill"><div class="info">Victoria Parker (GCSE - Chemistry)</div><div class="review-line">A* predicted now.</div></div>
-            <div class="student-pill"><div class="info">David Evans (Year 4 - Math)</div><div class="review-line">Wonderful patient tutors.</div></div>
-            <div class="student-pill"><div class="info">Lily Edwards (KS2 - English)</div><div class="review-line">Loved story analysis.</div></div>
-            <div class="student-pill"><div class="info">Carter Collins (A-Level Further Math)</div><div class="review-line">Pure math simplified.</div></div>
-            <div class="student-pill"><div class="info">Hannah Stewart (GCSE - Biology)</div><div class="review-line">Cell biology memorized easily.</div></div>
-            <div class="student-pill"><div class="info">Julian Sanchez (KS3 - Physics)</div><div class="review-line">Energy modules cleared.</div></div>
-            <div class="student-pill"><div class="info">Leah Morris (Year 6 - Science)</div><div class="review-line">Fantastic explanations.</div></div>
-            <div class="student-pill"><div class="info">Grayson Rogers (GCSE - English)</div><div class="review-line">Poetry analysis unlocked.</div></div>
-            <div class="student-pill"><div class="info">Scarlett Reed (A-Level Chemistry)</div><div class="review-line">Top notch lab guidance.</div></div>
-            <div class="student-pill"><div class="info">Luke Cook (KS3 - Math)</div><div class="review-line">Fractions made transparent.</div></div>
-            <div class="student-pill"><div class="info">Stella Morgan (Year 5 - Science)</div><div class="review-line">Always looking forward to class.</div></div>
-            <div class="student-pill"><div class="info">Gabriel Bell (GCSE - Physics)</div><div class="review-line">Electricity equations solved.</div></div>
-            <div class="student-pill"><div class="info">Paisley Murphy (KS2 - Math)</div><div class="review-line">Multiplication tables mastered.</div></div>
-            <div class="student-pill"><div class="info">Ryan Bailey (A-Level Biology)</div><div class="review-line">Genetics section aced.</div></div>
-            <div class="student-pill"><div class="info">Penelope Rivera (KS3 - English)</div><div class="review-line">Grammar rules cleared.</div></div>
-            <div class="student-pill"><div class="info">Nathan Cooper (Year 6 - Math)</div><div class="review-line">Amazing score boost.</div></div>
-            <div class="student-pill"><div class="info">Ellie Richardson (GCSE - Chemistry)</div><div class="review-line">Bonding topics finally clicked.</div></div>
+    <!-- =========================
+         STUDENTS PROGRESS TICKER
+    ========================= -->
 
-            <!-- Duplicate loop set for seamless infinite animation -->
-            <div class="student-pill"><div class="info">Liam Smith (Year 5 - Math)</div><div class="review-line">Improved confidence fast!</div></div>
-            <div class="student-pill"><div class="info">Olivia Jones (GCSE - Physics)</div><div class="review-line">Top grades achieved!</div></div>
-            <div class="student-pill"><div class="info">Noah Brown (KS3 - English)</div><div class="review-line">Very engaging sessions.</div></div>
-            <div class="student-pill"><div class="info">Emma Davis (A-Level Chemistry)</div><div class="review-line">Complex concepts made easy.</div></div>
-            <div class="student-pill"><div class="info">Lucas Wilson (Year 6 - Science)</div><div class="review-line">Fun experiments online!</div></div>
-            <div class="student-pill"><div class="info">Sophia Miller (GCSE - Math)</div><div class="review-line">Passed with a Grade 9.</div></div>
-            <div class="student-pill"><div class="info">Ethan Taylor (KS2 - Coding)</div><div class="review-line">Coding skills doubled.</div></div>
-            <div class="student-pill"><div class="info">Isabella Anderson (A-Level Biology)</div><div class="review-line">Brilliant explanation flow.</div></div>
-            <div class="student-pill"><div class="info">Mason Thomas (KS3 - Geography)</div><div class="review-line">Interactive maps are cool.</div></div>
-            <div class="student-pill"><div class="info">Ava Jackson (Year 4 - Math)</div><div class="review-line">Math is now her favorite!</div></div>
-            <div class="student-pill"><div class="info">Logan White (GCSE - Further Math)</div><div class="review-line">Cleared all exam phobia.</div></div>
-            <div class="student-pill"><div class="info">Mia Harris (KS3 - History)</div><div class="review-line">Stories are told vividly.</div></div>
-            <div class="student-pill"><div class="info">Alexander Martin (A-Level Mechanics)</div><div class="review-line">Exceptional calculation help.</div></div>
-            <div class="student-pill"><div class="info">Harper Clark (Year 6 - Science)</div><div class="review-line">Loved the quizzes.</div></div>
-            <div class="student-pill"><div class="info">Benjamin Lewis (GCSE - ICT)</div><div class="review-line">Clear diagrams and notes.</div></div>
-            <div class="student-pill"><div class="info">Charlotte Walker (KS2 - Math)</div><div class="review-line">No more tears during math.</div></div>
-            <div class="student-pill"><div class="info">James Hall (A-Level Physics)</div><div class="review-line">Top-tier tutoring standards.</div></div>
-            <div class="student-pill"><div class="info">Amelia Allen (KS3 - Coding)</div><div class="review-line">Creative logic boosted.</div></div>
-            <div class="student-pill"><div class="info">Henry Young (Year 5 - Science)</div><div class="review-line">Fascinating tutoring style.</div></div>
-            <div class="student-pill"><div class="info">Evelyn King (GCSE - English)</div><div class="review-line">Essay structure mastered.</div></div>
-            <div class="student-pill"><div class="info">Sebastian Wright (KS3 - Math)</div><div class="review-line">Algebra made simple.</div></div>
-            <div class="student-pill"><div class="info">Abigail Scott (A-Level Statistics)</div><div class="review-line">Data analytics cracked.</div></div>
-            <div class="student-pill"><div class="info">Jack Green (Year 4 - English)</div><div class="review-line">Spelling tests improved.</div></div>
-            <div class="student-pill"><div class="info">Emily Baker (GCSE - Physics)</div><div class="review-line">Practiced past papers well.</div></div>
-            <div class="student-pill"><div class="info">Owen Adams (KS3 - Science)</div><div class="review-line">Great interactive boards.</div></div>
-            <div class="student-pill"><div class="info">Chloe Nelson (Year 6 - Math)</div><div class="review-line">SATS prep was smooth.</div></div>
-            <div class="student-pill"><div class="info">Samuel Carter (A-Level Computer Science)</div><div class="review-line">In-depth concept review.</div></div>
-            <div class="student-pill"><div class="info">Ella Mitchell (KS2 - Science)</div><div class="review-line">Fun learning environment.</div></div>
-            <div class="student-pill"><div class="info">Daniel Perez (GCSE - Math)</div><div class="review-line">Jumped two grade boundaries.</div></div>
-            <div class="student-pill"><div class="info">Grace Roberts (KS3 - Geography)</div><div class="review-line">Very structured classes.</div></div>
-            <div class="student-pill"><div class="info">Matthew Turner (Year 5 - English)</div><div class="review-line">Vocabulary expanded.</div></div>
-            <div class="student-pill"><div class="info">Zoe Phillips (A-Level Physics)</div><div class="review-line">Mechanics became intuitive.</div></div>
-            <div class="student-pill"><div class="info">Joseph Campbell (KS3 - History)</div><div class="review-line">Historical insights rock.</div></div>
-            <div class="student-pill"><div class="info">Victoria Parker (GCSE - Chemistry)</div><div class="review-line">A* predicted now.</div></div>
-            <div class="student-pill"><div class="info">David Evans (Year 4 - Math)</div><div class="review-line">Wonderful patient tutors.</div></div>
-            <div class="student-pill"><div class="info">Lily Edwards (KS2 - English)</div><div class="review-line">Loved story analysis.</div></div>
-            <div class="student-pill"><div class="info">Carter Collins (A-Level Further Math)</div><div class="review-line">Pure math simplified.</div></div>
-            <div class="student-pill"><div class="info">Hannah Stewart (GCSE - Biology)</div><div class="review-line">Cell biology memorized easily.</div></div>
-            <div class="student-pill"><div class="info">Julian Sanchez (KS3 - Physics)</div><div class="review-line">Energy modules cleared.</div></div>
-            <div class="student-pill"><div class="info">Leah Morris (Year 6 - Science)</div><div class="review-line">Fantastic explanations.</div></div>
-            <div class="student-pill"><div class="info">Grayson Rogers (GCSE - English)</div><div class="review-line">Poetry analysis unlocked.</div></div>
-            <div class="student-pill"><div class="info">Scarlett Reed (A-Level Chemistry)</div><div class="review-line">Top notch lab guidance.</div></div>
-            <div class="student-pill"><div class="info">Luke Cook (KS3 - Math)</div><div class="review-line">Fractions made transparent.</div></div>
-            <div class="student-pill"><div class="info">Stella Morgan (Year 5 - Science)</div><div class="review-line">Always looking forward to class.</div></div>
-            <div class="student-pill"><div class="info">Gabriel Bell (GCSE - Physics)</div><div class="review-line">Electricity equations solved.</div></div>
-            <div class="student-pill"><div class="info">Paisley Murphy (KS2 - Math)</div><div class="review-line">Multiplication tables mastered.</div></div>
-            <div class="student-pill"><div class="info">Ryan Bailey (A-Level Biology)</div><div class="review-line">Genetics section aced.</div></div>
-            <div class="student-pill"><div class="info">Penelope Rivera (KS3 - English)</div><div class="review-line">Grammar rules cleared.</div></div>
-            <div class="student-pill"><div class="info">Nathan Cooper (Year 6 - Math)</div><div class="review-line">Amazing score boost.</div></div>
-            <div class="student-pill"><div class="info">Ellie Richardson (GCSE - Chemistry)</div><div class="review-line">Bonding topics finally clicked.</div></div>
+    <div class="students-ticker-box">
+
+        <h4>Students Progress Stream</h4>
+
+        <div class="ticker-track">
+
+            <!-- FIRST SET -->
+
+            <div class="student-pill">
+                <div class="info">Liam Smith (Year 5 - Math)</div>
+                <div class="review-line">Improved confidence fast!</div>
+            </div>
+
+            <div class="student-pill">
+                <div class="info">Olivia Jones (GCSE - Physics)</div>
+                <div class="review-line">Top grades achieved!</div>
+            </div>
+
+            <div class="student-pill">
+                <div class="info">Noah Brown (KS3 - English)</div>
+                <div class="review-line">Very engaging sessions.</div>
+            </div>
+
+            <div class="student-pill">
+                <div class="info">Emma Davis (A-Level Chemistry)</div>
+                <div class="review-line">Complex concepts made easy.</div>
+            </div>
+
+            <div class="student-pill">
+                <div class="info">Lucas Wilson (Year 6 - Science)</div>
+                <div class="review-line">Fun experiments online!</div>
+            </div>
+
+            <div class="student-pill">
+                <div class="info">Sophia Miller (GCSE - Math)</div>
+                <div class="review-line">Passed with a Grade 9.</div>
+            </div>
+
+            <div class="student-pill">
+                <div class="info">Ethan Taylor (KS2 - Coding)</div>
+                <div class="review-line">Coding skills doubled.</div>
+            </div>
+
+            <div class="student-pill">
+                <div class="info">Isabella Anderson (A-Level Biology)</div>
+                <div class="review-line">Brilliant explanation flow.</div>
+            </div>
+
+            <div class="student-pill">
+                <div class="info">Mason Thomas (KS3 - Geography)</div>
+                <div class="review-line">Interactive maps are cool.</div>
+            </div>
+
+            <div class="student-pill">
+                <div class="info">Ava Jackson (Year 4 - Math)</div>
+                <div class="review-line">Math is now her favorite!</div>
+            </div>
+
+            <div class="student-pill">
+                <div class="info">Logan White (GCSE - Further Math)</div>
+                <div class="review-line">Cleared all exam phobia.</div>
+            </div>
+
+            <div class="student-pill">
+                <div class="info">Mia Harris (KS3 - History)</div>
+                <div class="review-line">Stories are told vividly.</div>
+            </div>
+
+            <div class="student-pill">
+                <div class="info">Alexander Martin (A-Level Mechanics)</div>
+                <div class="review-line">Exceptional calculation help.</div>
+            </div>
+
+            <div class="student-pill">
+                <div class="info">Harper Clark (Year 6 - Science)</div>
+                <div class="review-line">Loved the quizzes.</div>
+            </div>
+
+            <div class="student-pill">
+                <div class="info">Benjamin Lewis (GCSE - ICT)</div>
+                <div class="review-line">Clear diagrams and notes.</div>
+            </div>
+
+            <div class="student-pill">
+                <div class="info">Charlotte Walker (KS2 - Math)</div>
+                <div class="review-line">No more tears during math.</div>
+            </div>
+
+            <div class="student-pill">
+                <div class="info">James Hall (A-Level Physics)</div>
+                <div class="review-line">Top-tier tutoring standards.</div>
+            </div>
+
+            <div class="student-pill">
+                <div class="info">Amelia Allen (KS3 - Coding)</div>
+                <div class="review-line">Creative logic boosted.</div>
+            </div>
+
+            <div class="student-pill">
+                <div class="info">Henry Young (Year 5 - Science)</div>
+                <div class="review-line">Fascinating tutoring style.</div>
+            </div>
+
+            <div class="student-pill">
+                <div class="info">Evelyn King (GCSE - English)</div>
+                <div class="review-line">Essay structure mastered.</div>
+            </div>
+
+            <div class="student-pill">
+                <div class="info">Sebastian Wright (KS3 - Math)</div>
+                <div class="review-line">Algebra made simple.</div>
+            </div>
+
+            <div class="student-pill">
+                <div class="info">Abigail Scott (A-Level Statistics)</div>
+                <div class="review-line">Data analytics cracked.</div>
+            </div>
+
+            <div class="student-pill">
+                <div class="info">Jack Green (Year 4 - English)</div>
+                <div class="review-line">Spelling tests improved.</div>
+            </div>
+
+            <div class="student-pill">
+                <div class="info">Emily Baker (GCSE - Physics)</div>
+                <div class="review-line">Practiced past papers well.</div>
+            </div>
+
+            <div class="student-pill">
+                <div class="info">Owen Adams (KS3 - Science)</div>
+                <div class="review-line">Great interactive boards.</div>
+            </div>
+
+            <div class="student-pill">
+                <div class="info">Chloe Nelson (Year 6 - Math)</div>
+                <div class="review-line">SATS prep was smooth.</div>
+            </div>
+
+            <div class="student-pill">
+                <div class="info">Samuel Carter (A-Level Computer Science)</div>
+                <div class="review-line">In-depth concept review.</div>
+            </div>
+
+            <div class="student-pill">
+                <div class="info">Ella Mitchell (KS2 - Science)</div>
+                <div class="review-line">Fun learning environment.</div>
+            </div>
+
+            <div class="student-pill">
+                <div class="info">Daniel Perez (GCSE - Math)</div>
+                <div class="review-line">Jumped two grade boundaries.</div>
+            </div>
+
+            <div class="student-pill">
+                <div class="info">Grace Roberts (KS3 - Geography)</div>
+                <div class="review-line">Very structured classes.</div>
+            </div>
+
+            <div class="student-pill">
+                <div class="info">Matthew Turner (Year 5 - English)</div>
+                <div class="review-line">Vocabulary expanded.</div>
+            </div>
+
+            <div class="student-pill">
+                <div class="info">Zoe Phillips (A-Level Physics)</div>
+                <div class="review-line">Mechanics became intuitive.</div>
+            </div>
+
+            <div class="student-pill">
+                <div class="info">Joseph Campbell (KS3 - History)</div>
+                <div class="review-line">Historical insights rock.</div>
+            </div>
+
+            <div class="student-pill">
+                <div class="info">Victoria Parker (GCSE - Chemistry)</div>
+                <div class="review-line">A* predicted now.</div>
+            </div>
+
+            <div class="student-pill">
+                <div class="info">David Evans (Year 4 - Math)</div>
+                <div class="review-line">Wonderful patient tutors.</div>
+            </div>
+
+            <div class="student-pill">
+                <div class="info">Lily Edwards (KS2 - English)</div>
+                <div class="review-line">Loved story analysis.</div>
+            </div>
+
+            <div class="student-pill">
+                <div class="info">Carter Collins (A-Level Further Math)</div>
+                <div class="review-line">Pure math simplified.</div>
+            </div>
+
+            <div class="student-pill">
+                <div class="info">Hannah Stewart (GCSE - Biology)</div>
+                <div class="review-line">Cell biology memorized easily.</div>
+            </div>
+
+            <div class="student-pill">
+                <div class="info">Julian Sanchez (KS3 - Physics)</div>
+                <div class="review-line">Energy modules cleared.</div>
+            </div>
+
+            <div class="student-pill">
+                <div class="info">Leah Morris (Year 6 - Science)</div>
+                <div class="review-line">Fantastic explanations.</div>
+            </div>
+
+            <div class="student-pill">
+                <div class="info">Grayson Rogers (GCSE - English)</div>
+                <div class="review-line">Poetry analysis unlocked.</div>
+            </div>
+
+            <div class="student-pill">
+                <div class="info">Scarlett Reed (A-Level Chemistry)</div>
+                <div class="review-line">Top notch lab guidance.</div>
+            </div>
+
+            <div class="student-pill">
+                <div class="info">Luke Cook (KS3 - Math)</div>
+                <div class="review-line">Fractions made transparent.</div>
+            </div>
+
+            <div class="student-pill">
+                <div class="info">Stella Morgan (Year 5 - Science)</div>
+                <div class="review-line">Always looking forward to class.</div>
+            </div>
+
+            <div class="student-pill">
+                <div class="info">Gabriel Bell (GCSE - Physics)</div>
+                <div class="review-line">Electricity equations solved.</div>
+            </div>
+
+            <div class="student-pill">
+                <div class="info">Paisley Murphy (KS2 - Math)</div>
+                <div class="review-line">Multiplication tables mastered.</div>
+            </div>
+
+            <div class="student-pill">
+                <div class="info">Ryan Bailey (A-Level Biology)</div>
+                <div class="review-line">Genetics section aced.</div>
+            </div>
+
+            <div class="student-pill">
+                <div class="info">Penelope Rivera (KS3 - English)</div>
+                <div class="review-line">Grammar rules cleared.</div>
+            </div>
+
+            <div class="student-pill">
+                <div class="info">Nathan Cooper (Year 6 - Math)</div>
+                <div class="review-line">Amazing score boost.</div>
+            </div>
+
+            <div class="student-pill">
+                <div class="info">Ellie Richardson (GCSE - Chemistry)</div>
+                <div class="review-line">Bonding topics finally clicked.</div>
+            </div>
+
+            <!-- DUPLICATE SET FOR SEAMLESS ANIMATION -->
+
+            <div class="student-pill">
+                <div class="info">Liam Smith (Year 5 - Math)</div>
+                <div class="review-line">Improved confidence fast!</div>
+            </div>
+
+            <div class="student-pill">
+                <div class="info">Olivia Jones (GCSE - Physics)</div>
+                <div class="review-line">Top grades achieved!</div>
+            </div>
+
+            <div class="student-pill">
+                <div class="info">Noah Brown (KS3 - English)</div>
+                <div class="review-line">Very engaging sessions.</div>
+            </div>
+
+            <div class="student-pill">
+                <div class="info">Emma Davis (A-Level Chemistry)</div>
+                <div class="review-line">Complex concepts made easy.</div>
+            </div>
+
+            <div class="student-pill">
+                <div class="info">Lucas Wilson (Year 6 - Science)</div>
+                <div class="review-line">Fun experiments online!</div>
+            </div>
+
+            <div class="student-pill">
+                <div class="info">Sophia Miller (GCSE - Math)</div>
+                <div class="review-line">Passed with a Grade 9.</div>
+            </div>
+
+            <div class="student-pill">
+                <div class="info">Ethan Taylor (KS2 - Coding)</div>
+                <div class="review-line">Coding skills doubled.</div>
+            </div>
+
+            <div class="student-pill">
+                <div class="info">Isabella Anderson (A-Level Biology)</div>
+                <div class="review-line">Brilliant explanation flow.</div>
+            </div>
+
+            <div class="student-pill">
+                <div class="info">Mason Thomas (KS3 - Geography)</div>
+                <div class="review-line">Interactive maps are cool.</div>
+            </div>
+
+            <div class="student-pill">
+                <div class="info">Ava Jackson (Year 4 - Math)</div>
+                <div class="review-line">Math is now her favorite!</div>
+            </div>
+
+            <div class="student-pill">
+                <div class="info">Logan White (GCSE - Further Math)</div>
+                <div class="review-line">Cleared all exam phobia.</div>
+            </div>
+
+            <div class="student-pill">
+                <div class="info">Mia Harris (KS3 - History)</div>
+                <div class="review-line">Stories are told vividly.</div>
+            </div>
+
+            <div class="student-pill">
+                <div class="info">Alexander Martin (A-Level Mechanics)</div>
+                <div class="review-line">Exceptional calculation help.</div>
+            </div>
+
+            <div class="student-pill">
+                <div class="info">Harper Clark (Year 6 - Science)</div>
+                <div class="review-line">Loved the quizzes.</div>
+            </div>
+
+            <div class="student-pill">
+                <div class="info">Benjamin Lewis (GCSE - ICT)</div>
+                <div class="review-line">Clear diagrams and notes.</div>
+            </div>
+
+            <div class="student-pill">
+                <div class="info">Charlotte Walker (KS2 - Math)</div>
+                <div class="review-line">No more tears during math.</div>
+            </div>
+
+            <div class="student-pill">
+                <div class="info">James Hall (A-Level Physics)</div>
+                <div class="review-line">Top-tier tutoring standards.</div>
+            </div>
+
+            <div class="student-pill">
+                <div class="info">Amelia Allen (KS3 - Coding)</div>
+                <div class="review-line">Creative logic boosted.</div>
+            </div>
+
+            <div class="student-pill">
+                <div class="info">Henry Young (Year 5 - Science)</div>
+                <div class="review-line">Fascinating tutoring style.</div>
+            </div>
+
+            <div class="student-pill">
+                <div class="info">Evelyn King (GCSE - English)</div>
+                <div class="review-line">Essay structure mastered.</div>
+            </div>
+
+            <div class="student-pill">
+                <div class="info">Sebastian Wright (KS3 - Math)</div>
+                <div class="review-line">Algebra made simple.</div>
+            </div>
+
+            <div class="student-pill">
+                <div class="info">Abigail Scott (A-Level Statistics)</div>
+                <div class="review-line">Data analytics cracked.</div>
+            </div>
+
+            <div class="student-pill">
+                <div class="info">Jack Green (Year 4 - English)</div>
+                <div class="review-line">Spelling tests improved.</div>
+            </div>
+
+            <div class="student-pill">
+                <div class="info">Emily Baker (GCSE - Physics)</div>
+                <div class="review-line">Practiced past papers well.</div>
+            </div>
+
+            <div class="student-pill">
+                <div class="info">Owen Adams (KS3 - Science)</div>
+                <div class="review-line">Great interactive boards.</div>
+            </div>
+
+            <div class="student-pill">
+                <div class="info">Chloe Nelson (Year 6 - Math)</div>
+                <div class="review-line">SATS prep was smooth.</div>
+            </div>
+
+            <div class="student-pill">
+                <div class="info">Samuel Carter (A-Level Computer Science)</div>
+                <div class="review-line">In-depth concept review.</div>
+            </div>
+
+            <div class="student-pill">
+                <div class="info">Ella Mitchell (KS2 - Science)</div>
+                <div class="review-line">Fun learning environment.</div>
+            </div>
+
+            <div class="student-pill">
+                <div class="info">Daniel Perez (GCSE - Math)</div>
+                <div class="review-line">Jumped two grade boundaries.</div>
+            </div>
+
+            <div class="student-pill">
+                <div class="info">Grace Roberts (KS3 - Geography)</div>
+                <div class="review-line">Very structured classes.</div>
+            </div>
+
+            <div class="student-pill">
+                <div class="info">Matthew Turner (Year 5 - English)</div>
+                <div class="review-line">Vocabulary expanded.</div>
+            </div>
+
+            <div class="student-pill">
+                <div class="info">Zoe Phillips (A-Level Physics)</div>
+                <div class="review-line">Mechanics became intuitive.</div>
+            </div>
+
+            <div class="student-pill">
+                <div class="info">Joseph Campbell (KS3 - History)</div>
+                <div class="review-line">Historical insights rock.</div>
+            </div>
+
+            <div class="student-pill">
+                <div class="info">Victoria Parker (GCSE - Chemistry)</div>
+                <div class="review-line">A* predicted now.</div>
+            </div>
+
+            <div class="student-pill">
+                <div class="info">David Evans (Year 4 - Math)</div>
+                <div class="review-line">Wonderful patient tutors.</div>
+            </div>
+
+            <div class="student-pill">
+                <div class="info">Lily Edwards (KS2 - English)</div>
+                <div class="review-line">Loved story analysis.</div>
+            </div>
+
+            <div class="student-pill">
+                <div class="info">Carter Collins (A-Level Further Math)</div>
+                <div class="review-line">Pure math simplified.</div>
+            </div>
+
+            <div class="student-pill">
+                <div class="info">Hannah Stewart (GCSE - Biology)</div>
+                <div class="review-line">Cell biology memorized easily.</div>
+            </div>
+
+            <div class="student-pill">
+                <div class="info">Julian Sanchez (KS3 - Physics)</div>
+                <div class="review-line">Energy modules cleared.</div>
+            </div>
+
+            <div class="student-pill">
+                <div class="info">Leah Morris (Year 6 - Science)</div>
+                <div class="review-line">Fantastic explanations.</div>
+            </div>
+
+            <div class="student-pill">
+                <div class="info">Grayson Rogers (GCSE - English)</div>
+                <div class="review-line">Poetry analysis unlocked.</div>
+            </div>
+
+            <div class="student-pill">
+                <div class="info">Scarlett Reed (A-Level Chemistry)</div>
+                <div class="review-line">Top notch lab guidance.</div>
+            </div>
+
+            <div class="student-pill">
+                <div class="info">Luke Cook (KS3 - Math)</div>
+                <div class="review-line">Fractions made transparent.</div>
+            </div>
+
+            <div class="student-pill">
+                <div class="info">Stella Morgan (Year 5 - Science)</div>
+                <div class="review-line">Always looking forward to class.</div>
+            </div>
+
+            <div class="student-pill">
+                <div class="info">Gabriel Bell (GCSE - Physics)</div>
+                <div class="review-line">Electricity equations solved.</div>
+            </div>
+
+            <div class="student-pill">
+                <div class="info">Paisley Murphy (KS2 - Math)</div>
+                <div class="review-line">Multiplication tables mastered.</div>
+            </div>
+
+            <div class="student-pill">
+                <div class="info">Ryan Bailey (A-Level Biology)</div>
+                <div class="review-line">Genetics section aced.</div>
+            </div>
+
+            <div class="student-pill">
+                <div class="info">Penelope Rivera (KS3 - English)</div>
+                <div class="review-line">Grammar rules cleared.</div>
+            </div>
+
+            <div class="student-pill">
+                <div class="info">Nathan Cooper (Year 6 - Math)</div>
+                <div class="review-line">Amazing score boost.</div>
+            </div>
+
+            <div class="student-pill">
+                <div class="info">Ellie Richardson (GCSE - Chemistry)</div>
+                <div class="review-line">Bonding topics finally clicked.</div>
+            </div>
+
         </div>
     </div>
 
-    <!-- 4. Parents Appreciation Slider (Manual Swipe - 10 Reviews across levels/subjects) -->
+    <!-- =========================
+         PARENTS APPRECIATION SLIDER
+    ========================= -->
+
     <div class="appreciation-section">
+
         <h3>The Appreciation That We Get From Parents</h3>
+
         <div class="slider-container">
-            <button class="slider-btn prev" onclick="moveSlide(-1)">&#10094;</button>
+
+            <button class="slider-btn prev" onclick="moveSlide(-1)">
+                &#10094;
+            </button>
+
             <div class="slider-track" id="sliderTrack">
+
                 <!-- Slide 1 -->
                 <div class="slide-item">
                     <div class="appreciation-card">
                         <span class="subj-tag">KS2 - Math</span>
-                        <p>"eEdutran completely changed my child's perspective on learning. Math homework is no longer a daily struggle!"</p>
+                        <p>
+                            "eEdutran completely changed my child's
+                            perspective on learning. Math homework is
+                            no longer a daily struggle!"
+                        </p>
                         <span>— Parent of Liam Smith (Year 5)</span>
                     </div>
                 </div>
+
                 <!-- Slide 2 -->
                 <div class="slide-item">
                     <div class="appreciation-card">
                         <span class="subj-tag">GCSE - Physics</span>
-                        <p>"The physics tutor broke down complex concepts effortlessly. Olivia's mock grades jumped two levels!"</p>
+                        <p>
+                            "The physics tutor broke down complex concepts
+                            effortlessly. Olivia's mock grades jumped two levels!"
+                        </p>
                         <span>— Parent of Olivia Jones (GCSE)</span>
                     </div>
                 </div>
+
                 <!-- Slide 3 -->
                 <div class="slide-item">
                     <div class="appreciation-card">
                         <span class="subj-tag">KS3 - English</span>
-                        <p>"Noah's reading and analytical writing skills have improved remarkably. Highly professional platform."</p>
+                        <p>
+                            "Noah's reading and analytical writing skills
+                            have improved remarkably. Highly professional platform."
+                        </p>
                         <span>— Parent of Noah Brown (KS3)</span>
                     </div>
                 </div>
+
                 <!-- Slide 4 -->
                 <div class="slide-item">
                     <div class="appreciation-card">
                         <span class="subj-tag">A-Level - Chemistry</span>
-                        <p>"Organic chemistry was a nightmare until we found eEdutran. Truly grateful for the expert mentorship."</p>
+                        <p>
+                            "Organic chemistry was a nightmare until we
+                            found eEdutran. Truly grateful for the expert mentorship."
+                        </p>
                         <span>— Parent of Emma Davis (A-Level)</span>
                     </div>
                 </div>
+
                 <!-- Slide 5 -->
                 <div class="slide-item">
                     <div class="appreciation-card">
                         <span class="subj-tag">KS2 - Science</span>
-                        <p>"Lucas gets so excited for his online science experiments every single week. Wonderful engagement!"</p>
+                        <p>
+                            "Lucas gets so excited for his online science
+                            experiments every single week. Wonderful engagement!"
+                        </p>
                         <span>— Parent of Lucas Wilson (Year 6)</span>
                     </div>
                 </div>
+
                 <!-- Slide 6 -->
                 <div class="slide-item">
                     <div class="appreciation-card">
                         <span class="subj-tag">GCSE - Math</span>
-                        <p>"Sophia secured a Grade 9 in her GCSE math thanks to the rigorous practice sessions and patience of the tutor."</p>
+                        <p>
+                            "Sophia secured a Grade 9 in her GCSE math
+                            thanks to the rigorous practice sessions and patience of the tutor."
+                        </p>
                         <span>— Parent of Sophia Miller (GCSE)</span>
                     </div>
                 </div>
+
                 <!-- Slide 7 -->
                 <div class="slide-item">
                     <div class="appreciation-card">
                         <span class="subj-tag">KS3 - Geography</span>
-                        <p>"The interactive maps and visual aids used in geography lessons made learning fun and effective."</p>
+                        <p>
+                            "The interactive maps and visual aids used
+                            in geography lessons made learning fun and effective."
+                        </p>
                         <span>— Parent of Mason Thomas (KS3)</span>
                     </div>
                 </div>
+
                 <!-- Slide 8 -->
                 <div class="slide-item">
                     <div class="appreciation-card">
                         <span class="subj-tag">A-Level - Biology</span>
-                        <p>"Detailed notes and exam paper walkthroughs gave our daughter total clarity ahead of her exams."</p>
+                        <p>
+                            "Detailed notes and exam paper walkthroughs
+                            gave our daughter total clarity ahead of her exams."
+                        </p>
                         <span>— Parent of Isabella Anderson (A-Level)</span>
                     </div>
                 </div>
+
                 <!-- Slide 9 -->
                 <div class="slide-item">
                     <div class="appreciation-card">
                         <span class="subj-tag">KS2 - Coding</span>
-                        <p>"His logic and programming confidence developed faster than we ever anticipated. Wonderful tutors!"</p>
+                        <p>
+                            "His logic and programming confidence developed
+                            faster than we ever anticipated. Wonderful tutors!"
+                        </p>
                         <span>— Parent of Ethan Taylor (KS2)</span>
                     </div>
                 </div>
+
                 <!-- Slide 10 -->
                 <div class="slide-item">
                     <div class="appreciation-card">
                         <span class="subj-tag">GCSE - Further Math</span>
-                        <p>"Pocket-friendly plans without compromising on education quality. Best investment we've made for school prep."</p>
+                        <p>
+                            "Pocket-friendly plans without compromising
+                            on education quality. Best investment we've made for school prep."
+                        </p>
                         <span>— Parent of Logan White (GCSE)</span>
                     </div>
                 </div>
+
             </div>
-            <button class="slider-btn next" onclick="moveSlide(1)">&#10095;</button>
+
+            <button class="slider-btn next" onclick="moveSlide(1)">
+                &#10095;
+            </button>
+
         </div>
+
         <div class="slider-dots" id="sliderDots">
             <span class="dot active" onclick="currentSlide(0)"></span>
             <span class="dot" onclick="currentSlide(1)"></span>
@@ -1099,19 +1815,29 @@
             <span class="dot" onclick="currentSlide(8)"></span>
             <span class="dot" onclick="currentSlide(9)"></span>
         </div>
+
     </div>
 
-     <!-- FAQ Section (Dropdown Accordion - Only questions visible initially) -->
+    <!-- =========================
+         FAQ SECTION
+    ========================= -->
+
     <div class="faq-section">
+
         <h3>Frequently Asked Questions</h3>
-        
+
         <div class="faq-item">
             <div class="faq-question" onclick="toggleFaq(this)">
                 <span>How can I book a free trial session?</span>
                 <span class="arrow">▼</span>
             </div>
+
             <div class="faq-answer">
-                You can easily book your <strong>free trial session</strong> by clicking any <strong>"Book Your Free Session Now"</strong> button across our website. Simply fill in your details, and our team will get in touch with you immediately to schedule a convenient time slot!
+                You can easily book your <strong>free trial session</strong>
+                by clicking any <strong>"Book Your Free Session Now"</strong>
+                button across our website. Simply fill in your details,
+                and our team will get in touch with you immediately to
+                schedule a convenient time slot!
             </div>
         </div>
 
@@ -1120,8 +1846,14 @@
                 <span>What happens after the trial session? Is there any obligation?</span>
                 <span class="arrow">▼</span>
             </div>
+
             <div class="faq-answer">
-                Everything after the trial will be <strong>directly communicated over on WhatsApp</strong> for your convenience. There are <strong>absolute zero obligations</strong> if you don't like it—feel completely free to walk away with <strong>no pressure or hidden catches</strong>!
+                Everything after the trial will be
+                <strong>directly communicated over on WhatsApp</strong>
+                for your convenience. There are
+                <strong>absolute zero obligations</strong> if you don't like it—
+                feel completely free to walk away with
+                <strong>no pressure or hidden catches</strong>!
             </div>
         </div>
 
@@ -1130,8 +1862,14 @@
                 <span>How do you conduct online tutoring sessions?</span>
                 <span class="arrow">▼</span>
             </div>
+
             <div class="faq-answer">
-                Our online tutoring sessions are hosted via <strong>Google Meet</strong> paired with advanced <strong>interactive virtual whiteboards</strong>. Students can write, draw, view diagrams live, and access all past session notes anytime for seamless <strong>collaborative learning</strong>.
+                Our online tutoring sessions are hosted via
+                <strong>Google Meet</strong> paired with advanced
+                <strong>interactive virtual whiteboards</strong>.
+                Students can write, draw, view diagrams live, and
+                access all past session notes anytime for seamless
+                <strong>collaborative learning</strong>.
             </div>
         </div>
 
@@ -1140,12 +1878,28 @@
                 <span>What subjects and levels do you teach? (Detailed Overview)</span>
                 <span class="arrow">▼</span>
             </div>
+
             <div class="faq-answer">
-                We provide expert, tailored tutoring across multiple foundational and advanced academic tiers:<br><br>
-                • <strong>KS2 Level (Primary):</strong> Comprehensive building blocks covering <strong>Math, English, Science, and Coding</strong>.<br>
-                • <strong>KS3 Level (Lower Secondary):</strong> Deep dives into <strong>English, Math, Physics, Chemistry, Biology, Geography, History, and Coding</strong>.<br>
-                • <strong>GCSE Level (Core Exams):</strong> Intensive exam-focused preparation for <strong>Math, Further Math, English, Physics, Chemistry, Biology, and ICT / Computer Science</strong> to secure top grades.<br>
-                • <strong>A-Level (Advanced Study):</strong> Rigorous mentoring for complex modules in <strong>Math, Further Math, Statistics, Mechanics, English, Physics, Chemistry, Biology, and Computer Science</strong> to conquer university entry requirements.
+                We provide expert, tailored tutoring across multiple
+                foundational and advanced academic tiers:<br><br>
+
+                • <strong>KS2 Level (Primary):</strong> Comprehensive
+                building blocks covering <strong>Math, English,
+                Science, and Coding</strong>.<br>
+
+                • <strong>KS3 Level (Lower Secondary):</strong> Deep dives
+                into <strong>English, Math, Physics, Chemistry, Biology,
+                Geography, History, and Coding</strong>.<br>
+
+                • <strong>GCSE Level (Core Exams):</strong> Intensive
+                exam-focused preparation for <strong>Math, Further Math,
+                English, Physics, Chemistry, Biology, and ICT / Computer
+                Science</strong> to secure top grades.<br>
+
+                • <strong>A-Level (Advanced Study):</strong> Rigorous
+                mentoring for complex modules in <strong>Math, Further Math,
+                Statistics, Mechanics, English, Physics, Chemistry, Biology,
+                and Computer Science</strong> to conquer university entry requirements.
             </div>
         </div>
 
@@ -1154,8 +1908,12 @@
                 <span>Are you an agency or a tutoring company?</span>
                 <span class="arrow">▼</span>
             </div>
+
             <div class="faq-answer">
-                We are <strong>not any agency</strong>! We are a dedicated group of <strong>professional tutors</strong>. Parents get to contact and communicate with the tutors <strong>directly</strong> with complete transparency.
+                We are <strong>not any agency</strong>! We are a dedicated
+                group of <strong>professional tutors</strong>. Parents get
+                to contact and communicate with the tutors
+                <strong>directly</strong> with complete transparency.
             </div>
         </div>
 
@@ -1164,8 +1922,12 @@
                 <span>What are your pricing and subscription charges?</span>
                 <span class="arrow">▼</span>
             </div>
+
             <div class="faq-answer">
-                Our standard charges are just <strong>£14 per hour</strong>, plus a mere <strong>£1 monthly fee</strong> for the number of subjects chosen. There are absolute <strong>zero hidden charges</strong>!
+                Our standard charges are just <strong>£14 per hour</strong>,
+                plus a mere <strong>£1 monthly fee</strong> for the number
+                of subjects chosen. There are absolute
+                <strong>zero hidden charges</strong>!
             </div>
         </div>
 
@@ -1174,8 +1936,12 @@
                 <span>What qualifications and experience do your tutors have?</span>
                 <span class="arrow">▼</span>
             </div>
+
             <div class="faq-answer">
-                All our tutors possess a minimum of <strong>10+ years of teaching experience</strong>, bringing deep academic expertise and proven student success results to every session.
+                All our tutors possess a minimum of
+                <strong>10+ years of teaching experience</strong>,
+                bringing deep academic expertise and proven student
+                success results to every session.
             </div>
         </div>
 
@@ -1184,66 +1950,102 @@
                 <span>Can students access notes or pages from past sessions?</span>
                 <span class="arrow">▼</span>
             </div>
+
             <div class="faq-answer">
-                <strong>Yes!</strong> All pages tutored during sessions are <strong>safely stored</strong> and can be accessed anytime by students for revision or completing homework assignments.
+                <strong>Yes!</strong> All pages tutored during sessions
+                are <strong>safely stored</strong> and can be accessed
+                anytime by students for revision or completing homework assignments.
             </div>
         </div>
+
     </div>
 
-    <!-- 5. Final Bottom Book Your Free Session Now -->
+    <!-- =========================
+         FINAL CTA
+    ========================= -->
+
     <div class="bottom-cta" style="margin-bottom: 50px;">
-        <a href="contact.html#callback-form" class="footer-cta-btn">Book Your Free Session Now</a>
+        <a href="contact.html#callback-form" class="footer-cta-btn">
+            Book Your Free Session Now
+        </a>
     </div>
 
-    <!-- ================= END OF SECTIONS ================= -->
+    <!-- =========================
+         JAVASCRIPT
+    ========================= -->
 
     <script>
         // Toggle main dropdown menu
+
         function toggleDropdown(event) {
             event.stopPropagation();
-            const dropdownContent = document.getElementById('subjectsDropdown');
+
+            const dropdownContent =
+                document.getElementById('subjectsDropdown');
+
             dropdownContent.classList.toggle('show');
         }
 
+
         // Toggle individual level accordion lists
+
         function toggleLevel(event, listId) {
             event.stopPropagation();
-            const allLists = document.getElementsByClassName("subjects-list");
+
+            const allLists =
+                document.getElementsByClassName("subjects-list");
+
             for (let i = 0; i < allLists.length; i++) {
                 if (allLists[i].id !== listId) {
                     allLists[i].classList.remove("active");
                 }
             }
 
-            const targetList = document.getElementById(listId);
+            const targetList =
+                document.getElementById(listId);
+
             targetList.classList.toggle("active");
         }
 
-        // Close dropdown when clicking anywhere outside of it
+
+        // Close dropdown when clicking outside
+
         window.onclick = function(event) {
+
             if (!event.target.closest('.dropdown')) {
-                const dropdownContent = document.getElementById('subjectsDropdown');
+
+                const dropdownContent =
+                    document.getElementById('subjectsDropdown');
+
                 if (dropdownContent) {
                     dropdownContent.classList.remove('show');
                 }
-                const allLists = document.getElementsByClassName("subjects-list");
+
+                const allLists =
+                    document.getElementsByClassName("subjects-list");
+
                 for (let i = 0; i < allLists.length; i++) {
                     allLists[i].classList.remove("active");
                 }
             }
-        }
+        };
 
-        // Manual Slider Logic for Parents Appreciation
+
+        // Parents appreciation slider
+
         let slideIndex = 0;
         const totalSlides = 10;
 
         function moveSlide(n) {
+
             slideIndex += n;
+
             if (slideIndex >= totalSlides) {
                 slideIndex = 0;
             } else if (slideIndex < 0) {
                 slideIndex = totalSlides - 1;
             }
+
             updateSlider();
         }
 
@@ -1253,37 +2055,76 @@
         }
 
         function updateSlider() {
-            const track = document.getElementById('sliderTrack');
-            const dots = document.getElementsByClassName('dot');
-            track.style.transform = 'translateX(' + (-slideIndex * 100) + '%)';
+
+            const track =
+                document.getElementById('sliderTrack');
+
+            const dots =
+                document.getElementsByClassName('dot');
+
+            track.style.transform =
+                'translateX(' + (-slideIndex * 100) + '%)';
+
             for (let i = 0; i < dots.length; i++) {
                 dots[i].classList.remove('active');
             }
+
             dots[slideIndex].classList.add('active');
         }
 
-        // FAQ Accordion Dropdown Logic (Closes all other FAQs when one is opened)
+
+        // FAQ accordion
+
         function toggleFaq(element) {
-            const parentItem = element.parentElement;
-            const allFaqItems = document.querySelectorAll('.faq-item');
+
+            const parentItem =
+                element.parentElement;
+
+            const allFaqItems =
+                document.querySelectorAll('.faq-item');
 
             allFaqItems.forEach(item => {
+
                 if (item !== parentItem) {
                     item.classList.remove('active');
                 }
+
             });
 
             parentItem.classList.toggle('active');
         }
+
     </script>
+
+    <!-- =========================
+         SERVICE WORKER
+    ========================= -->
+
     <script>
-      if ('serviceWorker' in navigator) {
-        window.addEventListener('load', () => {
-          navigator.serviceWorker.register('/sw.js')
-            .then((reg) => console.log('Service Worker registered successfully:', reg.scope))
-            .catch((err) => console.log('Service Worker registration failed:', err));
-        });
-      }
+        if ('serviceWorker' in navigator) {
+
+            window.addEventListener('load', () => {
+
+                navigator.serviceWorker.register('/sw.js')
+
+                    .then((reg) => {
+                        console.log(
+                            'Service Worker registered successfully:',
+                            reg.scope
+                        );
+                    })
+
+                    .catch((err) => {
+                        console.log(
+                            'Service Worker registration failed:',
+                            err
+                        );
+                    });
+
+            });
+
+        }
     </script>
+
 </body>
 </html>
