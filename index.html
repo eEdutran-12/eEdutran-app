@@ -1184,7 +1184,36 @@
                 padding: 6px 4px;
             }
         }
+/* MOBILE FIX — TRUST FLAGS BELOW HEADER */
+@media screen and (max-width: 768px) {
+    .wavy-flag-left,
+    .wavy-flag-right {
+        top: 0 !important;
+        position: relative !important;
+        z-index: 1 !important;
+    }
 
+    .trust-banner-row {
+        position: relative !important;
+        margin-top: 15px !important;
+        padding: 10px 8px !important;
+        display: flex !important;
+        justify-content: center !important;
+        align-items: center !important;
+        flex-wrap: wrap !important;
+        gap: 12px !important;
+        width: 100% !important;
+    }
+
+    .wavy-flag-left,
+    .wavy-flag-right {
+        margin: 0 !important;
+        max-width: 48% !important;
+        font-size: 11px !important;
+        text-align: center !important;
+    }
+}
+        
     </style>
 </head>
 
