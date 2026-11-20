@@ -5,7 +5,9 @@
     <meta name="theme-color" content="#317EFB">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
     <title>Contact Us - eEdutran Online Tutoring</title>
+
     <link href="https://fonts.googleapis.com/css2?family=Comic+Neue:wght@400;700&display=swap" rel="stylesheet">
 
     <style>
@@ -15,92 +17,137 @@
             padding: 0;
         }
 
+        html {
+            scroll-behavior: smooth;
+            scroll-padding-top: 150px;
+        }
+
         body {
-            background: linear-gradient(135deg, #2b989c 0%, #325a7b 30%, #5d3579 70%, #9e2a6b 100%);
-            font-family: 'Comic Sans MS', 'Comic Neue', 'Arial', sans-serif;
+            background: linear-gradient(
+                135deg,
+                #2b989c 0%,
+                #325a7b 30%,
+                #5d3579 70%,
+                #9e2a6b 100%
+            );
+
+            font-family: 'Comic Sans MS', 'Comic Neue', Arial, sans-serif;
             color: #ffffff;
             min-height: 100vh;
             overflow-x: hidden;
             position: relative;
         }
 
+        /* =========================================
+           HEADER
+        ========================================= */
+
         .top-header {
             position: fixed;
             top: 0;
             left: 0;
             width: 100%;
-            height: 54px;
+            min-height: 82px;
+
             display: flex;
             justify-content: space-between;
             align-items: center;
-            padding: 10px 15px;
+            gap: 15px;
+
+            padding: 12px 24px;
+
             background: rgba(43, 152, 156, 0.98);
-            backdrop-filter: blur(8px);
-            -webkit-backdrop-filter: blur(8px);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+
             z-index: 1000;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.3);
-            border-bottom: 2px solid #00e5ff;
+
+            box-shadow: 0 4px 18px rgba(0,0,0,0.35);
+            border-bottom: 3px solid #00e5ff;
         }
+
+        /* LOGO */
 
         .logo-container {
             display: flex;
             align-items: center;
-            gap: 8px;
+            gap: 10px;
             text-decoration: none;
+            flex-shrink: 0;
         }
 
         .logo-icon {
-            width: 32px;
-            height: 32px;
+            width: 45px;
+            height: 45px;
             border-radius: 50%;
-            background: conic-gradient(from 180deg at 50% 50%, #9b51e0, #27ae60, #f2c94c, #eb5757, #9b51e0);
+
+            background: conic-gradient(
+                from 180deg,
+                #9b51e0,
+                #27ae60,
+                #f2c94c,
+                #eb5757,
+                #9b51e0
+            );
+
             display: flex;
             align-items: center;
             justify-content: center;
+
             font-weight: bold;
-            font-size: 16px;
+            font-size: 23px;
             color: #ffffff;
-            box-shadow: 0 0 8px rgba(255,255,255,0.5);
+
+            box-shadow: 0 0 12px rgba(255,255,255,0.5);
+
             font-family: 'Arial Black', sans-serif;
+            border: 2px solid white;
         }
 
         .logo-text {
             display: flex;
             flex-direction: column;
-            line-height: 1.1;
+            line-height: 1.15;
         }
 
         .logo-title {
-            font-family: 'Verdana', sans-serif;
-            font-size: 13px;
+            font-family: Verdana, sans-serif;
+            font-size: 23px;
             font-weight: bold;
             color: #ffffff;
-            letter-spacing: -0.3px;
+            letter-spacing: -0.5px;
         }
 
         .logo-subtitle {
             font-family: 'Courier New', monospace;
-            font-size: 7px;
+            font-size: 10px;
             color: #76ff03;
             font-weight: bold;
-            letter-spacing: 0.8px;
+            letter-spacing: 1.5px;
         }
+
+        /* NAVIGATION */
 
         .nav-container {
             display: flex;
             align-items: center;
-            gap: 8px;
+            justify-content: flex-end;
+            gap: 10px;
+            flex-wrap: wrap;
         }
 
         .nav-link {
             background: #1b1464;
             border: 2px solid #00e5ff;
             color: #00e5ff;
+
             font-family: 'Lucida Console', monospace;
-            font-size: 11px;
+            font-size: 13px;
             font-weight: bold;
+
             border-radius: 9999px;
-            padding: 5px 12px;
+            padding: 9px 15px;
+
             text-decoration: none;
             transition: all 0.2s ease;
             white-space: nowrap;
@@ -109,8 +156,11 @@
         .nav-link:hover {
             background: #00e5ff;
             color: #1b1464;
-            box-shadow: 0 0 10px #00e5ff;
+            box-shadow: 0 0 12px #00e5ff;
+            transform: translateY(-2px);
         }
+
+        /* DROPDOWN */
 
         .dropdown {
             position: relative;
@@ -121,37 +171,46 @@
             background: #6f1e51;
             border: 2px solid #ffea00;
             color: #ffea00;
+
             font-family: 'Trebuchet MS', sans-serif;
-            font-size: 11px;
+            font-size: 13px;
             font-weight: 900;
+
             border-radius: 9999px;
-            padding: 5px 12px;
+            padding: 9px 15px;
+
             cursor: pointer;
             transition: all 0.2s ease;
             white-space: nowrap;
-            outline: none;
         }
 
-        .dropbtn:hover, .dropdown.active .dropbtn {
+        .dropbtn:hover,
+        .dropdown.active .dropbtn {
             background: #ffea00;
             color: #6f1e51;
-            box-shadow: 0 0 10px #ffea00;
+            box-shadow: 0 0 12px #ffea00;
         }
 
         .dropdown-content {
             display: none;
             position: absolute;
-            top: 38px;
+            top: calc(100% + 10px);
             right: 0;
+
             background: #1e1e2f;
-            min-width: 230px;
-            max-height: 300px;
+            width: 260px;
+            max-width: calc(100vw - 20px);
+            max-height: 65vh;
+
             overflow-y: auto;
+
             border: 2px solid #ffea00;
-            border-radius: 12px;
+            border-radius: 14px;
+
             box-shadow: 0 10px 25px rgba(0,0,0,0.6);
+
             z-index: 1001;
-            padding: 10px;
+            padding: 12px;
         }
 
         .dropdown-content.show {
@@ -160,26 +219,40 @@
         }
 
         @keyframes fadeIn {
-            from { opacity: 0; transform: translateY(-8px); }
-            to { opacity: 1; transform: translateY(0); }
+            from {
+                opacity: 0;
+                transform: translateY(-8px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
         }
 
         .level-accordion-btn {
             width: 100%;
+
             background: #2c2c54;
             border: 1px solid #ffea00;
             color: #ffea00;
-            padding: 6px 10px;
-            margin-bottom: 6px;
+
+            padding: 10px 12px;
+            margin-bottom: 7px;
+
             border-radius: 8px;
-            font-size: 11px;
+
+            font-size: 13px;
             font-weight: bold;
             font-family: 'Trebuchet MS', sans-serif;
+
             text-align: left;
             cursor: pointer;
+
             display: flex;
             justify-content: space-between;
             align-items: center;
+
             transition: background 0.2s;
         }
 
@@ -189,8 +262,10 @@
 
         .sub-subject-list {
             display: none;
-            padding: 4px 8px 8px 12px;
-            margin-bottom: 6px;
+
+            padding: 5px 8px 10px 14px;
+            margin-bottom: 7px;
+
             border-left: 2px solid #00e5ff;
         }
 
@@ -199,9 +274,11 @@
         }
 
         .sub-subject-item {
-            font-size: 11px;
+            font-size: 13px;
             color: #f1f2f6;
-            padding: 2px 0;
+
+            padding: 4px 0;
+
             display: block;
             text-decoration: none;
         }
@@ -210,17 +287,24 @@
             color: #00e5ff;
         }
 
+        /* FREE TRIAL BUTTON */
+
         .header-cta-btn {
             background: #e58e26;
             border: 2px solid #fff200;
             color: #ffffff;
-            font-family: 'Impact', sans-serif;
-            font-size: 11px;
+
+            font-family: Impact, sans-serif;
+            font-size: 13px;
             letter-spacing: 0.5px;
+
             border-radius: 9999px;
-            padding: 5px 12px;
+            padding: 9px 16px;
+
             text-shadow: 1px 1px 2px rgba(0,0,0,0.5);
+
             box-shadow: 0 2px 8px rgba(0,0,0,0.3);
+
             transition: all 0.2s ease;
             text-decoration: none;
             white-space: nowrap;
@@ -232,65 +316,91 @@
             background: #f39c12;
         }
 
+        /* =========================================
+           TRUST BANNERS
+           IMPORTANT: These are now in normal flow.
+           They cannot overlap the header.
+        ========================================= */
+
         @keyframes waveMotion {
-            0% { transform: translateY(0px) rotate(0deg); }
-            100% { transform: translateY(5px) rotate(1.5deg); }
+            0% {
+                transform: translateY(0px) rotate(0deg);
+            }
+
+            100% {
+                transform: translateY(4px) rotate(1deg);
+            }
+        }
+
+        .trust-banner-row {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 12px;
+
+            width: 100%;
+            padding: 10px 22px 0;
+        }
+
+        .wavy-flag-left,
+        .wavy-flag-right {
+            position: relative;
+
+            z-index: 1;
+
+            border: 2px solid #ffffff;
+            border-radius: 12px;
+
+            padding: 8px 14px;
+
+            font-size: 12px;
+            font-weight: bold;
+
+            box-shadow: 0 6px 15px rgba(0,0,0,0.3);
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            gap: 6px;
+
+            text-decoration: none;
+
+            animation: waveMotion 3s ease-in-out infinite alternate;
+
+            text-align: center;
         }
 
         .wavy-flag-left {
-            position: fixed;
-            top: 54px;
-            left: 20px;
-            z-index: 999;
             background: linear-gradient(135deg, #00b09b, #96c93d);
-            border: 2px solid #ffffff;
-            border-top: none;
-            border-radius: 0 0 12px 12px;
-            padding: 5px 12px;
-            font-size: 11px;
-            font-weight: bold;
             color: #111111;
-            box-shadow: 0 6px 15px rgba(0,0,0,0.3);
-            animation: waveMotion 3s ease-in-out infinite alternate;
-            text-decoration: none;
-            display: flex;
-            align-items: center;
-            gap: 5px;
         }
 
         .wavy-flag-right {
-            position: fixed;
-            top: 54px;
-            right: 20px;
-            z-index: 999;
             background: linear-gradient(135deg, #f857a6, #ff5858);
-            border: 2px solid #ffffff;
-            border-top: none;
-            border-radius: 0 0 12px 12px;
-            padding: 5px 12px;
-            font-size: 11px;
-            font-weight: bold;
             color: #ffffff;
-            box-shadow: 0 6px 15px rgba(0,0,0,0.3);
-            animation: waveMotion 3s ease-in-out infinite alternate-reverse;
-            display: flex;
-            align-items: center;
-            gap: 5px;
+            animation-direction: alternate-reverse;
         }
 
         .trustpilot-star-box {
             background: #00b67a;
             color: #fff;
-            padding: 1px 5px;
-            border-radius: 3px;
-            font-size: 9px;
+
+            padding: 2px 6px;
+            border-radius: 4px;
+
+            font-size: 10px;
             letter-spacing: 0.5px;
         }
 
+        /* =========================================
+           MAIN CONTENT
+        ========================================= */
+
         .main-container {
-            max-width: 980px;
-            margin: 110px auto 40px auto;
-            padding: 0 20px;
+            max-width: 1100px;
+            margin: 20px auto 40px auto;
+            padding: 0 22px;
         }
 
         .hero-title-badge {
@@ -302,32 +412,45 @@
             background: #ff4757;
             border: 3px solid #ffa502;
             color: #ffffff;
-            font-family: 'Impact', 'Arial Black', sans-serif;
+
+            font-family: Impact, 'Arial Black', sans-serif;
+
             border-radius: 9999px;
-            padding: 6px 26px;
-            font-size: 22px;
+            padding: 8px 28px;
+
+            font-size: 24px;
             letter-spacing: 1px;
+
             display: inline-block;
+
             text-shadow: 2px 2px 0px #000;
+
             box-shadow: 0 5px 15px rgba(0,0,0,0.4);
+
             transform: rotate(-1deg);
         }
 
         .hero-heading {
             text-align: center;
-            font-size: 28px;
+
+            font-size: 32px;
             font-weight: 900;
-            line-height: 1.25;
-            margin-bottom: 12px;
+            line-height: 1.3;
+
+            margin-bottom: 14px;
+
             text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
         }
 
         .hero-subtext {
             text-align: center;
-            font-size: 15px;
+
+            font-size: 16px;
             max-width: 780px;
+
             margin: 0 auto 25px auto;
-            line-height: 1.6;
+
+            line-height: 1.7;
             color: #f1f2f6;
         }
 
@@ -340,33 +463,60 @@
             background: linear-gradient(135deg, #25D366, #128C7E);
             border: 2px solid #ffea00;
             color: #ffffff;
-            font-family: 'Impact', 'Arial Black', sans-serif;
-            font-size: 16px;
+
+            font-family: Impact, 'Arial Black', sans-serif;
+            font-size: 17px;
             letter-spacing: 0.8px;
+
             border-radius: 9999px;
-            padding: 12px 28px;
+            padding: 14px 28px;
+
             text-shadow: 1px 1px 2px rgba(0,0,0,0.6);
+
             box-shadow: 0 4px 15px rgba(0,0,0,0.4);
+
             transition: all 0.25s ease;
             text-decoration: none;
             display: inline-block;
         }
 
         .inline-cta-btn:hover {
-            transform: scale(1.05);
+            transform: scale(1.04);
             box-shadow: 0 0 18px #ffea00;
-            background: linear-gradient(135deg, #128C7E, #25D366);
+
+            background: linear-gradient(
+                135deg,
+                #128C7E,
+                #25D366
+            );
         }
 
-        .neon-cyan { color: #00ffff; text-shadow: 0 0 6px rgba(0,255,255,0.5); }
-        .neon-yellow { color: #ffea00; text-shadow: 0 0 6px rgba(255,234,0,0.5); }
-        .neon-pink { color: #ff9ff3; text-shadow: 0 0 6px rgba(255,159,243,0.5); }
-        .neon-green { color: #00e676; text-shadow: 0 0 6px rgba(0,230,118,0.5); }
+        .neon-cyan {
+            color: #00ffff;
+            text-shadow: 0 0 6px rgba(0,255,255,0.5);
+        }
+
+        .neon-yellow {
+            color: #ffea00;
+            text-shadow: 0 0 6px rgba(255,234,0,0.5);
+        }
+
+        .neon-pink {
+            color: #ff9ff3;
+            text-shadow: 0 0 6px rgba(255,159,243,0.5);
+        }
+
+        .neon-green {
+            color: #00e676;
+            text-shadow: 0 0 6px rgba(0,230,118,0.5);
+        }
+
+        /* GRID */
 
         .grid-2 {
             display: grid;
             grid-template-columns: 1fr 1fr;
-            gap: 20px;
+            gap: 22px;
             margin-bottom: 25px;
         }
 
@@ -377,57 +527,79 @@
             margin-bottom: 25px;
         }
 
-        @media (max-width: 768px) {
-            .grid-2, .grid-3 {
-                grid-template-columns: 1fr;
-            }
-
-            .wavy-flag-left, .wavy-flag-right {
-                font-size: 9px;
-                padding: 4px 8px;
-            }
-
-            .wavy-flag-left { left: 8px; }
-            .wavy-flag-right { right: 8px; }
-
-            .main-container {
-                margin-top: 120px;
-            }
-        }
+        /* CARDS */
 
         .card-item {
             border-radius: 18px;
-            padding: 22px;
+            padding: 25px;
+
             box-shadow: 0 8px 25px rgba(0,0,0,0.35);
-            transition: transform 0.25s ease, box-shadow 0.25s ease;
+
+            transition:
+                transform 0.25s ease,
+                box-shadow 0.25s ease;
         }
 
         .card-item:hover {
             transform: translateY(-4px);
+
             box-shadow: 0 12px 28px rgba(0,0,0,0.45);
         }
 
-        .bg-card-slate { background: #1e272e; border: 2px solid #00d2d3; }
-        .bg-card-navy { background: #0a3d62; border: 2px solid #00e676; }
-        .bg-card-crimson { background: #b71540; border: 2px solid #ff7979; }
-        .bg-card-royal { background: #0c2461; border: 2px solid #4a69bd; }
-        .bg-card-coral { background: #e55039; border: 2px solid #ffb8b8; }
-        .bg-card-magenta { background: #6f1e51; border: 2px solid #ff9ff3; }
-        .bg-card-indigo { background: #3b3b98; border: 2px solid #ffea00; }
-        .bg-card-darknavy { background: #192a56; border: 2px solid #fd79a8; }
+        .bg-card-slate {
+            background: #1e272e;
+            border: 2px solid #00d2d3;
+        }
+
+        .bg-card-navy {
+            background: #0a3d62;
+            border: 2px solid #00e676;
+        }
+
+        .bg-card-crimson {
+            background: #b71540;
+            border: 2px solid #ff7979;
+        }
+
+        .bg-card-royal {
+            background: #0c2461;
+            border: 2px solid #4a69bd;
+        }
+
+        .bg-card-coral {
+            background: #e55039;
+            border: 2px solid #ffb8b8;
+        }
+
+        .bg-card-magenta {
+            background: #6f1e51;
+            border: 2px solid #ff9ff3;
+        }
+
+        .bg-card-indigo {
+            background: #3b3b98;
+            border: 2px solid #ffea00;
+        }
+
+        .bg-card-darknavy {
+            background: #192a56;
+            border: 2px solid #fd79a8;
+        }
 
         .card-heading {
-            font-size: 18px;
+            font-size: 20px;
             font-weight: bold;
-            margin-bottom: 10px;
+
+            margin-bottom: 12px;
+
             display: flex;
             align-items: center;
             gap: 8px;
         }
 
         .card-body-text {
-            font-size: 13.5px;
-            line-height: 1.6;
+            font-size: 15px;
+            line-height: 1.7;
             color: #f1f2f6;
         }
 
@@ -435,49 +607,76 @@
             color: #00ffff;
             text-decoration: underline;
             font-weight: bold;
+            overflow-wrap: anywhere;
         }
 
         .contact-link:hover {
             color: #ffea00;
         }
 
+        .feature-badge {
+            margin-top: 18px;
+            font-weight: bold;
+            font-size: 13px;
+        }
+
+        /* =========================================
+           CALLBACK FORM
+        ========================================= */
+
         .contact-form-container {
-            background: rgba(30, 39, 46, 0.95);
+            background: rgba(30, 39, 46, 0.96);
+
             border: 3px solid #00e5ff;
             border-radius: 20px;
-            padding: 28px 24px;
+
+            padding: 32px;
+
             box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+
             margin-bottom: 30px;
         }
 
         .form-section-title {
-            font-size: 16px;
+            font-size: 17px;
             font-weight: bold;
+
             color: #ffea00;
-            margin-top: 18px;
-            margin-bottom: 10px;
+
+            margin-top: 22px;
+            margin-bottom: 12px;
+
             border-bottom: 1px dashed rgba(255,234,0,0.4);
-            padding-bottom: 4px;
+
+            padding-bottom: 6px;
         }
 
         .form-label {
             display: block;
-            font-size: 13px;
+
+            font-size: 14px;
             font-weight: bold;
+
             color: #ffffff;
-            margin-bottom: 6px;
+            margin-bottom: 8px;
         }
 
         .form-control {
             width: 100%;
-            padding: 10px 14px;
+
+            padding: 12px 14px;
+
             border-radius: 10px;
             border: 2px solid #2e86de;
+
             background: #0f172a;
             color: #ffffff;
+
             font-family: inherit;
-            font-size: 13px;
+            font-size: 15px;
+
             outline: none;
+
             transition: border-color 0.2s;
         }
 
@@ -486,24 +685,39 @@
             box-shadow: 0 0 8px rgba(0,229,255,0.5);
         }
 
-        .radio-grid, .checkbox-grid {
+        .radio-grid,
+        .checkbox-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+
+            grid-template-columns: repeat(
+                auto-fill,
+                minmax(150px, 1fr)
+            );
+
             gap: 10px;
-            margin-bottom: 12px;
+            margin-bottom: 14px;
         }
 
         .custom-option {
             background: rgba(255,255,255,0.08);
+
             border: 1px solid rgba(255,255,255,0.2);
-            padding: 8px 12px;
+
+            padding: 10px 12px;
+
             border-radius: 8px;
+
             display: flex;
             align-items: center;
-            gap: 8px;
+            gap: 9px;
+
             cursor: pointer;
-            font-size: 12px;
+
+            font-size: 14px;
+
             transition: background 0.2s;
+
+            min-height: 42px;
         }
 
         .custom-option:hover {
@@ -513,9 +727,14 @@
 
         .custom-option input {
             accent-color: #ffea00;
-            width: 15px;
-            height: 15px;
+
+            width: 17px;
+            height: 17px;
+
+            flex-shrink: 0;
         }
+
+        /* PHONE */
 
         .phone-group {
             display: flex;
@@ -524,33 +743,49 @@
 
         .phone-code-select {
             width: 35%;
-            min-width: 110px;
+            min-width: 120px;
         }
 
         .phone-number-input {
             width: 65%;
         }
 
+        /* SUBMIT BUTTON */
+
         .form-submit-btn {
             background: linear-gradient(135deg, #eb2f06, #ff5e57);
+
             border: 2px solid #ffea00;
             color: #ffffff;
-            font-family: 'Impact', 'Arial Black', sans-serif;
-            font-size: 18px;
+
+            font-family: Impact, 'Arial Black', sans-serif;
+            font-size: 20px;
             letter-spacing: 1px;
+
             border-radius: 9999px;
-            padding: 12px 30px;
+            padding: 15px 30px;
+
             cursor: pointer;
             width: 100%;
-            margin-top: 20px;
+
+            margin-top: 22px;
+
             text-shadow: 1px 1px 2px #000;
+
             box-shadow: 0 5px 20px rgba(235,47,6,0.6);
+
             transition: all 0.25s ease;
         }
 
         .form-submit-btn:hover:not(:disabled) {
             transform: scale(1.02);
-            background: linear-gradient(135deg, #ff5e57, #eb2f06);
+
+            background: linear-gradient(
+                135deg,
+                #ff5e57,
+                #eb2f06
+            );
+
             box-shadow: 0 0 22px #ffea00;
         }
 
@@ -561,61 +796,91 @@
 
         #formMessage {
             display: none;
+
             margin-top: 16px;
-            padding: 12px 14px;
+            padding: 14px;
+
             border-radius: 8px;
-            font-size: 13px;
-            line-height: 1.5;
+
+            font-size: 14px;
+            line-height: 1.6;
+
             overflow-wrap: anywhere;
         }
 
         #formMessage.info {
             display: block;
+
             color: #ffffff;
             background: rgba(46, 134, 222, 0.2);
+
             border: 1px solid #2e86de;
         }
 
         #formMessage.error {
             display: block;
+
             color: #ffffff;
             background: rgba(183, 21, 64, 0.35);
+
             border: 1px solid #ff7979;
         }
 
         #formMessage.success {
             display: block;
+
             color: #ffffff;
             background: rgba(0, 184, 148, 0.25);
+
             border: 1px solid #00b894;
         }
 
+        /* =========================================
+           FOOTER CTA
+        ========================================= */
+
         .footer-cta-container {
             text-align: center;
+
             background: rgba(0,0,0,0.35);
+
             border: 3px solid #ffea00;
             border-radius: 24px;
-            padding: 30px 20px;
+
+            padding: 35px 25px;
+
             margin: 35px 0;
+
             box-shadow: 0 8px 25px rgba(0,0,0,0.4);
         }
 
         .footer-cta-btn {
             background: #eb2f06;
             border: 3px solid #ff7979;
+
             color: #ffffff;
+
             border-radius: 30px;
-            padding: 12px 30px;
+
+            padding: 14px 30px;
+
             font-weight: 900;
-            font-size: 14px;
+            font-size: 16px;
+
             cursor: pointer;
+
             text-transform: uppercase;
             letter-spacing: 1px;
+
             box-shadow: 0 5px 18px rgba(235, 47, 6, 0.6);
+
             transition: all 0.25s ease;
+
             text-decoration: none;
             display: inline-block;
-            margin-top: 12px;
+
+            margin-top: 15px;
+
             text-shadow: 1px 1px 2px #000;
         }
 
@@ -625,93 +890,322 @@
             box-shadow: 0 0 25px #ff7979;
         }
 
+        /* FOOTER */
+
         footer {
             text-align: center;
-            font-size: 11px;
+
+            font-size: 12px;
             color: #dcdde1;
-            padding: 20px 0 30px 0;
+
+            padding: 25px 15px 35px;
+
             border-top: 1px solid rgba(255,255,255,0.15);
+
+            line-height: 1.7;
         }
 
-        @media (max-width: 520px) {
+        /* =========================================
+           TABLET
+        ========================================= */
+
+        @media (max-width: 900px) {
+
             .top-header {
-                padding-left: 8px;
-                padding-right: 8px;
-            }
-
-            .nav-container {
-                gap: 4px;
-            }
-
-            .nav-link, .dropbtn, .header-cta-btn {
-                font-size: 9px;
-                padding: 5px 7px;
-            }
-
-            .logo-container {
-                gap: 5px;
+                padding: 12px 15px;
+                gap: 10px;
             }
 
             .logo-title {
-                font-size: 11px;
+                font-size: 20px;
             }
 
-            .logo-subtitle {
-                font-size: 6px;
+            .nav-container {
+                gap: 6px;
+            }
+
+            .nav-link,
+            .dropbtn,
+            .header-cta-btn {
+                font-size: 11px;
+                padding: 8px 11px;
+            }
+
+            .trust-banner-row {
+                padding-left: 15px;
+                padding-right: 15px;
+            }
+
+            .wavy-flag-left,
+            .wavy-flag-right {
+                font-size: 11px;
+                padding: 7px 10px;
+            }
+
+            .grid-2 {
+                gap: 15px;
+            }
+        }
+
+        /* =========================================
+           MOBILE
+        ========================================= */
+
+        @media (max-width: 650px) {
+
+            .top-header {
+                position: fixed;
+
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+
+                gap: 10px;
+
+                padding: 12px 8px;
+
+                min-height: auto;
+            }
+
+            .logo-container {
+                justify-content: center;
             }
 
             .logo-icon {
-                width: 27px;
-                height: 27px;
+                width: 38px;
+                height: 38px;
+                font-size: 21px;
+            }
+
+            .logo-title {
+                font-size: 21px;
+            }
+
+            .logo-subtitle {
+                font-size: 9px;
+                letter-spacing: 1.2px;
+            }
+
+            .nav-container {
+                justify-content: center;
+                align-items: center;
+
+                width: 100%;
+                gap: 5px;
+            }
+
+            .nav-link,
+            .dropbtn,
+            .header-cta-btn {
+                font-size: 10px;
+                padding: 8px 9px;
+            }
+
+            .dropdown-content {
+                right: auto;
+                left: 50%;
+
+                transform: translateX(-50%);
+
+                width: 260px;
+                max-width: calc(100vw - 20px);
+            }
+
+            .dropdown-content.show {
+                animation: fadeIn 0.2s ease-out;
+            }
+
+            .trust-banner-row {
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+
+                gap: 8px;
+
+                padding: 12px 10px 0;
+            }
+
+            .wavy-flag-left,
+            .wavy-flag-right {
+                width: 100%;
+                max-width: 350px;
+
+                font-size: 11px;
+                padding: 8px 10px;
+            }
+
+            .main-container {
+                margin: 18px auto 30px;
+                padding: 0 12px;
             }
 
             .hero-heading {
-                font-size: 23px;
+                font-size: 25px;
+            }
+
+            .hero-subtext {
+                font-size: 14px;
+                padding: 0 5px;
             }
 
             .badge-text {
+                font-size: 19px;
+                padding: 7px 20px;
+            }
+
+            .inline-cta-btn {
+                font-size: 14px;
+                padding: 13px 17px;
+
+                width: 100%;
+                max-width: 420px;
+            }
+
+            .grid-2,
+            .grid-3 {
+                grid-template-columns: 1fr;
+                gap: 14px;
+            }
+
+            .card-item {
+                padding: 20px;
+            }
+
+            .card-heading {
                 font-size: 18px;
-                padding: 6px 18px;
+            }
+
+            .card-body-text {
+                font-size: 14px;
             }
 
             .contact-form-container {
-                padding: 22px 16px;
+                padding: 23px 15px;
+            }
+
+            .radio-grid,
+            .checkbox-grid {
+                grid-template-columns: repeat(2, minmax(0, 1fr));
+                gap: 8px;
+            }
+
+            .custom-option {
+                font-size: 12px;
+                padding: 9px 8px;
             }
 
             .phone-group {
-                flex-wrap: wrap;
+                flex-direction: column;
             }
 
             .phone-code-select,
             .phone-number-input {
                 width: 100%;
             }
+
+            .form-submit-btn {
+                font-size: 17px;
+                padding: 14px 15px;
+            }
+
+            .footer-cta-container {
+                padding: 25px 15px;
+            }
+
+            .footer-cta-container h2 {
+                font-size: 21px !important;
+            }
+
+            .footer-cta-btn {
+                width: 100%;
+                max-width: 350px;
+                font-size: 14px;
+            }
         }
+
+        /* SMALL PHONES */
+
+        @media (max-width: 380px) {
+
+            .logo-title {
+                font-size: 19px;
+            }
+
+            .nav-container {
+                gap: 4px;
+            }
+
+            .nav-link,
+            .dropbtn,
+            .header-cta-btn {
+                font-size: 9px;
+                padding: 7px 7px;
+            }
+
+            .hero-heading {
+                font-size: 22px;
+            }
+
+            .badge-text {
+                font-size: 17px;
+            }
+
+            .radio-grid,
+            .checkbox-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
     </style>
 </head>
 
 <body>
+
+    <!-- =========================================
+         HEADER
+    ========================================= -->
+
     <header class="top-header">
+
         <a href="index.html" class="logo-container">
+
             <div class="logo-icon">e</div>
+
             <div class="logo-text">
                 <span class="logo-title">eEdutran</span>
                 <span class="logo-subtitle">ONLINE TUTORING</span>
             </div>
+
         </a>
 
         <nav class="nav-container">
-            <a href="index.html" class="nav-link">Homepage</a>
+
+            <a href="index.html" class="nav-link">
+                Homepage
+            </a>
 
             <div class="dropdown" id="levelsDropdown">
-                <button type="button" class="dropbtn" onclick="toggleDropdown(event)">
+
+                <button
+                    type="button"
+                    class="dropbtn"
+                    onclick="toggleDropdown(event)"
+                >
                     Levels &amp; Subjects ▼
                 </button>
 
                 <div class="dropdown-content" id="subjectsDropdown">
-                    <button type="button" class="level-accordion-btn" onclick="toggleLevel(event, 'ks2-list')">
+
+                    <!-- KS2 -->
+
+                    <button
+                        type="button"
+                        class="level-accordion-btn"
+                        onclick="toggleLevel(event, 'ks2-list')"
+                    >
                         KS2 Level <span>▼</span>
                     </button>
+
                     <div class="sub-subject-list" id="ks2-list">
                         <a href="#" class="sub-subject-item">• Science</a>
                         <a href="#" class="sub-subject-item">• Math</a>
@@ -719,9 +1213,16 @@
                         <a href="#" class="sub-subject-item">• Coding</a>
                     </div>
 
-                    <button type="button" class="level-accordion-btn" onclick="toggleLevel(event, 'ks3-list')">
+                    <!-- KS3 -->
+
+                    <button
+                        type="button"
+                        class="level-accordion-btn"
+                        onclick="toggleLevel(event, 'ks3-list')"
+                    >
                         KS3 Level <span>▼</span>
                     </button>
+
                     <div class="sub-subject-list" id="ks3-list">
                         <a href="#" class="sub-subject-item">• English</a>
                         <a href="#" class="sub-subject-item">• Math</a>
@@ -733,9 +1234,16 @@
                         <a href="#" class="sub-subject-item">• Coding</a>
                     </div>
 
-                    <button type="button" class="level-accordion-btn" onclick="toggleLevel(event, 'gcse-list')">
+                    <!-- GCSE -->
+
+                    <button
+                        type="button"
+                        class="level-accordion-btn"
+                        onclick="toggleLevel(event, 'gcse-list')"
+                    >
                         GCSE Level <span>▼</span>
                     </button>
+
                     <div class="sub-subject-list" id="gcse-list">
                         <a href="#" class="sub-subject-item">• English</a>
                         <a href="#" class="sub-subject-item">• Math</a>
@@ -746,9 +1254,16 @@
                         <a href="#" class="sub-subject-item">• ICT / Computer Science</a>
                     </div>
 
-                    <button type="button" class="level-accordion-btn" onclick="toggleLevel(event, 'alevel-list')">
+                    <!-- A LEVEL -->
+
+                    <button
+                        type="button"
+                        class="level-accordion-btn"
+                        onclick="toggleLevel(event, 'alevel-list')"
+                    >
                         A Level <span>▼</span>
                     </button>
+
                     <div class="sub-subject-list" id="alevel-list">
                         <a href="#" class="sub-subject-item">• English</a>
                         <a href="#" class="sub-subject-item">• Math</a>
@@ -760,91 +1275,209 @@
                         <a href="#" class="sub-subject-item">• Biology</a>
                         <a href="#" class="sub-subject-item">• Computer Science</a>
                     </div>
+
                 </div>
             </div>
 
-            <a href="about.html" class="nav-link">About</a>
-            <a href="#callback-form" class="header-cta-btn">Free Trial</a>
+            <a href="about.html" class="nav-link">
+                About
+            </a>
+
+            <a href="#callback-form" class="header-cta-btn">
+                Free Trial
+            </a>
+
         </nav>
+
     </header>
 
-    <a href="#" class="wavy-flag-left">
-        <span>Reviews on</span>
-        <span style="color:#000;font-weight:900;">★ Trustpilot</span>
-        <span class="trustpilot-star-box">★★★★★</span>
-    </a>
+    <!-- =========================================
+         TRUST BANNERS
+    ========================================= -->
 
-    <div class="wavy-flag-right">
-        <span>🎓 UK'S Most Trusted Tutoring</span>
+    <div class="trust-banner-row">
+
+        <a href="#" class="wavy-flag-left">
+
+            <span>Reviews on</span>
+
+            <span style="color:#000;font-weight:900;">
+                ★ Trustpilot
+            </span>
+
+            <span class="trustpilot-star-box">
+                ★★★★★
+            </span>
+
+        </a>
+
+        <div class="wavy-flag-right">
+
+            <span>🎓 UK'S Most Trusted Tutoring</span>
+
+        </div>
+
     </div>
 
+    <!-- =========================================
+         MAIN CONTENT
+    ========================================= -->
+
     <main class="main-container">
+
         <div class="hero-title-badge">
-            <div class="badge-text">CONTACT eEDUTRAN</div>
+            <div class="badge-text">
+                CONTACT eEDUTRAN
+            </div>
         </div>
 
         <h1 class="hero-heading">
+
             Connect Directly with Your Tutors<br>
-            <span class="neon-yellow">No Middlemen. No Wait Times.</span>
+
+            <span class="neon-yellow">
+                No Middlemen. No Wait Times.
+            </span>
+
         </h1>
 
         <p class="hero-subtext">
-            Have questions about key stages, exam boards, or scheduling? Reach out to us on WhatsApp or fill in the short form below to request a callback and claim your free trial.
+
+            Have questions about key stages, exam boards, or scheduling?
+            Reach out to us on WhatsApp or fill in the short form below
+            to request a callback and claim your free trial.
+
         </p>
 
+        <!-- WHATSAPP CTA -->
+
         <div class="cta-banner-container">
-            <a href="https://wa.me/447462215924" target="_blank" rel="noopener noreferrer" class="inline-cta-btn">
+
+            <a
+                href="https://wa.me/447462215924"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="inline-cta-btn"
+            >
                 💬 CHAT ON WHATSAPP (+44 7462 215924)
             </a>
+
         </div>
 
+        <!-- CONTACT CARDS -->
+
         <div class="grid-2">
+
+            <!-- CONTACT DETAILS -->
+
             <div class="card-item bg-card-slate">
+
                 <div class="card-heading neon-cyan">
-                    <span>📱</span> Direct Reachability
+                    <span>📱</span>
+                    Direct Reachability
                 </div>
+
                 <div class="card-body-text">
-                    <p style="margin-bottom:10px;">
+
+                    <p style="margin-bottom:12px;">
+
                         <strong>WhatsApp:</strong>
-                        <a href="https://wa.me/447462215924" class="contact-link">+44 7462 215924</a>
+
+                        <a
+                            href="https://wa.me/447462215924"
+                            class="contact-link"
+                        >
+                            +44 7462 215924
+                        </a>
+
                     </p>
-                    <p style="margin-bottom:10px;">
+
+                    <p style="margin-bottom:12px;">
+
                         <strong>Email:</strong>
-                        <a href="mailto:eedutran.tutor@gmail.com" class="contact-link">eedutran.tutor@gmail.com</a>
+
+                        <a
+                            href="mailto:eedutran.tutor@gmail.com"
+                            class="contact-link"
+                        >
+                            eedutran.tutor@gmail.com
+                        </a>
+
                     </p>
-                    <p><em>We usually respond within 30 minutes on WhatsApp!</em></p>
+
+                    <p>
+                        <em>
+                            We usually respond within 30 minutes on WhatsApp!
+                        </em>
+                    </p>
+
                 </div>
+
                 <div class="feature-badge neon-green">
                     ⚡ Fast Direct Parent–Tutor Communication
                 </div>
+
             </div>
 
+            <!-- HOURS -->
+
             <div class="card-item bg-card-indigo">
+
                 <div class="card-heading neon-yellow">
-                    <span>⏰</span> Teaching Hours Everyday
+                    <span>⏰</span>
+                    Teaching Hours Everyday
                 </div>
+
                 <div class="card-body-text">
-                    <p style="margin-bottom:8px;">
-                        <strong>🗓️ Operating Days:</strong> 7 Days a Week (Monday – Sunday)
+
+                    <p style="margin-bottom:10px;">
+
+                        <strong>🗓️ Operating Days:</strong>
+
+                        7 Days a Week (Monday – Sunday)
+
                     </p>
-                    <p style="margin-bottom:8px;">
-                        <strong>🕒 Daily Schedule:</strong> 6:00 AM – 10:00 PM (UK / GMT)
+
+                    <p style="margin-bottom:10px;">
+
+                        <strong>🕒 Daily Schedule:</strong>
+
+                        6:00 AM – 10:00 PM (UK / GMT)
+
                     </p>
-                    <p>Flexible morning and evening slots tailored around school hours.</p>
+
+                    <p>
+                        Flexible morning and evening slots tailored around school hours.
+                    </p>
+
                 </div>
+
                 <div class="feature-badge neon-pink">
                     ⭐ Open 365 Days a Year
                 </div>
+
             </div>
+
         </div>
 
+        <!-- =========================================
+             CALLBACK FORM
+        ========================================= -->
+
         <div class="contact-form-container" id="callback-form">
-            <h2 style="font-size:22px;text-align:center;margin-bottom:6px;" class="neon-yellow">
+
+            <h2
+                style="font-size:25px;text-align:center;margin-bottom:8px;"
+                class="neon-yellow"
+            >
                 Request a Callback &amp; Free Trial
             </h2>
 
-            <p style="text-align:center;font-size:13px;color:#dcdde1;margin-bottom:20px;">
-                Fill in your details and we will contact you on WhatsApp with class availability.
+            <p
+                style="text-align:center;font-size:14px;color:#dcdde1;margin-bottom:22px;line-height:1.6;"
+            >
+                Fill in your details and we will contact you on WhatsApp
+                with class availability.
             </p>
 
             <form
@@ -853,10 +1486,22 @@
                 method="POST"
                 target="submissionFrame"
             >
-                <div class="form-section-title">1. Student Details</div>
+
+                <!-- STUDENT -->
+
+                <div class="form-section-title">
+                    1. Student Details
+                </div>
 
                 <div style="margin-bottom:15px;">
-                    <label class="form-label" for="studentName">Name of Student *</label>
+
+                    <label
+                        class="form-label"
+                        for="studentName"
+                    >
+                        Name of Student *
+                    </label>
+
                     <input
                         type="text"
                         id="studentName"
@@ -867,63 +1512,210 @@
                         maxlength="120"
                         required
                     >
+
                 </div>
 
-                <div class="form-section-title">2. Year or Grade of Study *</div>
+                <!-- YEAR -->
+
+                <div class="form-section-title">
+                    2. Year or Grade of Study *
+                </div>
 
                 <div class="radio-grid">
-                    <label class="custom-option"><input type="radio" name="yearLevel" value="Year 4" required> Year 4</label>
-                    <label class="custom-option"><input type="radio" name="yearLevel" value="Year 5"> Year 5</label>
-                    <label class="custom-option"><input type="radio" name="yearLevel" value="Year 6"> Year 6</label>
-                    <label class="custom-option"><input type="radio" name="yearLevel" value="Year 7"> Year 7</label>
-                    <label class="custom-option"><input type="radio" name="yearLevel" value="Year 8"> Year 8</label>
-                    <label class="custom-option"><input type="radio" name="yearLevel" value="Year 9"> Year 9</label>
-                    <label class="custom-option"><input type="radio" name="yearLevel" value="Year 10"> Year 10 (GCSE)</label>
-                    <label class="custom-option"><input type="radio" name="yearLevel" value="Year 11"> Year 11 (GCSE)</label>
-                    <label class="custom-option"><input type="radio" name="yearLevel" value="Year 12"> Year 12 (A-Level)</label>
-                    <label class="custom-option"><input type="radio" name="yearLevel" value="Year 13"> Year 13 (A-Level)</label>
+
+                    <label class="custom-option">
+                        <input type="radio" name="yearLevel" value="Year 4" required>
+                        Year 4
+                    </label>
+
+                    <label class="custom-option">
+                        <input type="radio" name="yearLevel" value="Year 5">
+                        Year 5
+                    </label>
+
+                    <label class="custom-option">
+                        <input type="radio" name="yearLevel" value="Year 6">
+                        Year 6
+                    </label>
+
+                    <label class="custom-option">
+                        <input type="radio" name="yearLevel" value="Year 7">
+                        Year 7
+                    </label>
+
+                    <label class="custom-option">
+                        <input type="radio" name="yearLevel" value="Year 8">
+                        Year 8
+                    </label>
+
+                    <label class="custom-option">
+                        <input type="radio" name="yearLevel" value="Year 9">
+                        Year 9
+                    </label>
+
+                    <label class="custom-option">
+                        <input type="radio" name="yearLevel" value="Year 10">
+                        Year 10 (GCSE)
+                    </label>
+
+                    <label class="custom-option">
+                        <input type="radio" name="yearLevel" value="Year 11">
+                        Year 11 (GCSE)
+                    </label>
+
+                    <label class="custom-option">
+                        <input type="radio" name="yearLevel" value="Year 12">
+                        Year 12 (A-Level)
+                    </label>
+
+                    <label class="custom-option">
+                        <input type="radio" name="yearLevel" value="Year 13">
+                        Year 13 (A-Level)
+                    </label>
+
                 </div>
 
-                <div class="form-section-title">3. Subjects Chosen for Guidance (Select All That Apply)</div>
+                <!-- SUBJECTS -->
+
+                <div class="form-section-title">
+                    3. Subjects Chosen for Guidance (Select All That Apply)
+                </div>
 
                 <div class="checkbox-grid">
-                    <label class="custom-option"><input type="checkbox" name="subjects" value="Math"> Math</label>
-                    <label class="custom-option"><input type="checkbox" name="subjects" value="Further Math"> Further Math</label>
-                    <label class="custom-option"><input type="checkbox" name="subjects" value="Statistics"> Statistics</label>
-                    <label class="custom-option"><input type="checkbox" name="subjects" value="Mechanics"> Mechanics</label>
-                    <label class="custom-option"><input type="checkbox" name="subjects" value="Physics"> Physics</label>
-                    <label class="custom-option"><input type="checkbox" name="subjects" value="Chemistry"> Chemistry</label>
-                    <label class="custom-option"><input type="checkbox" name="subjects" value="Biology"> Biology</label>
-                    <label class="custom-option"><input type="checkbox" name="subjects" value="English"> English</label>
-                    <label class="custom-option"><input type="checkbox" name="subjects" value="Geography"> Geography</label>
-                    <label class="custom-option"><input type="checkbox" name="subjects" value="History"> History</label>
-                    <label class="custom-option"><input type="checkbox" name="subjects" value="Computer Science / ICT"> Computer Science</label>
-                    <label class="custom-option"><input type="checkbox" name="subjects" value="Coding"> Coding</label>
+
+                    <label class="custom-option">
+                        <input type="checkbox" name="subjects" value="Math">
+                        Math
+                    </label>
+
+                    <label class="custom-option">
+                        <input type="checkbox" name="subjects" value="Further Math">
+                        Further Math
+                    </label>
+
+                    <label class="custom-option">
+                        <input type="checkbox" name="subjects" value="Statistics">
+                        Statistics
+                    </label>
+
+                    <label class="custom-option">
+                        <input type="checkbox" name="subjects" value="Mechanics">
+                        Mechanics
+                    </label>
+
+                    <label class="custom-option">
+                        <input type="checkbox" name="subjects" value="Physics">
+                        Physics
+                    </label>
+
+                    <label class="custom-option">
+                        <input type="checkbox" name="subjects" value="Chemistry">
+                        Chemistry
+                    </label>
+
+                    <label class="custom-option">
+                        <input type="checkbox" name="subjects" value="Biology">
+                        Biology
+                    </label>
+
+                    <label class="custom-option">
+                        <input type="checkbox" name="subjects" value="English">
+                        English
+                    </label>
+
+                    <label class="custom-option">
+                        <input type="checkbox" name="subjects" value="Geography">
+                        Geography
+                    </label>
+
+                    <label class="custom-option">
+                        <input type="checkbox" name="subjects" value="History">
+                        History
+                    </label>
+
+                    <label class="custom-option">
+                        <input type="checkbox" name="subjects" value="Computer Science / ICT">
+                        Computer Science
+                    </label>
+
+                    <label class="custom-option">
+                        <input type="checkbox" name="subjects" value="Coding">
+                        Coding
+                    </label>
+
                 </div>
 
-                <div class="form-section-title">4. WhatsApp Contact Number *</div>
+                <!-- PHONE -->
+
+                <div class="form-section-title">
+                    4. WhatsApp Contact Number *
+                </div>
 
                 <div class="phone-group">
+
                     <select
                         class="form-control phone-code-select"
                         id="countryCode"
                         name="countryCode"
                         required
                     >
-                        <option value="+44" selected>🇬🇧 UK (+44)</option>
-                        <option value="+1">🇺🇸 USA/CAN (+1)</option>
-                        <option value="+91">🇮🇳 IND (+91)</option>
-                        <option value="+971">🇦🇪 UAE (+971)</option>
-                        <option value="+65">🇸🇬 SGP (+65)</option>
-                        <option value="+61">🇦🇺 AUS (+61)</option>
-                        <option value="+966">🇸🇦 KSA (+966)</option>
-                        <option value="+974">🇶🇦 QAT (+974)</option>
-                        <option value="+968">🇴🇲 OMN (+968)</option>
-                        <option value="+965">🇰🇼 KWT (+965)</option>
-                        <option value="+60">🇲🇾 MYS (+60)</option>
-                        <option value="+852">🇭🇰 HKG (+852)</option>
-                        <option value="+353">🇮🇪 IRL (+353)</option>
-                        <option value="other">🌐 Other Country</option>
+
+                        <option value="+44" selected>
+                            🇬🇧 UK (+44)
+                        </option>
+
+                        <option value="+1">
+                            🇺🇸 USA/CAN (+1)
+                        </option>
+
+                        <option value="+91">
+                            🇮🇳 IND (+91)
+                        </option>
+
+                        <option value="+971">
+                            🇦🇪 UAE (+971)
+                        </option>
+
+                        <option value="+65">
+                            🇸🇬 SGP (+65)
+                        </option>
+
+                        <option value="+61">
+                            🇦🇺 AUS (+61)
+                        </option>
+
+                        <option value="+966">
+                            🇸🇦 KSA (+966)
+                        </option>
+
+                        <option value="+974">
+                            🇶🇦 QAT (+974)
+                        </option>
+
+                        <option value="+968">
+                            🇴🇲 OMN (+968)
+                        </option>
+
+                        <option value="+965">
+                            🇰🇼 KWT (+965)
+                        </option>
+
+                        <option value="+60">
+                            🇲🇾 MYS (+60)
+                        </option>
+
+                        <option value="+852">
+                            🇭🇰 HKG (+852)
+                        </option>
+
+                        <option value="+353">
+                            🇮🇪 IRL (+353)
+                        </option>
+
+                        <option value="other">
+                            🌐 Other Country
+                        </option>
+
                     </select>
 
                     <input
@@ -937,18 +1729,40 @@
                         maxlength="25"
                         required
                     >
+
                 </div>
 
-                <p style="font-size:11px;color:#a4b0be;margin-top:12px;line-height:1.4;">
-                    🔒 <em>100% Confidential. We keep your data safe and never share it with third parties.</em>
+                <!-- PRIVACY -->
+
+                <p
+                    style="font-size:12px;color:#a4b0be;margin-top:14px;line-height:1.5;"
+                >
+                    🔒
+                    <em>
+                        100% Confidential. We keep your data safe and
+                        never share it with third parties.
+                    </em>
                 </p>
 
-                <button type="submit" class="form-submit-btn" id="submitButton">
+                <!-- SUBMIT -->
+
+                <button
+                    type="submit"
+                    class="form-submit-btn"
+                    id="submitButton"
+                >
                     SUBMIT &amp; REQUEST CALLBACK ★
                 </button>
 
-                <p id="formMessage" role="status" aria-live="polite"></p>
+                <p
+                    id="formMessage"
+                    role="status"
+                    aria-live="polite"
+                ></p>
+
             </form>
+
+            <!-- HIDDEN RESPONSE FRAME -->
 
             <iframe
                 name="submissionFrame"
@@ -956,27 +1770,66 @@
                 title="Form submission response"
                 style="display:none;"
             ></iframe>
+
         </div>
+
+        <!-- =========================================
+             WHATSAPP FOOTER CTA
+        ========================================= -->
 
         <div class="footer-cta-container">
-            <h2 style="font-size:24px;font-weight:900;margin-bottom:8px;">
+
+            <h2
+                style="font-size:26px;font-weight:900;margin-bottom:10px;"
+            >
                 Prefer to Talk Right Away?
             </h2>
-            <p style="font-size:14px;color:#f1f2f6;max-width:600px;margin:0 auto 10px auto;">
-                Send us a direct message on WhatsApp for instant assistance and slot checking.
+
+            <p
+                style="font-size:15px;color:#f1f2f6;max-width:600px;margin:0 auto;line-height:1.7;"
+            >
+                Send us a direct message on WhatsApp for instant
+                assistance and slot checking.
             </p>
-            <a href="https://wa.me/447462215924" target="_blank" rel="noopener noreferrer" class="footer-cta-btn">
+
+            <a
+                href="https://wa.me/447462215924"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="footer-cta-btn"
+            >
                 CHAT ON WHATSAPP NOW ★
             </a>
+
         </div>
+
     </main>
 
+    <!-- =========================================
+         FOOTER
+    ========================================= -->
+
     <footer>
-        <p>© 2026 eEdutran Online Tutoring. All rights reserved. Premier UK &amp; International Online Education.</p>
+
+        <p>
+            © 2026 eEdutran Online Tutoring.
+            All rights reserved.
+        </p>
+
+        <p>
+            Premier UK &amp; International Online Education.
+        </p>
+
     </footer>
 
+    <!-- =========================================
+         DROPDOWN JAVASCRIPT
+    ========================================= -->
+
     <script>
+
         function toggleDropdown(event) {
+
             event.stopPropagation();
 
             const dropdown = document.getElementById('levelsDropdown');
@@ -984,26 +1837,32 @@
 
             dropdown.classList.toggle('active');
             menu.classList.toggle('show');
+
         }
 
         function toggleLevel(event, listId) {
+
             event.stopPropagation();
 
             const selectedList = document.getElementById(listId);
             const allSubLists = document.querySelectorAll('.sub-subject-list');
 
             allSubLists.forEach(list => {
+
                 if (list.id !== listId) {
                     list.classList.remove('open');
                 }
+
             });
 
             if (selectedList) {
                 selectedList.classList.toggle('open');
             }
+
         }
 
         window.addEventListener('click', function(event) {
+
             const dropdown = document.getElementById('levelsDropdown');
             const menu = document.getElementById('subjectsDropdown');
 
@@ -1012,92 +1871,211 @@
                 menu &&
                 !dropdown.contains(event.target)
             ) {
+
                 menu.classList.remove('show');
                 dropdown.classList.remove('active');
+
             }
+
         });
+
     </script>
 
-    <script>
-        /*
-         * Service worker registration retained from the original page.
-         */
-        if ('serviceWorker' in navigator) {
-            window.addEventListener('load', () => {
-                navigator.serviceWorker.register('/sw.js')
-                    .then(registration => {
-                        console.log('Service worker registered:', registration.scope);
-                    })
-                    .catch(error => {
-                        console.error('Service worker registration failed:', error);
-                    });
-            });
-        }
-    </script>
+    <!-- =========================================
+         HEADER SPACING ADJUSTMENT
+         Keeps the page correctly positioned
+         on different mobile screen sizes.
+    ========================================= -->
 
     <script>
+
         (function () {
+
+            const header = document.querySelector('.top-header');
+
+            function updateHeaderSpacing() {
+
+                if (!header) return;
+
+                const headerHeight = header.offsetHeight;
+
+                document.body.style.paddingTop =
+                    headerHeight + 'px';
+
+            }
+
+            window.addEventListener('load', updateHeaderSpacing);
+            window.addEventListener('resize', updateHeaderSpacing);
+
+            if ('ResizeObserver' in window) {
+
+                const observer = new ResizeObserver(
+                    updateHeaderSpacing
+                );
+
+                observer.observe(header);
+
+            }
+
+            updateHeaderSpacing();
+
+        })();
+
+    </script>
+
+    <!-- =========================================
+         SERVICE WORKER
+    ========================================= -->
+
+    <script>
+
+        if ('serviceWorker' in navigator) {
+
+            window.addEventListener('load', () => {
+
+                navigator.serviceWorker.register('/sw.js')
+
+                    .then(registration => {
+
+                        console.log(
+                            'Service worker registered:',
+                            registration.scope
+                        );
+
+                    })
+
+                    .catch(error => {
+
+                        console.error(
+                            'Service worker registration failed:',
+                            error
+                        );
+
+                    });
+
+            });
+
+        }
+
+    </script>
+
+    <!-- =========================================
+         CALLBACK FORM HANDLING
+         EXISTING GOOGLE APPS SCRIPT CONNECTION
+         RETAINED
+    ========================================= -->
+
+    <script>
+
+        (function () {
+
             'use strict';
 
             const form = document.getElementById('callbackContactForm');
-            const submitButton = document.getElementById('submitButton');
-            const message = document.getElementById('formMessage');
+
+            const submitButton =
+                document.getElementById('submitButton');
+
+            const message =
+                document.getElementById('formMessage');
 
             let submitting = false;
             let fallbackTimer = null;
 
             function showMessage(text, type) {
+
                 message.textContent = text;
                 message.className = type;
                 message.style.display = 'block';
+
             }
 
             function resetButton() {
+
                 submitting = false;
+
                 submitButton.disabled = false;
-                submitButton.textContent = 'SUBMIT & REQUEST CALLBACK ★';
+
+                submitButton.textContent =
+                    'SUBMIT & REQUEST CALLBACK ★';
+
                 if (fallbackTimer) {
+
                     clearTimeout(fallbackTimer);
                     fallbackTimer = null;
+
                 }
+
             }
 
-            window.addEventListener('message', function (event) {
-                if (!event.data || event.data.type !== 'eedutran-form-result') {
+            /* RESPONSE FROM GOOGLE APPS SCRIPT */
+
+            window.addEventListener('message', function(event) {
+
+                if (
+                    !event.data ||
+                    event.data.type !== 'eedutran-form-result'
+                ) {
                     return;
                 }
 
                 resetButton();
 
                 if (event.data.success) {
+
                     form.reset();
+
                     showMessage(
-                        '🎉 ' + (event.data.message || 'Thank you! Your enquiry has been received successfully. We will contact you on WhatsApp shortly.'),
+
+                        '🎉 ' +
+                        (
+                            event.data.message ||
+                            'Thank you! Your enquiry has been received successfully. We will contact you on WhatsApp shortly.'
+                        ),
+
                         'success'
+
                     );
+
                 } else {
+
                     showMessage(
-                        event.data.message || 'Could not complete submission. Please message us on WhatsApp at +44 7462 215924.',
+
+                        event.data.message ||
+                        'Could not complete submission. Please message us on WhatsApp at +44 7462 215924.',
+
                         'error'
+
                     );
+
                 }
+
             });
 
-            form.addEventListener('submit', function (event) {
+            /* FORM SUBMISSION */
+
+            form.addEventListener('submit', function(event) {
+
                 message.textContent = '';
                 message.className = '';
                 message.style.display = 'none';
 
                 if (submitting) {
+
                     event.preventDefault();
                     return;
+
                 }
 
-                const selectedSubjects = form.querySelectorAll(
-                    'input[name="subjects"]:checked'
-                );
+                /* SUBJECT VALIDATION */
+
+                const selectedSubjects =
+                    form.querySelectorAll(
+                        'input[name="subjects"]:checked'
+                    );
 
                 if (selectedSubjects.length === 0) {
+
                     event.preventDefault();
 
                     showMessage(
@@ -1105,34 +2083,55 @@
                         'error'
                     );
 
-                    form.querySelector('.checkbox-grid').scrollIntoView({
-                        behavior: 'smooth',
-                        block: 'center'
-                    });
+                    form.querySelector('.checkbox-grid')
+                        .scrollIntoView({
+                            behavior: 'smooth',
+                            block: 'center'
+                        });
 
                     return;
+
                 }
 
+                /* SUBMISSION STATE */
+
                 submitting = true;
+
                 submitButton.disabled = true;
-                submitButton.textContent = 'SUBMITTING...';
+
+                submitButton.textContent =
+                    'SUBMITTING...';
 
                 showMessage(
                     'Sending your enquiry. Please wait and do not submit again.',
                     'info'
                 );
 
-                fallbackTimer = window.setTimeout(function () {
+                /* TIMEOUT FALLBACK */
+
+                fallbackTimer = window.setTimeout(function() {
+
                     if (submitting) {
+
                         resetButton();
+
                         showMessage(
+
                             'Request sent, but confirmation timed out. If we do not message you soon, please contact us on WhatsApp at +44 7462 215924.',
+
                             'info'
+
                         );
+
                     }
+
                 }, 12000);
+
             });
+
         })();
+
     </script>
+
 </body>
 </html>
